@@ -1,5 +1,3 @@
-var database = obterConfiguracaoFirebase();
-
 function obterConfiguracaoFirebase() {
 	var firebaseConfig = {
 		apiKey: "AIzaSyBOb971R81rzDuTvolsFhNDq3-vcd19kYs",
@@ -15,15 +13,6 @@ function obterConfiguracaoFirebase() {
 	return firebase.database();
 }
 
-function gravarLente(lente) {
-	lente.uuid = gerarUUID();
-	try {
-		database.ref("lentes/" + lente.uuid ).set(lente);	
-	}catch (exception) {
-		console.log("deu ruim: " + exception);
-	}
-}
-
 function gerarUUID () {
 	let x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f'];	
 	let M = [1, 2, 3, 4, 5];
@@ -36,8 +25,6 @@ function gerarUUID () {
 			[ x[obterNumeroRandomico(0, x.length)], x[obterNumeroRandomico(0, x.length)], x[obterNumeroRandomico(0, x.length)], x[obterNumeroRandomico(0, x.length)], x[obterNumeroRandomico(0, x.length)], x[obterNumeroRandomico(0, x.length)], x[obterNumeroRandomico(0, x.length)], x[obterNumeroRandomico(0, x.length)], x[obterNumeroRandomico(0, x.length)], x[obterNumeroRandomico(0, x.length)], x[obterNumeroRandomico(0, x.length)], x[obterNumeroRandomico(0, x.length)] ].join(""), ]
 			.join("-");		
 }
-
-
 
 function obterNumeroRandomico(min, max) {
 	min = Math.ceil(min); 

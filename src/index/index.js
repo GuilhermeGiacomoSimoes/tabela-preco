@@ -1,4 +1,5 @@
-
+var database = obterConfiguracaoFirebase();
+obterLentes();
 
 function obterLentes() {
 	try {

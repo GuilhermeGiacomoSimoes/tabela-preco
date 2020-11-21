@@ -1,3 +1,14 @@
+var database = obterConfiguracaoFirebase();
+
+function gravarLente(lente) {
+	lente.uuid = gerarUUID();
+	try {
+		database.ref("lentes/" + lente.uuid ).set(lente);	
+	}catch (exception) {
+		console.log("deu ruim: " + exception);
+	}
+}
+
 function cadastrar() {
 	let descricao 		= document.getElementById('descricao')		.value;
 	let empresa 		= document.getElementById('empresa')		.value;
