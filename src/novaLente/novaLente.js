@@ -1,5 +1,3 @@
-import { * } from '../helper/helper.js';
-
 function cadastrar() {
 	let descricao 		= document.getElementById('descricao')		.value;
 	let empresa 		= document.getElementById('empresa')		.value;
