@@ -45,7 +45,7 @@ function construirTabelaDeLentes(array){
 						<button class="positive" style="margin-left: 1%" onclick="editClient(${lente['uuid']})">Editar</button>
 						<hr style="margin-left: 10%; margin-right: 10%; opacity: 0.5">`;
 
-			document.getElementById('container_clients').innerHTML += html;
+			document.getElementById('container_lentes').innerHTML += html;
 	}
 }
 

@@ -1,0 +1,27 @@
+<meta charset="utf-8"/>
+<html>
+	<head> 
+		<title> TABELA DE PREÇO </title>
+		<link rel="stylesheet" href="styles.css">
+	</head>
+
+	<body>
+  		<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+  		<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+
+		<div style="background-color: #dcdcdc; height: 100%; width: 100%">
+
+			<div class="container" style="margin: 10%">
+					Descrição: <input id="descricao" placeholder="solamax" style="margin-bottom: 1%;"></input> <br/>
+					Empresa: <input id="empresa" placeholder="zeiss" style="margin-bottom: 1%;"></input> <br/>
+					Tipo: <input id="tipo" placeholder="lente" style="margin-bottom: 1%;"></input> <br/>
+					Preço: <input id="preco" placeholder="127.89" style="margin-bottom: 1%;"></input> <br/>
+					Multiplicador: <input id="multiplicador" placeholder="2.8" style="margin-bottom: 1%;"></input> <br/>
+
+					<button id="add" onclick="addNewClient()" class="new"> Adicionar </button>
+			</div>
+	</div>
+	</body>
+
+</html>
