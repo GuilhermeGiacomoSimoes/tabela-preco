@@ -2,7 +2,7 @@
 <html>
 	<head> 
 		<title> TABELA DE PREÇO </title>
-		<link rel="stylesheet" href="styles.css">
+		<link rel="stylesheet" href="../styles.css">
 	</head>
 
 	<body>
@@ -26,23 +26,4 @@
 
 </html>
 
-<script>
-	function cadastrar() {
-		let descricao 		= document.getElementById('descricao')		.value;
-		let empresa 		= document.getElementById('empresa')		.value;
-		let tipo 			= document.getElementById('tipo')			.value;
-		let preco 			= document.getElementById('preco')			.value;
-		let multiplicador 	= document.getElementById('multiplicador')	.value;
-
-		let lente = {descricao, empresa, tipo, preco, multiplicador};
-
-	}
-
-	let input = document.getElementById('multiplicador');
-	input.addEventListener('change', _=> {
-		let multiplicador 	= input.value;  
-		let preco 			= document.getElementById('preco').value;
-		let venda	 		= (preco * multiplicador).toFixed(2);
-		document.getElementById('venda').value = venda;
-	});
-</script>
+<script src="novaLente.js"></script>
