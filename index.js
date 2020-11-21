@@ -1,6 +1,9 @@
-//obterLentes();
-//obterConfiguracaoFirebase()
-
+obterConfiguracaoFirebase()
+gravarLente({
+	uui       : gerarUUID()		,
+	descricao : 'zeiss solamax'	,
+	empresa   : 'zeiss'
+});
 
 function obterConfiguracaoFirebase() {
 	var firebaseConfig = {
@@ -18,13 +21,17 @@ function obterConfiguracaoFirebase() {
 	var bancoDeDados = firebase.database();
 }
 
-//function obterLentes() {
-//	bancoDeDados.ref("lentes")	
-//}
-//
-//function gravarLente(lente) {
-//	bancoDeDados.ref("lentes")	
-//}
+function obterLentes() {
+	bancoDeDados.ref("lentes")	
+}
+
+function gravarLente(lente) {
+	try {
+		bancoDeDados.ref("lentes/" + lente.uuid ).set(lente);	
+	}catch (exception) {
+		console.log("deu ruim: " + exception);
+	}
+}
 
 
 function gerarUUID () {
