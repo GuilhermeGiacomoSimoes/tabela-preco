@@ -1,7 +1,6 @@
 //obterLentes();
 //obterConfiguracaoFirebase()
 
-console.log(gerarUUID ());
 
 function obterConfiguracaoFirebase() {
 	var firebaseConfig = {
