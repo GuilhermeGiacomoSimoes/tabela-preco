@@ -1,9 +1,11 @@
-obterConfiguracaoFirebase()
-gravarLente({
-	uui       : gerarUUID()		,
-	descricao : 'zeiss solamax'	,
-	empresa   : 'zeiss'
-});
+database = obterConfiguracaoFirebase();
+//gravarLente({
+//	uuid       : gerarUUID()	,
+//	descricao : 'zeiss solamax'	,
+//	empresa   : 'zeiss'
+//});
+
+obterLentes();
 
 function obterConfiguracaoFirebase() {
 	var firebaseConfig = {
@@ -16,18 +18,54 @@ function obterConfiguracaoFirebase() {
 		appId: "1:743281858698:web:e3969122ca8dd8d39ef573"
 	  };
 
-	 firebase.initializeApp(firebaseConfig);
-
-	var bancoDeDados = firebase.database();
+	firebase.initializeApp(firebaseConfig);
+	return firebase.database();
 }
 
 function obterLentes() {
-	bancoDeDados.ref("lentes")	
+	try {
+		var listaDeLentes = database.ref("lentes").orderByChild('descricao');	
+		listaDeLentes.on('value', snapshot => {
+			JSONParaArray(snapshot);	
+		});
+	}catch (exception) {
+		console.log("deu ruim: " + exception);
+	}
+}
+
+function JSONParaArray(json) {
+	let JSONString 			= JSON.stringify(json.val());
+	let arrayDeStringJSONs 	= JSONString.split("},");
+	let arrayDeJSONs 		= [];
+
+	for (let i=0; i<arrayDeStringJSONs.length; i ++) {
+		let string = arrayDeStringJSONs[i]; 
+
+		if (i==0) {
+			string = string + "}}";
+		}
+		else if (i==arrayDeStringJSONs.length - 1) {
+			string = "{" + string;
+		}
+		else {
+			string = "{" + string + "}}";
+		}
+
+		let json = JSON.parse(string);	
+		arrayDeJSONs.push(json);
+	} 
+
+	construirTabelaDeLentes(arrayDeJSONs);
+}
+
+
+function construirTabelaDeLentes(array){
+
 }
 
 function gravarLente(lente) {
 	try {
-		bancoDeDados.ref("lentes/" + lente.uuid ).set(lente);	
+		database.ref("lentes/" + lente.uuid ).set(lente);	
 	}catch (exception) {
 		console.log("deu ruim: " + exception);
 	}
