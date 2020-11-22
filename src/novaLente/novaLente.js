@@ -7,9 +7,14 @@ function gravarLente(lente) {
 	}catch (exception) {
 		console.log("deu ruim: " + exception);
 	}
+	finally {
+		gerarAnimacaoBotao(false);
+	}
 }
 
 function cadastrar() {
+	gerarAnimacaoBotao(true);
+
 	let descricao 		= document.getElementById('descricao')		.value;
 	let empresa 		= document.getElementById('empresa')		.value;
 	let tipo 			= document.getElementById('tipo')			.value;
@@ -28,4 +33,9 @@ input.addEventListener('change', _=> {
 	let venda	 		= (preco * multiplicador).toFixed(2);
 	document.getElementById('venda').value = venda;
 });
+
+function gerarAnimacaoBotao(loading) {
+	document.getElementById('txtAdicionar').style.display = loading ? 'none' : '' ;	
+	document.getElementById('txtCarregando').style.display = loading ? '' : 'none';	
+}
 

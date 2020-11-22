@@ -19,12 +19,15 @@
 					Multiplicador: <input id="multiplicador" type="number" min="0" placeholder="2.8" style="margin-bottom: 1%;"></input> <br/>
 					Preço de venda: <input id="venda" placeholder="" style="margin-bottom: 1%;" readonly></input> <br/>
 
-					<button id="add" onclick="cadastrar()" class="new"> Adicionar </button>
+					<button id="btnCadastrar" onclick="cadastrar()" class="new" style="max-width: 10%; max-height: 5%"> 
+						<span id="txtAdicionar" style="display: visibilty"> Adicionar </span>
+						<img id="txtCarregando" src="../loading.gif" style="display: none; max-width: 100%; max-height: 100%" /> 
+					</button>
 			</div>
 	</div>
 	</body>
 
 </html>
 
-<script src="novaLente.js"></script>
 <script src="../helper/helperFirebase.js"></script>
+<script src="novaLente.js"></script>
