@@ -20,12 +20,18 @@ function construirTabelaDeLentes(array){
 						<span class="description"style="margin-left: 8%; width: 2%"> ${lente['tipo']} </span>
 						<span class="description"style="margin-left: 8%; width: 5%"> ${lente['custo']} </span>
 						<span class="description"style="margin-left: 6%; width: 4%"> ${lente['venda']} </span>
-						<button class="danger" style="margin-left: 8%;" onclick="deleteClient(${lente['uuid']})">Excluir</button>
-						<button class="positive" style="margin-left: 1%" onclick="editClient(${lente['uuid']})">Editar</button>
+						<button class="danger" style="margin-left: 8%;" onclick="deletaLente(${lente['uuid']})">Excluir</button>
+						<button class="positive" style="margin-left: 1%" onclick="editaLente(${lente['uuid']})">Editar</button>
 						<hr style="margin-left: 10%; margin-right: 10%; opacity: 0.5">`;
 
 			document.getElementById('container_lentes').innerHTML += html;
 	}
 }
 
+function deletaLente( uuid ) {
+	let lenteRef = this.database.ref("lentes/" + uuid);
+	lenteRef.remove();
+
+	location.reload();
+}
 
