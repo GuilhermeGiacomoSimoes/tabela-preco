@@ -13,10 +13,14 @@ function obterLentes() {
 }
 
 function deletaLente( uuid ) {
-	let lenteRef = this.database.ref("lentes/" + uuid);
-	lenteRef.remove();
-
-	location.reload();
+	try {
+		let lenteRef = this.database.ref("lentes/" + uuid);
+		lenteRef.remove();
+		location.reload();
+	}catch(exception){
+		console.log("deu ruim: " + exception);
+	}
+	
 }
 
 function editClient( uuid ) {
