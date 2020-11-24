@@ -1,4 +1,6 @@
-var database = obterConfiguracaoFirebase();
+var database 		  = obterConfiguracaoFirebase();
+var editar            = false;
+var uuidLenteEditada  = '';
 
 verificaEdicao();
 function verificaEdicao()  {
@@ -9,6 +11,9 @@ function verificaEdicao()  {
 
 		const lenteUUID = url.split('?')[1];
 		obterLente(lenteUUID);
+
+		editar   = true;
+		uuid     = lenteUUID;
 	}
 }
 
@@ -55,7 +60,7 @@ function gravarLente(lente) {
 		console.log("deu ruim: " + exception);
 	}
 	finally {
-		setTimeout(_=>{ pararLoading(); }, 3000);
+		setTimeout(_=>{ pararLoading(); if (editar) window.location.href = '../index/index.html';  }, 3000);
 	}
 }
 
@@ -67,7 +72,7 @@ function cadastrar() {
 	let tipo 			= document.getElementById('tipo')			.value;
 	let preco 			= document.getElementById('preco')			.value;
 	let multiplicador 	= document.getElementById('multiplicador')	.value;
-	let uuid 			= gerarUUID();
+	let uuid 			= editar ? uuidLenteEditada : gerarUUID();
 
 	let lente = {descricao, empresa, tipo, preco, multiplicador};
 	gravarLente(lente);
