@@ -38,8 +38,14 @@ function construirTabelaDeLentes(array){
 						<span class="description" style="margin-left: 8%; width: 3%"> ${lente['tipo']} </span>
 						<span class="description" style="margin-left: 8%; width: 5%"> ${lente['preco']} </span>
 						<span class="description" style="margin-left: 6%; width: 4%"> ${vista} </span>
-						<button class="danger" style="margin-left: 8%;" onclick="deletaLente(\'${lente['uuid']}\')">Excluir</button>
-						<button class="positive" style="margin-left: 1%" onclick="editClient(\'${lente['uuid']}\')">Editar</button>
+						<button class="danger" style="margin-left: 5%; width: 10%; height: 5%;" onclick="deletaLente(\'${lente['uuid']}\')">
+							<img src="../../resources/trash.png" style="width: 20%; height: 200%; margin-right: 2%"/> 
+							Excluir
+						</button>
+						<button class="positive" style="margin-left: 1%; width: 10%; height: 5%;" onclick="editClient(\'${lente['uuid']}\')">
+							<img src="../../resources/edit.png" style="width: 20%; height: 200%; margin-right: 2%"/> 
+							Editar
+						</button>
 						<hr style="margin-left: 10%; margin-right: 10%; opacity: 0.5">`;
 
 			document.getElementById('container_lentes').innerHTML += html;

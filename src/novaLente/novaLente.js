@@ -57,10 +57,15 @@ function gravarLente(lente) {
 	try {
 		database.ref("lentes/" + lente.uuid ).set(lente);	
 	}catch (exception) {
-		console.log("deu ruim: " + exception);
+		mostrarDialog("Algo deu errado! " + exception);	
 	}
 	finally {
-		setTimeout(_=>{ pararLoading(); if (editar) window.location.href = '../index/index.html';  }, 3000);
+		setTimeout(_=>{ 
+			pararLoading(); 
+			if (editar) window.location.href = '../index/index.html';  
+			mostrarDialog("Salvo com sucesso");	
+		}, 3000);
+		
 	}
 }
 
@@ -87,12 +92,30 @@ input.addEventListener('change', _=> {
 });
 
 function gerarLoading() {
-	var modal = document.getElementById("loading");
+	let modal = document.getElementById("loading");
 	modal.style.display = "block";
 }
 
 function pararLoading() {
-	var modal = document.getElementById("loading");
+	let modal = document.getElementById("loading");
 	modal.style.display = "none";
+}
+
+function mostrarDialog(mensagem) {
+	let modal = document.getElementById("dialogRetorno");
+	modal.style.display = "block";
+
+	document.getElementById("mensagemRetorno").textContent=mensagem;
+
+	let btnFechar = document.getElementsByClassName("close")[0];
+	btnFechar.onclick = _=> {
+		modal.style.display = "none";
+	}
+
+	window.onclick = function(event) {
+  		if (event.target == modal) {
+    		modal.style.display = "none";
+  		}
+	}
 }
 

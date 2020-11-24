@@ -10,7 +10,8 @@
   		<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
 
-		<div style="background-color: #dcdcdc; height: 100%; width: 100%; margin-top: -10%">
+			<div style="background-color: #dcdcdc; height: 100%; width: 100%;">
+			<div style="padding: 1%"></div>
 			<div class="container" style="margin: 10%">
 					Descrição: <input id="descricao" placeholder="solamax" style="margin-bottom: 1%;"></input> <br/>
 					Empresa: <input id="empresa" placeholder="zeiss" style="margin-bottom: 1%;"></input> <br/>
@@ -19,9 +20,15 @@
 					Multiplicador: <input id="multiplicador" type="number" min="0" placeholder="2.8" style="margin-bottom: 1%;"></input> <br/>
 					Preço de venda: <input id="venda" placeholder="" style="margin-bottom: 1%;" readonly></input> <br/>
 
-					<button id="btnCadastrar" onclick="cadastrar()" class="new" style="max-width: 10%; max-height: 5%"> 
-						<span id="txtAdicionar"> Adicionar </span>
+					<button id="btnVoltar" class="positive" onclick="location.href='../index/index.html';" style="width: 10%; height: 5%; margin-right: 3%"> 
+						<img src="../../resources/back-arrow.png" style="width: 20%; height: 80%; margin-right: 2%"/> 
+						<span>  voltar </span>
 					</button>
+					<button id="btnCadastrar" onclick="cadastrar()" class="new" style="width: 10%; height: 5%"> 
+						<img src="../../resources/save-file.png" style="width: 20%; height: 100%; margin-right: 3%"/> 
+						<span id="txtAdicionar"> Salvar</span>
+					</button>
+
 			</div>
 		</div>
 
@@ -29,6 +36,14 @@
 		  	<div class="modal-content" style="max-width: 30%; max-height: 30%">
 				<img src="../loading.gif" style="max-width: 10%; max-height: 10%"/> 
 				<span style="font-size: 30px; margin-left: 4%; margin-bottom: 2%">Carregando..</span>
+		  	</div>
+
+		</div>
+
+		<div id="dialogRetorno" class="modal">
+		  	<div class="modal-content" style="max-width: 40%; max-height: 40%">
+				<span class="close">&times;</span>
+				<span style="font-size: 30px; margin-left: 4%; margin-bottom: 2%" id="mensagemRetorno"></span>
 		  	</div>
 
 		</div>
