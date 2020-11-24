@@ -25,6 +25,17 @@ span {
 	 cursor: pointer;	
 }
 
+.neutral {
+	background-image: linear-gradient(to top, #D3D3D3, #DCDCDC) ; 
+	color: black; 
+	padding: 1%;
+	font-size: 15px;
+	-moz-border-radius:7px;
+	-webkit-border-radius:7px;
+	 border-radius:7px;
+	 cursor: pointer;	
+}
+
 .positive {
 	background-image: linear-gradient(to top, #4169E1, #6495ED) ; 
 	color: white; 

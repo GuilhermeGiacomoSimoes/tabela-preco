@@ -31,6 +31,26 @@
 				
 			</div>
 		</div>		
+
+		<div id="confirmaExclusao" class="modal">
+		  	<div class="modal-content" style="max-width: 40%; max-height: 40%">
+				<span class="close">&times;</span>
+				<span style="font-size: 30px; margin-left: 4%; margin-bottom: 2%"> Tem certeza que deseja excluir a lente?</span>
+
+				<br>
+				<br>
+
+				<button class="danger" style="margin-left: 5%; width: 10%; height: 5%;" onclick="deletaLente(\'${lente['uuid']}\')">
+					Excluir
+				</button>
+					<button class="neutral" style="margin-right: 2%; width: 10%; height: 5%; float: right" onclick="editClient(\'${lente['uuid']}\')">
+					Cancelar	
+				</button>
+
+		  	</div>
+
+		</div>
+
 	<body>
 
 </html>

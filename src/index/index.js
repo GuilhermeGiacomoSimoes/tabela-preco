@@ -13,14 +13,16 @@ function obterLentes() {
 }
 
 function deletaLente( uuid ) {
-	try {
-		let lenteRef = this.database.ref("lentes/" + uuid);
-		lenteRef.remove();
-
-		location.reload();
-	}catch (exception) {
-		console.log("deu ruim: " + exception);
-	}
+	let modal = document.getElementById('confirmaExclusao');
+	modal.style.display = 'block';
+//	try {
+//		let lenteRef = this.database.ref("lentes/" + uuid);
+//		lenteRef.remove();
+//
+//		location.reload();
+//	}catch (exception) {
+//		console.log("deu ruim: " + exception);
+//	}
 	
 }
 
@@ -52,5 +54,18 @@ function construirTabelaDeLentes(array){
 	}
 }
 
+
+function fecharModal() {
+	let btnFechar = document.getElementsByClassName("close")[0];
+	btnFechar.onclick = _=> {
+		modal.style.display = "none";
+	}
+
+	window.onclick = function(event) {
+  		if (event.target == modal) {
+    		modal.style.display = "none";
+  		}
+	}
+}
 
 
