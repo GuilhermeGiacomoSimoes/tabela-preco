@@ -25,7 +25,7 @@ function deletaLente( uuid ) {
 }
 
 function editClient( uuid ) {
-
+	window.location.href = `../novaLente/novaLente.html?${uuid}`;
 }
 
 function construirTabelaDeLentes(array){
