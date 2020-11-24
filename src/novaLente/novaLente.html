@@ -20,14 +20,26 @@
 					Preço de venda: <input id="venda" placeholder="" style="margin-bottom: 1%;" readonly></input> <br/>
 
 					<button id="btnCadastrar" onclick="cadastrar()" class="new" style="max-width: 10%; max-height: 5%"> 
-						<span id="txtAdicionar" style="display: visibilty"> Adicionar </span>
-						<img id="txtCarregando" src="../loading.gif" style="display: none; max-width: 100%; max-height: 100%" /> 
+						<span id="txtAdicionar"> Adicionar </span>
 					</button>
 			</div>
-	</div>
+		</div>
+
+		<div id="loading" class="modal">
+		  	<div class="modal-content" style="max-width: 30%; max-height: 30%">
+				<img src="../loading.gif" style="max-width: 10%; max-height: 10%"/> 
+				<span style="font-size: 30px; margin-left: 4%; margin-bottom: 2%">Carregando..</span>
+		  	</div>
+
+		</div>
+
 	</body>
+
 
 </html>
 
 <script src="../helper/helperFirebase.js"></script>
 <script src="novaLente.js"></script>
+
+
+

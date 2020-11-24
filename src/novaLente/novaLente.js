@@ -8,12 +8,12 @@ function gravarLente(lente) {
 		console.log("deu ruim: " + exception);
 	}
 	finally {
-		gerarAnimacaoBotao(false);
+		setTimeout(_=>{ pararLoading(); }, 3000);
 	}
 }
 
 function cadastrar() {
-	gerarAnimacaoBotao(true);
+	gerarLoading();
 
 	let descricao 		= document.getElementById('descricao')		.value;
 	let empresa 		= document.getElementById('empresa')		.value;
@@ -34,8 +34,13 @@ input.addEventListener('change', _=> {
 	document.getElementById('venda').value = venda;
 });
 
-function gerarAnimacaoBotao(loading) {
-	document.getElementById('txtAdicionar').style.display = loading ? 'none' : '' ;	
-	document.getElementById('txtCarregando').style.display = loading ? '' : 'none';	
+function gerarLoading() {
+	var modal = document.getElementById("loading");
+	modal.style.display = "block";
+}
+
+function pararLoading() {
+	var modal = document.getElementById("loading");
+	modal.style.display = "none";
 }
 
