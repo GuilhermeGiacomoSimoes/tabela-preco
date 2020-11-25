@@ -93,18 +93,28 @@ function cadastrar() {
 	let preco 			= document.getElementById('preco')			.value;
 	let multiplicador 	= document.getElementById('multiplicador')	.value;
 	let uuid 			= editar ? uuidLenteEditada : gerarUUID();
+	let promocao        = document.getElementById('promocao').checked;
 
 	let lente = {uuid, descricao, empresa, tipo, preco, multiplicador};
 	gravarLente(lente);
 }
 
-let input = document.getElementById('multiplicador');
-input.addEventListener('change', _=> {
-	let multiplicador 	= input.value;  
+let multiplicadorInput = document.getElementById('multiplicador');
+multiplicadorInput.addEventListener('change', _=> {
+	let multiplicador 	= multiplicadorInput.value;  
 	let preco 			= document.getElementById('preco').value;
 	let venda	 		= (preco * multiplicador).toFixed(2);
 	document.getElementById('venda').value = venda;
 });
+
+let precoInput = document.getElementById('preco');
+precoInput.addEventListener('change', _=> {
+	let preco 	       = precoInput.value;  
+	let multiplicador = document.getElementById('multiplicador').value;
+	let venda	 	   = (preco * multiplicador).toFixed(2);
+	document.getElementById('venda').value = venda;
+});
+
 
 function gerarLoading() {
 	let modal = document.getElementById("loading");
@@ -140,5 +150,21 @@ function mostrarDialog(mensagem, voltar) {
 			}
   		}
 	}
+}
+
+
+function flagPromocao() {
+	let promocao = document.getElementById('promocao').checked;
+
+	if (promocao) {
+		document.getElementById('flagPromocaoAtivada').style.display = 'block';
+	}
+	else {
+		document.getElementById('flagPromocaoAtivada').style.display = 'none';
+	}
+}
+
+function mudaPrecoPromocional() {
+	alert('deu certo');
 }
 

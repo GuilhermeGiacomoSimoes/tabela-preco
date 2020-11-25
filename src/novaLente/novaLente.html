@@ -19,6 +19,13 @@
 					Preço: <input id="preco" placeholder="127.89" type="number" min="0" style="margin-bottom: 1%;"></input> <br/>
 					Multiplicador: <input id="multiplicador" type="number" min="0" placeholder="2.8" style="margin-bottom: 1%;"></input> <br/>
 					Preço de venda: <input id="venda" placeholder="" style="margin-bottom: 1%;" readonly></input> <br/>
+					Promoção:	<input type="checkbox" id="promocao" onchange="flagPromocao()" > <br/><br/>
+
+
+					<div id="flagPromocaoAtivada" style="display: none"> 
+						Preço promocional: <input id="precoPromocional" onkeypress="mudaPrecoPromocional()" placeholder="127.89" type="number" min="0" style="margin-bottom: 1%;"></input> <br/>
+						Porcentagem do desconto: <input id="porcentagemDoDesconto" placeholder="10" type="number" min="0" style="margin-bottom: 1%;"></input> <br/>
+					</div>
 
 					<button id="btnVoltar" class="positive" onclick="location.href='../index/index.html';" style="width: 10%; height: 5%; margin-right: 3%"> 
 						<img src="../../resources/back-arrow.png" style="width: 20%; height: 80%; margin-right: 2%"/> 
