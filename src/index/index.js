@@ -1,5 +1,6 @@
 var database = obterConfiguracaoFirebase();
 obterLentes();
+var uuid = undefined; 
 
 function obterLentes() {
 	try {
@@ -12,18 +13,28 @@ function obterLentes() {
 	}
 }
 
-function deletaLente( uuid ) {
+function confirmarDelecaoLente(uuidParametro) {
+	uuid = uuidParametro;	
 	let modal = document.getElementById('confirmaExclusao');
 	modal.style.display = 'block';
-//	try {
-//		let lenteRef = this.database.ref("lentes/" + uuid);
-//		lenteRef.remove();
-//
-//		location.reload();
-//	}catch (exception) {
-//		console.log("deu ruim: " + exception);
-//	}
-	
+}
+
+function fecharModal() {
+	uuid = undefined; 
+	let modal = document.getElementById('confirmaExclusao');
+	modal.style.display = 'none';
+}
+
+function deletaLente() {
+	try {
+		let uuid = this.uuid; 
+		let lenteRef = this.database.ref("lentes/" + uuid);
+		lenteRef.remove();
+
+		location.reload();
+	}catch (exception) {
+		console.log("deu ruim: " + exception);
+	}
 }
 
 function editClient( uuid ) {
@@ -40,7 +51,7 @@ function construirTabelaDeLentes(array){
 						<span class="description" style="margin-left: 8%; width: 3%"> ${lente['tipo']} </span>
 						<span class="description" style="margin-left: 8%; width: 5%"> ${lente['preco']} </span>
 						<span class="description" style="margin-left: 6%; width: 4%"> ${vista} </span>
-						<button class="danger" style="margin-left: 5%; width: 10%; height: 5%;" onclick="deletaLente(\'${lente['uuid']}\')">
+						<button class="danger" style="margin-left: 5%; width: 10%; height: 5%;" onclick="confirmarDelecaoLente(\'${lente['uuid']}\')">
 							<img src="../../resources/trash.png" style="width: 20%; height: 200%; margin-right: 2%"/> 
 							Excluir
 						</button>
@@ -55,17 +66,5 @@ function construirTabelaDeLentes(array){
 }
 
 
-function fecharModal() {
-	let btnFechar = document.getElementsByClassName("close")[0];
-	btnFechar.onclick = _=> {
-		modal.style.display = "none";
-	}
-
-	window.onclick = function(event) {
-  		if (event.target == modal) {
-    		modal.style.display = "none";
-  		}
-	}
-}
 
 
