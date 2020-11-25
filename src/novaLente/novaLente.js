@@ -12,8 +12,8 @@ function verificaEdicao()  {
 		const lenteUUID = url.split('?')[1];
 		obterLente(lenteUUID);
 
-		editar   = true;
-		uuid     = lenteUUID;
+		editar   		 = true;
+		uuidLenteEditada = lenteUUID;
 	}
 }
 
@@ -53,20 +53,35 @@ function preencherDadosLente(snapshot) {
 }
 
 function gravarLente(lente) {
-	lente.uuid = gerarUUID();
 	try {
-		database.ref("lentes/" + lente.uuid ).set(lente);	
+		database.ref("lentes/" + lente.uuid ).set(lente).then( snapshot => {
+			pararLoading(); 
+			resetarCampos();
+			mostrarDialog("Salvo com sucesso", true);
+
+		}).catch(error => {
+			mostrarDialog("Algo deu errado! " + error);	
+		});	
 	}catch (exception) {
-		mostrarDialog("Algo deu errado! " + exception);	
 	}
 	finally {
 		setTimeout(_=>{ 
-			pararLoading(); 
-			if (editar) window.location.href = '../index/index.html';  
-			mostrarDialog("Salvo com sucesso");	
+				
 		}, 3000);
 		
 	}
+}
+
+function resetarCampos() {
+	editar            = false;
+	uuidLenteEditada  = '';
+
+	document.getElementById('descricao')    .value="";
+	document.getElementById('empresa')      .value="";
+	document.getElementById('tipo')			.value="";
+	document.getElementById('preco')		.value="";
+	document.getElementById('multiplicador').value="";
+	document.getElementById('venda')        .value="";
 }
 
 function cadastrar() {
@@ -79,7 +94,7 @@ function cadastrar() {
 	let multiplicador 	= document.getElementById('multiplicador')	.value;
 	let uuid 			= editar ? uuidLenteEditada : gerarUUID();
 
-	let lente = {descricao, empresa, tipo, preco, multiplicador};
+	let lente = {uuid, descricao, empresa, tipo, preco, multiplicador};
 	gravarLente(lente);
 }
 
@@ -101,7 +116,7 @@ function pararLoading() {
 	modal.style.display = "none";
 }
 
-function mostrarDialog(mensagem) {
+function mostrarDialog(mensagem, voltar) {
 	let modal = document.getElementById("dialogRetorno");
 	modal.style.display = "block";
 
@@ -110,11 +125,19 @@ function mostrarDialog(mensagem) {
 	let btnFechar = document.getElementsByClassName("close")[0];
 	btnFechar.onclick = _=> {
 		modal.style.display = "none";
+
+		if (editar) { 
+			window.location.href = '../index/index.html';  
+		}
 	}
 
 	window.onclick = function(event) {
   		if (event.target == modal) {
     		modal.style.display = "none";
+
+			if (voltar) { 
+				window.location.href = '../index/index.html';  
+			}
   		}
 	}
 }
