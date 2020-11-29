@@ -51,13 +51,17 @@ function construirTabelaDeLentes(array){
 						<span class="description" style="margin-left: 8%; width: 3%"> ${lente['tipo']} </span>
 						<span class="description" style="margin-left: 8%; width: 5%"> ${lente['preco']} </span>
 						<span class="description" style="margin-left: 6%; width: 4%"> ${vista} </span>
-						<button class="danger" style="margin-left: 5%; width: 10%; height: 5%;" onclick="confirmarDelecaoLente(\'${lente['uuid']}\')">
-							<img src="../../resources/trash.png" style="width: 20%; height: 200%; margin-right: 2%"/> 
-							Excluir
+						<button class="danger" style="margin-left: 5%; width: 120px; height: 50px;" onclick="confirmarDelecaoLente(\'${lente['uuid']}\')">
+							<center>
+								<img src="../../resources/trash.png" style="width: 20px; height: 20px;"/> 
+								Excluir
+							</center>
 						</button>
-						<button class="positive" style="margin-left: 1%; width: 10%; height: 5%;" onclick="editClient(\'${lente['uuid']}\')">
-							<img src="../../resources/edit.png" style="width: 20%; height: 200%; margin-right: 2%"/> 
-							Editar
+						<button class="positive" style="margin-left: 1%; width: 120px; height: 50px;" onclick="editClient(\'${lente['uuid']}\')">
+							<center>
+								<img src="../../resources/edit.png" style="width: 20px; height: 20px;"/> 
+								Editar
+							</center>
 						</button>
 						<hr style="margin-left: 10%; margin-right: 10%; opacity: 0.5">`;
 

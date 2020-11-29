@@ -1,6 +1,7 @@
 var database 		  = obterConfiguracaoFirebase();
 var editar            = false;
 var uuidLenteEditada  = '';
+resetarCampos()
 
 verificaEdicao();
 function verificaEdicao()  {
@@ -35,12 +36,27 @@ function preencherDadosLente(snapshot) {
 	let	edtPreco    	 = document.getElementById('preco'			);   
 	let	edtMultiplicador = document.getElementById('multiplicador'	);   
 	let	edtVenda 		 = document.getElementById('venda'			);   
+	let	cbPromocao       = document.getElementById('promocao'	    );   
+	let	edtPrecoPromocional    = document.getElementById('precoPromocional' );   
+	let	edtPorcentagemDesconto = document.getElementById('porcentagemDoDesconto' );   
 
 	let	descricao 	  = snapshot['descricao'];  
 	let	empresa   	  = snapshot['empresa']; 
 	let	tipo      	  = snapshot['tipo']; 
 	let	preco     	  = snapshot['preco']; 
 	let	multiplicador = snapshot['multiplicador'];    
+	let	promocao      = snapshot['promocao'];    
+
+	if (promocao) {
+		cbPromocao.checked = true;
+
+		let	porcentagemDesconto = snapshot['porcentagemDesconto'];    
+		let	precoPromocao = snapshot['precoPromocional'];    
+		edtPrecoPromocional.value = porcentagemDesconto; 
+		edtPorcentagemDesconto.value = precoPromocao;
+
+		flagPromocao()
+	}
 
 	edtDescricao 	  .value = descricao 	 ;	
 	edtEmpresa   	  .value = empresa   	 ;	
@@ -82,6 +98,9 @@ function resetarCampos() {
 	document.getElementById('preco')		.value="";
 	document.getElementById('multiplicador').value="";
 	document.getElementById('venda')        .value="";
+	document.getElementById('promocao') .checked=false;
+	document.getElementById('precoPromocional').value="";
+	document.getElementById('porcentagemDoDesconto').value = '';
 }
 
 function cadastrar() {
@@ -94,8 +113,16 @@ function cadastrar() {
 	let multiplicador 	= document.getElementById('multiplicador')	.value;
 	let uuid 			= editar ? uuidLenteEditada : gerarUUID();
 	let promocao        = document.getElementById('promocao').checked;
+	
+	let precoPromocional    = null; 
+    let porcentagemDesconto = null;
 
-	let lente = {uuid, descricao, empresa, tipo, preco, multiplicador};
+	if (promocao) {
+		let precoPromocional     = document.getElementById('precoPromocional').value;
+		let porcentagemDesconto  = document.getElementById('porcentagemDoDesconto').value;
+	}
+
+	let lente = {uuid, descricao, empresa, tipo, preco, multiplicador, promocao, precoPromocional, porcentagemDesconto};
 	gravarLente(lente);
 }
 
@@ -165,6 +192,23 @@ function flagPromocao() {
 }
 
 function mudaPrecoPromocional() {
-	alert('deu certo');
+	let precoPromocional     = document.getElementById('precoPromocional').value;
+	let preco                = document.getElementById('preco').value;
+
+	if (precoPromocional != "" && preco != "") {
+		let porcentagem = (1 - (precoPromocional / preco ))  * 100 ;	
+		document.getElementById('porcentagemDoDesconto').value = Number(porcentagem).toFixed(2);
+	}
+
 }
 
+function mudaPorcentagemPromocao() {
+	let porcentagem = document.getElementById('porcentagemDoDesconto').value;
+	let preco       = document.getElementById('preco').value;
+
+	if (porcentagem != "" && preco != "") {
+		let precoPromocional = preco - (preco * ( porcentagem / 100 ));
+		document.getElementById('precoPromocional').value = precoPromocional;	
+	}
+
+}
