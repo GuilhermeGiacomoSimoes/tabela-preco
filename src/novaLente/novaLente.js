@@ -109,7 +109,8 @@ function cadastrar() {
 	let multiplicador 	= document.getElementById('multiplicador')	.value;
 	let uuid 			= editar ? uuidLenteEditada : gerarUUID();
 	let promocao        = document.getElementById('promocao').checked;
-	
+	let venda          = preco * multiplicador;
+
 	let precoPromocional    = null; 
     let porcentagemDesconto = null;
 
@@ -118,7 +119,7 @@ function cadastrar() {
 		porcentagemDesconto  = document.getElementById('porcentagemDoDesconto').value;
 	}
 
-	let lente = {uuid, descricao, empresa, tipo, preco, multiplicador, promocao, precoPromocional, porcentagemDesconto};
+	let lente = {uuid, descricao, empresa, tipo, preco, multiplicador, promocao, precoPromocional, porcentagemDesconto, venda};
 	gravarLente(lente);
 }
 

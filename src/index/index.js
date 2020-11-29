@@ -48,13 +48,12 @@ function construirTabelaDeLentes(array){
 
 	for (let key in array){
 			let lente = array[key];
-			let vista = lente['preco'] * lente['multiplicador'];
 
 			const html = `<span class="description"style="margin-left: 10%; width: 15%"> ${lente['descricao']}</span>
 						<span class="description" style="margin-left: 4%; width: 5%"> ${lente['empresa']} </span>
 						<span class="description" style="margin-left: 8%; width: 3%"> ${lente['tipo']} </span>
-						<span class="description" style="margin-left: 8%; width: 5%"> ${lente['preco']} </span>
-						<span class="description" style="margin-left: 6%; width: 4%"> ${vista} </span>
+						<span class="description" style="margin-left: 8%; width: 5%"> R$ ${lente['preco']} </span>
+						<span class="description" style="margin-left: 6%; width: 6%"> R$ ${lente['venda']} </span>
 						<button class="danger" style="margin-left: 5%; width: 120px; height: 50px;" onclick="confirmarDelecaoLente(\'${lente['uuid']}\')">
 							<center>
 								<img src="../../resources/trash.png" style="width: 20px; height: 20px;"/> 
