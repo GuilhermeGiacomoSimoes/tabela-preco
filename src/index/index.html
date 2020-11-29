@@ -16,7 +16,7 @@
 		<div style="background-color: #dcdcdc; height: 100%; width: 100%; overflow: hidden;">
 			<div style="padding: 1%"></div>
 
-			<div class="container" id="container_lentes">
+			<div class="container" >
 				<span class="title" style="margin-left: 10%; font-size: 18px; width: 8%">Descrição</span>
 				<span class="title" style="margin-left: 11%; font-size: 18px; width: 6%">Empresa</span>
 				<span class="title" style="margin-left: 7%; font-size: 18px; width: 3%">Tipo</span>
@@ -25,12 +25,15 @@
 				<a href="../novaLente/novaLente.html" style="margin-left: 9%">
 					<button class="new">Nova lente</button>
 				</a>
+
+				<br/>
 				<br/>
 
-
-				<input type="text"/>
+				<input id="busca" placeholder="busca" onchange="busca()" onkeyup="this.onchange();" oninput="this.onchange();" style="margin-bottom: 1%; margin-left: 10%; width: 70%"></input> <br/>
 
 				<hr style="margin-left: 10%; margin-right: 10%;  opacity: 0.5">
+
+				<div id="container_lentes"> </div>
 				
 			</div>
 		</div>		

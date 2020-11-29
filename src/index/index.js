@@ -1,12 +1,14 @@
 var database = obterConfiguracaoFirebase();
 obterLentes();
 var uuid = undefined; 
+var todasAsLentes = {};
 
 function obterLentes() {
 	try {
 		var listaDeLentes = database.ref("lentes").orderByChild('descricao');	
 		listaDeLentes.on('value', snapshot => {
-			construirTabelaDeLentes(snapshot.val());
+			todasAsLentes = snapshot.val(); 
+			construirTabelaDeLentes(todasAsLentes);
 		});
 	}catch (exception) {
 		console.log("deu ruim: " + exception);
@@ -42,6 +44,8 @@ function editClient( uuid ) {
 }
 
 function construirTabelaDeLentes(array){
+	document.getElementById('container_lentes').innerHTML = "";
+
 	for (let key in array){
 			let lente = array[key];
 			let vista = lente['preco'] * lente['multiplicador'];
@@ -69,6 +73,31 @@ function construirTabelaDeLentes(array){
 	}
 }
 
+function busca() {
+	const textoBusca = document.getElementById("busca").value;	
 
+	if (textoBusca) {
+		filtrar(textoBusca);
+	} else {
+		construirTabelaDeLentes(todasAsLentes);
+	}
+}
 
+function filtrar(texto) {
+	let lentesFiltradas = {};
 
+	for (let key in todasAsLentes) {
+		let lente = todasAsLentes[key];
+
+		for (let keyLente in lente) {
+			let valor = ""+lente[keyLente];
+
+			if (valor.indexOf(texto) != -1) {
+				lentesFiltradas[lente.uuid] = lente;	
+				break;
+			}
+		}
+	}	
+
+	construirTabelaDeLentes(lentesFiltradas);
+}
