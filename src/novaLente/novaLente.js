@@ -51,18 +51,19 @@ function preencherDadosLente(snapshot) {
 		cbPromocao.checked = true;
 
 		let	porcentagemDesconto = snapshot['porcentagemDesconto'];    
-		let	precoPromocao = snapshot['precoPromocional'];    
-		edtPrecoPromocional.value = porcentagemDesconto; 
-		edtPorcentagemDesconto.value = precoPromocao;
+		let	precoPromocao       = snapshot['precoPromocional'];    
+
+		edtPrecoPromocional.value = precoPromocao; 
+		edtPorcentagemDesconto.value = porcentagemDesconto;
 
 		flagPromocao()
 	}
 
-	edtDescricao 	  .value = descricao 	 ;	
-	edtEmpresa   	  .value = empresa   	 ;	
-	edtTipo      	  .value = tipo      	 ;	
-	edtPreco     	  .value = preco     	 ;	
-	edtMultiplicador  .value = multiplicador ;
+	edtDescricao 	  .value = descricao			 ;	
+	edtEmpresa   	  .value = empresa				 ;	
+	edtTipo      	  .value = tipo					 ;	
+	edtPreco     	  .value = preco				 ;	
+	edtMultiplicador  .value = multiplicador		 ;
 	edtVenda 	 	  .value = 	preco * multiplicador;
 
 	pararLoading();
@@ -79,12 +80,7 @@ function gravarLente(lente) {
 			mostrarDialog("Algo deu errado! " + error);	
 		});	
 	}catch (exception) {
-	}
-	finally {
-		setTimeout(_=>{ 
-				
-		}, 3000);
-		
+
 	}
 }
 
@@ -118,8 +114,8 @@ function cadastrar() {
     let porcentagemDesconto = null;
 
 	if (promocao) {
-		let precoPromocional     = document.getElementById('precoPromocional').value;
-		let porcentagemDesconto  = document.getElementById('porcentagemDoDesconto').value;
+		precoPromocional     = document.getElementById('precoPromocional').value;
+		porcentagemDesconto  = document.getElementById('porcentagemDoDesconto').value;
 	}
 
 	let lente = {uuid, descricao, empresa, tipo, preco, multiplicador, promocao, precoPromocional, porcentagemDesconto};
