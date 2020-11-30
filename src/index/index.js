@@ -53,7 +53,7 @@ function construirTabelaDeLentes(array){
 						<span class="description" style="margin-left: 4%; width: 2%"> ${lente['empresa']} </span>
 						<span class="description" style="margin-left: 8%; width: 2%"> ${lente['tipo']} </span>
 						<span class="description" style="margin-left: 8%; width: 4%"> R$ ${lente['preco']} </span>
-						<span class="description" style="margin-left: 6%; width: 1%"> R$ ${lente['venda']} </span>
+						<span class="description" style="margin-left: 6%; width: 5%"> R$ ${lente['venda']} </span>
 						<button class="danger" style="margin-left: 5%; width: 120px; height: 50px;" onclick="confirmarDelecaoLente(\'${lente['uuid']}\')">
 							<center>
 								<img src="../../resources/trash.png" style="width: 20px; height: 20px;"/> 
