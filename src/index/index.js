@@ -50,10 +50,10 @@ function construirTabelaDeLentes(array){
 			let lente = array[key];
 
 			const html = `<span class="description"style="margin-left: 10%; width: 15%"> ${lente['descricao']}</span>
-						<span class="description" style="margin-left: 4%; width: 5%"> ${lente['empresa']} </span>
-						<span class="description" style="margin-left: 8%; width: 3%"> ${lente['tipo']} </span>
-						<span class="description" style="margin-left: 8%; width: 5%"> R$ ${lente['preco']} </span>
-						<span class="description" style="margin-left: 6%; width: 6%"> R$ ${lente['venda']} </span>
+						<span class="description" style="margin-left: 4%; width: 2%"> ${lente['empresa']} </span>
+						<span class="description" style="margin-left: 8%; width: 2%"> ${lente['tipo']} </span>
+						<span class="description" style="margin-left: 8%; width: 4%"> R$ ${lente['preco']} </span>
+						<span class="description" style="margin-left: 6%; width: 1%"> R$ ${lente['venda']} </span>
 						<button class="danger" style="margin-left: 5%; width: 120px; height: 50px;" onclick="confirmarDelecaoLente(\'${lente['uuid']}\')">
 							<center>
 								<img src="../../resources/trash.png" style="width: 20px; height: 20px;"/> 
@@ -66,7 +66,7 @@ function construirTabelaDeLentes(array){
 								Editar
 							</center>
 						</button>
-						<hr style="margin-left: 10%; margin-right: 10%; opacity: 0.5">`;
+						<hr style="margin-left: 10%; margin-right: 20%; opacity: 0.5">`;
 
 			document.getElementById('container_lentes').innerHTML += html;
 	}
