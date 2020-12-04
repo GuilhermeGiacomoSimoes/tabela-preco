@@ -7,11 +7,11 @@ span {
 	background-color: #fff;
 	-moz-border-radius:7px;
 	-webkit-border-radius:7px;
-	 border-radius:7px;
-	margin: 2%;
+	border-radius:7px;
 	overflow: auto;
 	max-width: 100%;
 	max-height: 100%;
+	margin: 5%;
 }
 
 .danger {
@@ -112,4 +112,5 @@ span {
     left: 0;
     right: 0;
     bottom: 0;
+	overflow: hidden;
 }
