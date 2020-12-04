@@ -11,7 +11,7 @@ span {
 	margin: 2%;
 	overflow: auto;
 	max-width: 100%;
-	max-height: 70%;
+	max-height: 100%;
 }
 
 .danger {
@@ -100,4 +100,16 @@ span {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+.background {
+	background-image: url("../resources/fundo.jpeg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
