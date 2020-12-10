@@ -1,4 +1,5 @@
 var database = obterConfiguracaoFirebase();
+gerarLoading();
 obterLentes();
 var uuid = undefined; 
 var todasAsLentes = {};
@@ -9,6 +10,7 @@ function obterLentes() {
 		listaDeLentes.on('value', snapshot => {
 			todasAsLentes = snapshot.val(); 
 			construirTabelaDeLentes(todasAsLentes);
+			pararLoading();
 		});
 	}catch (exception) {
 		console.log("deu ruim: " + exception);
@@ -99,4 +101,14 @@ function filtrar(texto) {
 	}	
 
 	construirTabelaDeLentes(lentesFiltradas);
+}
+
+function gerarLoading() {
+	let modal = document.getElementById("loading");
+	modal.style.display = "block";
+}
+
+function pararLoading() {
+	let modal = document.getElementById("loading");
+	modal.style.display = "none";
 }
