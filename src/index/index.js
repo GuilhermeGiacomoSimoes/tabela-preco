@@ -1,10 +1,12 @@
-var database = obterConfiguracaoFirebase();
-gerarLoading();
-obterLentes();
-var uuid = undefined; 
+var database      = obterConfiguracaoFirebase();
+var uuid          = undefined; 
 var todasAsLentes = {};
 
+obterLentes();
+
 function obterLentes() {
+	gerarLoading();
+
 	try {
 		var listaDeLentes = database.ref("lentes").orderByChild('descricao');	
 		listaDeLentes.on('value', snapshot => {
@@ -105,10 +107,14 @@ function filtrar(texto) {
 
 function gerarLoading() {
 	let modal = document.getElementById("loading");
-	modal.style.display = "block";
+	if (modal){
+		modal.style.display = "block";
+	}
 }
 
 function pararLoading() {
 	let modal = document.getElementById("loading");
-	modal.style.display = "none";
+	if (modal){
+		modal.style.display = "none";
+	}
 }
