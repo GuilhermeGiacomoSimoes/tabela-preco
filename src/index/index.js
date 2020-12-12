@@ -122,11 +122,4 @@ function pararLoading() {
 function mostrarEsconderLentesNaoPromocionais() {
 	let valor    = document.getElementById('switchLentesPromocionais').checked;
 	let divTexto = document.getElementById('textoSwitch');
-
-	if (valor) {
-		divTexto.innerHTML = `todas as lentes`;
-	}
-	else{
-		divTexto.innerHTML = `somente lentes promocionais`;
-	}
 }
