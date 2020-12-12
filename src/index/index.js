@@ -1,6 +1,7 @@
-var database      = obterConfiguracaoFirebase();
-var uuid          = undefined; 
-var todasAsLentes = {};
+var database       = obterConfiguracaoFirebase();
+var uuid           = undefined; 
+var todasAsLentes  = {};
+var lentesVisiveis = {}; 
 
 obterLentes();
 
@@ -13,6 +14,7 @@ function obterLentes() {
 			todasAsLentes = snapshot.val(); 
 			construirTabelaDeLentes(todasAsLentes);
 			pararLoading();
+			document.getElementById('switchLentesPromocionais').checked = false;
 		});
 	}catch (exception) {
 		console.log("deu ruim: " + exception);
@@ -77,31 +79,57 @@ function construirTabelaDeLentes(array){
 }
 
 function busca() {
-	const textoBusca = document.getElementById("busca").value;	
-
-	if (textoBusca) {
-		filtrar(textoBusca);
-	} else {
-		construirTabelaDeLentes(todasAsLentes);
-	}
+	filtrar();
 }
 
-function filtrar(texto) {
+function filtrar() {
 	let lentesFiltradas = {};
+	const valorSwitch   = document.getElementById('switchLentesPromocionais').checked;
+	const texto         = document.getElementById("busca").value;	
 
-	for (let key in todasAsLentes) {
-		let lente = todasAsLentes[key];
+	if (texto != "" && texto != undefined && texto != null) {
+		for (let key in todasAsLentes) {
+			let lente = todasAsLentes[key];
+			let add   = false;
 
-		for (let keyLente in lente) {
-			let valor = ""+lente[keyLente];
+			for (let keyLente in lente) {
+				let valor = ""+lente[keyLente];
 
-			if (valor.indexOf(texto) != -1) {
+				if (valor.indexOf(texto) != -1) {
+					add = true;
+					break;
+				}
+			}
+
+			if(valorSwitch && lente['promocao'] && add) {
+				add = true;
+			}
+			else if(valorSwitch && !lente['promocao']) {
+				add = false; 
+			}
+			else if (!valorSwitch && add) {
+				add = true;
+			}
+
+			if (add) {
 				lentesFiltradas[lente.uuid] = lente;	
-				break;
 			}
 		}
-	}	
+	}
 
+	else {
+		for (let key in todasAsLentes) {
+			let lente = todasAsLentes[key];
+
+			if (valorSwitch && lente['promocao']) {
+				lentesFiltradas[lente.uuid] = lente;
+			}	
+			else if (!valorSwitch) {
+				lentesFiltradas[lente.uuid] = lente;
+			}
+		}	
+	}
+		
 	construirTabelaDeLentes(lentesFiltradas);
 }
 
@@ -120,6 +148,6 @@ function pararLoading() {
 }
 
 function mostrarEsconderLentesNaoPromocionais() {
-	let valor    = document.getElementById('switchLentesPromocionais').checked;
-	let divTexto = document.getElementById('textoSwitch');
+	let valor = document.getElementById('switchLentesPromocionais').checked;
+	filtrar();
 }
