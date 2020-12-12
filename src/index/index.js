@@ -56,10 +56,14 @@ function construirTabelaDeLentes(array){
 		let lente       = array[key];
 		let promocional = lente['promocao'];
 		let color       = '#808080'; 
+		let preco       = lente['preco'];
 
 		if (promocional) {
 			color = "#FF0000";
+			preco = lente['precoPromocional']; 
 		}
+		
+		let venda = preco * lente['multiplicador'];
 	
 		const html = `<span class="description"style="margin-left: 10%; width: 15%"> ${lente['descricao']}</span>
 				<span class="description" style="margin-left: 4%; width: 2%"> ${lente['empresa']} </span>
