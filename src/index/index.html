@@ -16,18 +16,16 @@
 		<div class="background" >
 			<div class="container">
 
-				<input id="busca" placeholder="busca" onchange="busca()" onkeyup="this.onchange();" oninput="this.onchange();" style="margin-bottom: 1%; margin-left: 10%; width: 50%"></input> 
+				<input id="busca" placeholder="busca" onchange="busca()" onkeyup="this.onchange();" oninput="this.onchange();" style="margin-bottom: 1%; margin-left: 10%; width: 45%"></input> 
 
-			   	<label class="switch" style="margin-left: 2%;">
-					<input type="checkbox">
+			   	<label class="switch"  style="margin-left: 2%;" onclick="mostrarEsconderLentesNaoPromocionais()">
+					<input type="checkbox" id="switchLentesPromocionais">
 				  	<span class="slider round"></span>
 				</label> 
 
-				<span class="title" style="font-size: 18px; width: 6%">
-					teste
-				</span>
+				<span class="title" id="textoSwitch" style="font-size: 18px; width: 6%"></span>
 
-				<a href="../novaLente/novaLente.html" style="margin-left: 1%;">
+				<a href="../novaLente/novaLente.html" style="margin-left: 8%;">
 					<button class="new">Nova lente</button>
 				</a>
 
