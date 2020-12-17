@@ -12,17 +12,17 @@
 
 			<div class="background">
 			<div class="container">
-					Descrição: <input id="descricao" placeholder="solamax" style="margin-bottom: 1%;"></input> <br/>
-					Empresa: <input id="empresa" placeholder="zeiss" style="margin-bottom: 1%;"></input> <br/>
-					Tipo: <input id="tipo" placeholder="lente" style="margin-bottom: 1%;"></input> <br/>
-					Preço: <input id="preco" placeholder="127.89" type="number" min="0" style="margin-bottom: 1%;"></input> <br/>
-					Multiplicador: <input id="multiplicador" type="number" min="0" placeholder="2.8" style="margin-bottom: 1%;"></input> <br/>
+					Descrição: <input id="descricao" placeholder="solamax" style="margin-bottom: 1%;" maxlength="50"></input> <br/>
+					Empresa: <input id="empresa" placeholder="zeiss" style="margin-bottom: 1%;" maxlength="20"></input> <br/>
+					Tipo: <input id="tipo" placeholder="lente" style="margin-bottom: 1%;" maxlength="10"></input> <br/>
+					Preço: <input id="preco" placeholder="127.89" type="number" min="0" style="margin-bottom: 1%;" maxlength="7"></input> <br/>
+					Multiplicador: <input id="multiplicador" type="number" min="0" placeholder="2.8" style="margin-bottom: 1%;" maxlength="1"></input> <br/>
 					Preço de venda: <input id="venda" placeholder="" style="margin-bottom: 1%;" readonly></input> <br/>
 					Promoção:	<input type="checkbox" id="promocao" onchange="flagPromocao()" > <br/><br/>
 
 					<div id="flagPromocaoAtivada" style="display: none"> 
-						Preço promocional: <input id="precoPromocional" onchange="mudaPrecoPromocional()" placeholder="127.89" type="number" min="0" style="margin-bottom: 1%;"></input> <br/>
-						Porcentagem do desconto: <input id="porcentagemDoDesconto" onchange="mudaPorcentagemPromocao()" placeholder="10" type="number" min="0" style="margin-bottom: 1%;"></input> <br/>
+						Preço promocional: <input id="precoPromocional" onchange="mudaPrecoPromocional()" placeholder="127.89" type="number" min="0" style="margin-bottom: 1%;" maxlength="7"></input> <br/>
+						Porcentagem do desconto: <input id="porcentagemDoDesconto" onchange="mudaPorcentagemPromocao()" placeholder="10" type="number" min="0" style="margin-bottom: 1%;" maxlength="2"></input> <br/>
 					</div>
 
 					<button id="btnVoltar" class="positive" onclick="location.href='../index/index.html';" style="width: 120px; height: 50px; margin-right: 3%"> 
