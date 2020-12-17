@@ -70,6 +70,10 @@ function preencherDadosLente(snapshot) {
 }
 
 function gravarLente(lente) {
+	if (verificaIrregularidades(lente)) {
+		return false;
+	}
+
 	try {
 		database.ref("lentes/" + lente.uuid ).set(lente).then( snapshot => {
 			pararLoading(); 
@@ -82,6 +86,8 @@ function gravarLente(lente) {
 	}catch (exception) {
 
 	}
+
+	return true;
 }
 
 function resetarCampos() {
