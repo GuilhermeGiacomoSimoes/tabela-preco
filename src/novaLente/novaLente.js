@@ -69,8 +69,40 @@ function preencherDadosLente(snapshot) {
 	pararLoading();
 }
 
+function verificaIrregularidades(lente){
+	if ( lente.descricao == null || lente.descricao  == undefined || lente.descricao  == "" || lente.descricao.length > 50 )  {
+		return true;
+	} 
+	if (lente.empresa  == null || lente.empresa  == undefined || lente.empresa  == "" || lente.empresa.length > 20 )  {
+		return true;
+	} 
+	if (lente.tipo == null || lente.tipo == undefined || lente.tipo == "" || lente.tipo.length > 10 )  {
+		return true;
+	} 
+	if (lente.preco == null || lente.preco == undefined || lente.preco <= 0 || ''+lente.preco.length > 7 )  {
+		return true;
+	} 
+	if (lente.multiplicador == null || lente.multiplicador == undefined || lente.multiplicador <= 0 || ''+lente.multiplicador.length > 1 )  {
+		return true;
+	} 
+	if (lente.promocao)  {
+		if (lente.precoPromocional == null || lente.precoPromocional == undefined || lente.precoPromocional <= 0 || ''+lente.precoPromocional.length > 7)  {
+			return true;
+		} 
+		if (lente.porcentagemDesconto == null || lente.porcentagemDesconto == undefined || lente.porcentagemDesconto <= 0 || ''+lente.porcentagemDesconto.length > 2)  {
+			return true;
+		} 
+		if (lente.venda == null || lente.venda == undefined || lente.venda == "" || lente.venda.length > 50 )  {
+			return true;
+		} 
+	} 
+
+	return false;
+}
+
 function gravarLente(lente) {
 	if (verificaIrregularidades(lente)) {
+		mostrarDialog("Preencha todos os campos corretamente", false);
 		return false;
 	}
 
