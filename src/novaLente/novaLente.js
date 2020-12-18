@@ -106,6 +106,8 @@ function gravarLente(lente) {
 		return false;
 	}
 
+	gerarLoading();
+
 	try {
 		database.ref("lentes/" + lente.uuid ).set(lente).then( snapshot => {
 			pararLoading(); 
@@ -138,8 +140,6 @@ function resetarCampos() {
 }
 
 function cadastrar() {
-	gerarLoading();
-
 	let descricao 		= document.getElementById('descricao')		.value;
 	let empresa 		= document.getElementById('empresa')		.value;
 	let tipo 			= document.getElementById('tipo')			.value;
