@@ -15,6 +15,8 @@ function obterLentes() {
 			construirTabelaDeLentes(todasAsLentes);
 			pararLoading();
 			document.getElementById('switchLentesPromocionais').checked = false;
+		}, err => {
+			console.log(err);
 		});
 	}catch (exception) {
 		console.log("deu ruim: " + exception);
