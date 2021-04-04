@@ -53,25 +53,22 @@ function editClient( uuid ) {
 
 function construirTabelaDeLentes(array){
 	document.getElementById('container_lentes').innerHTML = "";
-	let index = 0;
+	var index = 0;
 	
 	for (let key in array){
 		let lente       = array[key];
 		let promocional = lente['promocao'];
 		let color       = '#808080'; 
 		let preco       = lente['preco'];
-		let background_line = "#d3d3d3";
 		index ++;	
+
+		let background_line =  ( index % 2 == 0 ) ? "#d3d3d3" : "#ffffff"; 
 
 		if (promocional) {
 			color = "#FF0000";
 			preco = lente['precoPromocional']; 
 		}
 
-		if ( index % 2 == 0 ) {
-			background_line = "#ffffff";
-		}
-		
 		let venda = preco * lente['multiplicador'];
 	
 		const html = `
@@ -79,21 +76,21 @@ function construirTabelaDeLentes(array){
 			<span class="description col-xs-2  style="margin-left: 10%"> ${lente['descricao']}</span>
 			<span class="description col-xs-2" > ${lente['empresa']} </span>
 			<span class="description col-xs-2" > ${lente['tipo']} </span>
-			<span class="description col-xs-1" style="color: ${color}"; > R$ ${lente['preco']} </span>
-			<span class="description col-xs-1" style="color: ${color}"; > R$ ${lente['venda']} </span>
-			<button class="btn btn-danger col-xs-2" onclick="confirmarDelecaoLente(\'${lente['uuid']}\')">
+			<span class="description col-xs-2" style="color: ${color}"; > R$ ${lente['preco']} </span>
+			<span class="description col-xs-2" style="color: ${color}"; > R$ ${lente['venda']} </span>
+			<button class="btn btn-danger col-xs-1" onclick="confirmarDelecaoLente(\'${lente['uuid']}\')" style="width: 8%; margin-right: 0.5%">
 				<center>
 					<img src="../../resources/trash.png" style="width: 20px; height: 20px;"/> 
 					Excluir
 				</center>
 			</button>
-			<button class="btn btn-primary col-xs-2" onclick="editClient(\'${lente['uuid']}\')">
+			<button class="btn btn-primary col-xs-1" onclick="editClient(\'${lente['uuid']}\')" style="width: 8%">
 				<center>
 					<img src="../../resources/edit.png" style="width: 20px; height: 20px;"/> 
 					Editar
 				</center>
 			</button>
-		<div>`;
+		</div>`;
 
 		document.getElementById('container_lentes').innerHTML += html;
 	}
