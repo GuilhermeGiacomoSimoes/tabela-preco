@@ -72,13 +72,13 @@ function construirTabelaDeLentes(array){
 		let venda = preco * lente['multiplicador'];
 	
 		const html = `
-		<div style="background-color: ${background_line}">
-			<span class="description col-xs-2  style="margin-left: 10%"> ${lente['descricao']}</span>
-			<span class="description col-xs-2" > ${lente['empresa']} </span>
-			<span class="description col-xs-2" > ${lente['tipo']} </span>
-			<span class="description col-xs-2" style="color: ${color}"; > R$ ${lente['preco']} </span>
-			<span class="description col-xs-2" style="color: ${color}"; > R$ ${lente['venda']} </span>
-			<button class="btn btn-danger col-xs-1" onclick="confirmarDelecaoLente(\'${lente['uuid']}\')" style="width: 8%; margin-right: 0.5%">
+		<div class="align-items-center" style="background-color: ${background_line}; height: 5%;">
+			<span class="description col-xs-2"> ${lente['descricao']} </span>
+			<span class="description col-xs-2"> ${lente['empresa']} </span>
+			<span class="description col-xs-2"> ${lente['tipo']} </span>
+			<span class="description col-xs-2" style="color: ${color}"> R$ ${lente['preco']} </span>
+			<span class="description col-xs-1" style="color: ${color}"> R$ ${lente['venda']} </span>
+			<button class="btn btn-danger col-xs-1" onclick="confirmarDelecaoLente(\'${lente['uuid']}\')" style="margin-top: 0.7%; margin-right: 0.5%">
 				<center>
 					<img src="../../resources/trash.png" style="width: 20px; height: 20px;"/> 
 					Excluir
