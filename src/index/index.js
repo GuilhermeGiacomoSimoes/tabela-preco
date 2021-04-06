@@ -80,13 +80,13 @@ function construirTabelaDeLentes(array){
 			<span class="description col-xs-1" style="color: ${color}"> R$ ${lente['venda']} </span>
 			<button class="btn btn-danger col-xs-1" onclick="confirmarDelecaoLente(\'${lente['uuid']}\')" style="margin-top: 0.7%; margin-right: 0.5%">
 				<center>
-					<img src="../../resources/trash.png" style="width: 20px; height: 20px;"/> 
+					<img src="../../resources/trash.png" class="image-buttons"/> 
 					Excluir
 				</center>
 			</button>
 			<button class="btn btn-primary col-xs-1" onclick="editClient(\'${lente['uuid']}\')" style="margin-top: 0.7%">
 				<center>
-					<img src="../../resources/edit.png" style="width: 20px; height: 20px;"/> 
+					<img src="../../resources/edit.png" class="image-buttons"/> 
 					Editar
 				</center>
 			</button>
