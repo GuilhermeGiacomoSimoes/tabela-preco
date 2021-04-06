@@ -22,23 +22,33 @@
 		<div class="background" >
 			<div class="container">
 
-				<input id="busca" placeholder="busca" onchange="busca()" onkeyup="this.onchange();" oninput="this.onchange();" style="margin-bottom: 1%; margin-left: 10%; width: 40%"></input> 
+				<div class="row"> 
+					<div class="col-xs-5">
+						<input class="form-control" id="busca" placeholder="busca" onchange="busca()" onkeyup="this.onchange();" oninput="this.onchange();"></input> 
+					</div>
 
-			   	<label class="switch"  style="margin-left: 2%;" onclick="mostrarEsconderLentesNaoPromocionais()">
-					<input type="checkbox" id="switchLentesPromocionais" checked="none">
-				  	<span class="slider round"></span>
-				</label> 
+					<div class="col-xs-1">
+						<label class="switch"  style="margin-left: 2%;" onclick="mostrarEsconderLentesNaoPromocionais()">
+							<input type="checkbox" id="switchLentesPromocionais" checked="none">
+							<span class="slider round"></span>
+						</label> 
+					</div>
 
-				<span class="title" id="textoSwitch" style="font-size: 18px; width: 20%">
-					somente lentes promocionais
-				</span>
+					<div class="col-xs-4">
+						<span class="title" id="textoSwitch" style="font-size: 18px; width: 20%">
+							somente lentes promocionais
+						</span>
+					</div>
 
-				<a href="../novaLente/novaLente.html" style="margin-left: 2%">
-					<button class="btn btn-success" style="width: 10%; height: 5%;">
-						<img src="../../resources/plus.png" style="width: 15%; height: 30%"/> 
-						Nova lente
-					</button>
-				</a>
+					<div class="col-xs-2">
+						<a href="../novaLente/novaLente.html" style="margin-left: 2%">
+							<button class="btn btn-success" style="width: 70%">
+								<img src="../../resources/plus.png" style="width: 15%; height: 30%"/> 
+								Nova lente
+							</button>
+						</a>
+					</div>
+				</div>
 
 				<br/>
 				<br/>
