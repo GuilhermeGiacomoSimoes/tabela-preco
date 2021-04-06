@@ -84,7 +84,7 @@ function construirTabelaDeLentes(array){
 					Excluir
 				</center>
 			</button>
-			<button class="btn btn-primary col-xs-1" onclick="editClient(\'${lente['uuid']}\')" style="width: 8%">
+			<button class="btn btn-primary col-xs-1" onclick="editClient(\'${lente['uuid']}\')" style="margin-top: 0.5%">
 				<center>
 					<img src="../../resources/edit.png" style="width: 20px; height: 20px;"/> 
 					Editar
