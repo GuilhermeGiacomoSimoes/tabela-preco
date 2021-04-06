@@ -62,7 +62,7 @@ function construirTabelaDeLentes(array){
 		let preco       = lente['preco'];
 		index ++;	
 
-		let background_line =  ( index % 2 == 0 ) ? "#d3d3d3" : "#ffffff"; 
+		let background_line = ( index % 2 != 0 ) ? "#d3d3d3" : "#ffffff"; 
 
 		if (promocional) {
 			color = "#FF0000";
