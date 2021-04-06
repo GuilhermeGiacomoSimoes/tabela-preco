@@ -136,3 +136,8 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+.image-buttons {
+	width: 30%; 
+	height: 30%;
+}
