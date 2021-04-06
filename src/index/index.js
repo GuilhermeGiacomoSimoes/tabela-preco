@@ -72,19 +72,19 @@ function construirTabelaDeLentes(array){
 		let venda = preco * lente['multiplicador'];
 	
 		const html = `
-		<div class="align-items-center" style="background-color: ${background_line}; height: 5%;">
+		<div class="row align-items-center" style="background-color: ${background_line}; height: 7%; margin-bottom: 1%">
 			<span class="description col-xs-2"> ${lente['descricao']} </span>
 			<span class="description col-xs-2"> ${lente['empresa']} </span>
 			<span class="description col-xs-2"> ${lente['tipo']} </span>
 			<span class="description col-xs-2" style="color: ${color}"> R$ ${lente['preco']} </span>
 			<span class="description col-xs-1" style="color: ${color}"> R$ ${lente['venda']} </span>
-			<button class="btn btn-danger col-xs-1" onclick="confirmarDelecaoLente(\'${lente['uuid']}\')" style="margin-top: 0.7%; margin-right: 0.5%">
+			<button class="btn btn-danger col-xs-1" onclick="confirmarDelecaoLente(\'${lente['uuid']}\')" style="height: 100%; margin-right: 0.5%">
 				<center>
 					<img src="../../resources/trash.png" class="image-buttons"/> 
 					Excluir
 				</center>
 			</button>
-			<button class="btn btn-primary col-xs-1" onclick="editClient(\'${lente['uuid']}\')" style="margin-top: 0.7%">
+			<button class="btn btn-primary col-xs-1" onclick="editClient(\'${lente['uuid']}\')" style="height: 100%">
 				<center>
 					<img src="../../resources/edit.png" class="image-buttons"/> 
 					Editar
