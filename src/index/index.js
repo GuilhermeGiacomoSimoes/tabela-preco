@@ -13,8 +13,8 @@ function obterLentes() {
 		listaDeLentes.on('value', snapshot => {
 			todasAsLentes = snapshot.val(); 
 			construirTabelaDeLentes(todasAsLentes);
-			pararLoading();
 			document.getElementById('switchLentesPromocionais').checked = false;
+			pararLoading();
 		}, err => {
 			console.log(err);
 		});
