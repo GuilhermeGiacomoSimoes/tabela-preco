@@ -23,6 +23,9 @@ function obterLente(uuid) {
 		let ref = database.ref('lentes/' + uuid);
 		ref.on('value', snapshot => {
 			preencherDadosLente(snapshot.val());
+			pararLoading();
+		}, err => {
+
 		});
 	} catch(Exception){
 		console.log('deu ruim');
@@ -66,7 +69,6 @@ function preencherDadosLente(snapshot) {
 	edtMultiplicador  .value = multiplicador		 ;
 	edtVenda 	 	  .value = 	preco * multiplicador;
 
-	pararLoading();
 }
 
 function verificaIrregularidades(lente){
