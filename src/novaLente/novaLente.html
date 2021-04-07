@@ -18,18 +18,18 @@
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 
 			<div class="background">
-			<div class="container" style="padding: 1%">
-					Descrição: <input id="descricao" placeholder="solamax" style="margin-bottom: 1%;" maxlength="50"></input> <br/>
-					Empresa: <input id="empresa" placeholder="zeiss" style="margin-bottom: 1%;" maxlength="20"></input> <br/>
-					Tipo: <input id="tipo" placeholder="lente" style="margin-bottom: 1%;" maxlength="10"></input> <br/>
-					Preço: <input id="preco" placeholder="127.89" type="number" min="0" style="margin-bottom: 1%;" maxlength="7"></input> <br/>
-					Multiplicador: <input id="multiplicador" type="number" min="0" placeholder="2.8" style="margin-bottom: 1%;" maxlength="1"></input> <br/>
-					Preço de venda: <input id="venda" placeholder="" style="margin-bottom: 1%;" readonly></input> <br/>
-					Promoção:	<input type="checkbox" id="promocao" onchange="flagPromocao()" > <br/><br/>
+				<div class="container" style="padding: 1%">
+					Descrição: <input class="form-control"id="descricao" placeholder="solamax" style="margin-bottom: 1%; width: 80%" maxlength="50"></input>
+					Empresa: <input class="form-control"id="empresa" placeholder="zeiss" style="margin-bottom: 1%; width: 80%" maxlength="20"></input> 
+					Tipo: <input class="form-control"id="tipo" placeholder="lente" style="margin-bottom: 1%; width: 80%" maxlength="10"></input> 
+					Preço: <input class="form-control"id="preco" placeholder="127.89" type="number" min="0" style="margin-bottom: 1%; width: 80%" maxlength="7"></input> 
+					Multiplicador: <input class="form-control"id="multiplicador" type="number" min="0" placeholder="2.8" style="margin-bottom: 1%; width: 80%" maxlength="1"></input> 
+					Preço de venda: <input class="form-control"id="venda" placeholder="" style="margin-bottom: 1%; width: 80%" readonly></input> 
+					Promoção:	<input type="checkbox" id="promocao" onchange="flagPromocao()"> <br> <br>
 
 					<div id="flagPromocaoAtivada" style="display: none"> 
-						Preço promocional: <input id="precoPromocional" onchange="mudaPrecoPromocional()" placeholder="127.89" type="number" min="0" style="margin-bottom: 1%;" maxlength="7"></input> <br/>
-						Porcentagem do desconto: <input id="porcentagemDoDesconto" onchange="mudaPorcentagemPromocao()" placeholder="10" type="number" min="0" style="margin-bottom: 1%;" maxlength="2"></input> <br/>
+						Preço promocional: <input class="form-control"id="precoPromocional" onchange="mudaPrecoPromocional()" placeholder="127.89" type="number" min="0" style="margin-bottom: 1%; width: 80%" maxlength="7"></input> 
+						Porcentagem do desconto: <input class="form-control"id="porcentagemDoDesconto" onchange="mudaPorcentagemPromocao()" placeholder="10" type="number" min="0" style="margin-bottom: 1%; width: 80%" maxlength="2"></input> 
 					</div>
 
 					<button id="btnVoltar" class="btn btn-primary" onclick="location.href='../index/index.html';" style="width: 120px; height: 50px; margin-right: 3%"> 
