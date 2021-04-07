@@ -31,3 +31,29 @@ function obterNumeroRandomico(min, max) {
 	max = Math.floor(max - 1);
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+enviarEmail(); 
+function enviarEmail() {
+
+	//Email.send({
+	//	SecureToken: 'c74f46b4-ba9d-46e0-afee-0d1d31366684',
+	//	To : 'trintaeoitogc@gmail.com',
+	//	From : "modelo.montagem@hotmail.com",
+	//	Subject : "subject",
+	//	Body : "bodyyyyy "
+	//	}).then(
+	//		message => alert(message)
+	//	);
+
+	Email.send({
+		Host : "smtp-mail.outlook.com",
+		Username : "Optica Modelo",
+		Password : "modelo153",
+		To : 'trintaeoitogc@gmail.com',
+		From : "modelo.montagem@hotmail.com",
+		Subject : "This is the subject",
+		Body : "And this is the body"
+	}).then(
+	  message => alert(message)
+	);
+} 
