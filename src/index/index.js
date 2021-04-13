@@ -15,6 +15,7 @@ function obterLentes() {
 			construirTabelaDeLentes(todasAsLentes);
 			document.getElementById('switchLentesPromocionais').checked = false;
 			pararLoading();
+			exportHTML(); 
 		}, err => {
 			console.log(err);
 		});
@@ -70,6 +71,17 @@ function construirTabelaDeLentes(array){
 		}
 
 		let venda = preco * lente['multiplicador'];
+
+		let html_docx = `
+		<div class="row align-items-center" style="background-color: ${background_line}; height: 7%; margin-bottom: 1%">
+			<span class="description col-xs-2"> ${lente['descricao']} </span>
+			<span class="description col-xs-2"> ${lente['empresa']} </span>
+			<span class="description col-xs-2"> ${lente['tipo']} </span>
+			<span class="description col-xs-2" style="color: ${color}"> R$ ${lente['preco']} </span>
+			<span class="description col-xs-1" style="color: ${color}"> R$ ${lente['venda']} </span>
+		</div>`;
+		document.getElementById('source-html').innerHTML += html_docx; 
+
 	
 		const html = `
 		<div class="row align-items-center" style="background-color: ${background_line}; height: 7%; margin-bottom: 1%">
@@ -169,3 +181,5 @@ function mostrarEsconderLentesNaoPromocionais() {
 	let valor = document.getElementById('switchLentesPromocionais').checked;
 	filtrar();
 }
+
+
