@@ -80,26 +80,22 @@
 		</div>		
 
 		<table border="1" id="source-html">
+			<tr style="background-color: ${background_line}; height: 7%; margin-bottom: 1%">
+				<td><span class=""> ${lente['descricao']} </span></td>
+				<td><span class=""> ${lente['empresa']} </span></td>
+				<td><span class=""> ${lente['tipo']} </span></td>
+				<td><span class="" style="color: ${color}"> R$ ${lente['preco']} </span></td>
+				<td><span class="" style="color: ${color}"> R$ ${lente['venda']} </span></td>
+			</tr>
+			<tr style="background-color: ${background_line}; height: 7%; margin-bottom: 1%">
+				<td><span class=""> ${lente['descricao']} </span></td>
+				<td><span class=""> ${lente['empresa']} </span></td>
+				<td><span class=""> ${lente['tipo']} </span></td>
+				<td><span class="" style="color: ${color}"> R$ ${lente['preco']} </span></td>
+				<td><span class="" style="color: ${color}"> R$ ${lente['venda']} </span></td>
+			</tr>
 		</table>
 
-		<script>
-			function exportHTML(){
-			   var header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' "+
-					"xmlns:w='urn:schemas-microsoft-com:office:word' "+
-					"xmlns='http://www.w3.org/TR/REC-html40'>"+
-					"<head><meta charset='utf-8'><title>Export HTML to Word Document with JavaScript</title></head><body>";
-			   var footer = "</body></html>";
-			   var sourceHTML = header+document.getElementById("source-html").innerHTML+footer;
-			   
-			   var source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
-			   var fileDownload = document.createElement("a");
-			   document.body.appendChild(fileDownload);
-			   fileDownload.href = source;
-			   fileDownload.download = 'tabela.doc';
-			   fileDownload.click();
-			   document.body.removeChild(fileDownload);
-			}
-		</script>
 		<div id="confirmaExclusao" class="modal">
 		  	<div class="modal-content" style="max-width: 40%; max-height: 40%">
 				<span class="close" onclick="fecharModal()">&times;</span>
