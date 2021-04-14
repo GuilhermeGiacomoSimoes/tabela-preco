@@ -181,4 +181,17 @@ function mostrarEsconderLentesNaoPromocionais() {
 	filtrar();
 }
 
+function exportHTML(){
+	html2canvas(document.getElementById("source-html"), {
+		onrendered : function(canvas){
+			var imgData = canvas.toDataURL('image/jpeg');
+            var doc = new window.jspdf.jsPDF('p','mm','a4');
+            doc.setFontSize(10);
+            doc.text(10, 15, 'Filter section will be printed where.')
+            doc.addImage(imgData, 'jpeg', 10, 20);
+            doc.save('sample.pdf');
+		}
+	});
+}
+
 
