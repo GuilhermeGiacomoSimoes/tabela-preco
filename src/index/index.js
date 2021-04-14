@@ -73,16 +73,15 @@ function construirTabelaDeLentes(array){
 		let venda = preco * lente['multiplicador'];
 
 		let html_docx = `
-		<div class="row align-items-center" style="background-color: ${background_line}; height: 7%; margin-bottom: 1%">
-			<span class="description col-xs-2"> ${lente['descricao']} </span>
-			<span class="description col-xs-2"> ${lente['empresa']} </span>
-			<span class="description col-xs-2"> ${lente['tipo']} </span>
-			<span class="description col-xs-2" style="color: ${color}"> R$ ${lente['preco']} </span>
-			<span class="description col-xs-1" style="color: ${color}"> R$ ${lente['venda']} </span>
-		</div>`;
+		<tr class="row align-items-center" style="background-color: ${background_line}; height: 7%; margin-bottom: 1%">
+			<td><span class="description col-xs-2"> ${lente['descricao']} </span></td>
+			<td><span class="description col-xs-2"> ${lente['empresa']} </span></td>
+			<td><span class="description col-xs-2"> ${lente['tipo']} </span></td>
+			<td><span class="description col-xs-2" style="color: ${color}"> R$ ${lente['preco']} </span></td>
+			<td><span class="description col-xs-1" style="color: ${color}"> R$ ${lente['venda']} </span></td>
+		</tr>`;
 		document.getElementById('source-html').innerHTML += html_docx; 
 
-	
 		const html = `
 		<div class="row align-items-center" style="background-color: ${background_line}; height: 7%; margin-bottom: 1%">
 			<span class="description col-xs-2"> ${lente['descricao']} </span>
