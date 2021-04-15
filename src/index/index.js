@@ -63,58 +63,60 @@ function editClient( uuid ) {
 	window.location.href = `../novaLente/novaLente.html?${uuid}`;
 }
 
-function construirTabelaDeLentes(array){
+function construirTabelaDeLentes(empresas){
 	document.getElementById('container_lentes').innerHTML = "";
 	var index = 0;
 	
-	for (let key in array){
-		let lente       = array[key];
-		let promocional = lente['promocao'];
-		let color       = '#808080'; 
-		let preco       = lente['preco'];
-		index ++;	
+	for (let key in empresas){
+		let empresa = empresas[key];
+		for (let uuidLente in empresa){
+			let lente       = empresa[uuidLente];
+			let promocional = lente['promocao'];
+			let color       = '#808080'; 
+			let preco       = lente['preco'];
+			index ++;	
 
-		let background_line = ( index % 2 != 0 ) ? "#d3d3d3" : "#ffffff"; 
+			let background_line = ( index % 2 != 0 ) ? "#d3d3d3" : "#ffffff"; 
 
-		if (promocional) {
-			color = "#FF0000";
-			preco = lente['precoPromocional']; 
+			if (promocional) {
+				color = "#FF0000";
+				preco = lente['precoPromocional']; 
+			}
+
+			let venda = preco * lente['multiplicador'];
+
+			let html_docx = `
+				<tr style="background-color: #fff; height: 7%; margin-bottom: 1%">
+					<td><span class="description col-xs-2"> ${lente['descricao']} </span></td>
+					<td><span class="description col-xs-2"> ${lente['tipo']} </span></td>
+					<td><span class="description col-xs-2" style="color: ${color}"> R$ ${lente['preco']} </span></td>
+					<td><span class="description col-xs-1" style="color: ${color}"> R$ ${lente['venda']} </span></td>
+				</tr>`;
+			document.getElementById('source-html').innerHTML += html_docx; 
+
+			const html = `
+			<div class="row align-items-center" style="background-color: ${background_line}; height: 7%; margin-bottom: 1%">
+				<span class="description col-xs-2"> ${lente['descricao']} </span>
+				<span class="description col-xs-2"> ${lente['empresa']} </span>
+				<span class="description col-xs-2"> ${lente['tipo']} </span>
+				<span class="description col-xs-2" style="color: ${color}"> R$ ${lente['preco']} </span>
+				<span class="description col-xs-1" style="color: ${color}"> R$ ${lente['venda']} </span>
+				<button class="btn btn-danger col-xs-1" onclick="confirmarDelecaoLente(\'${lente['uuid']}\')" style="height: 100%; margin-right: 0.5%">
+					<center>
+						<img src="../../resources/trash.png" class="image-buttons"/> 
+						Excluir
+					</center>
+				</button>
+				<button class="btn btn-primary col-xs-1" onclick="editClient(\'${lente['uuid']}\')" style="height: 100%">
+					<center>
+						<img src="../../resources/edit.png" class="image-buttons"/> 
+						Editar
+					</center>
+				</button>
+			</div>`;
+
+			document.getElementById('container_lentes').innerHTML += html;
 		}
-
-		let venda = preco * lente['multiplicador'];
-
-		let html_docx = `
-		<tr class="row align-items-center" style="background-color: ${background_line}; height: 7%; margin-bottom: 1%">
-			<td><span class="description col-xs-2"> ${lente['descricao']} </span></td>
-			<td><span class="description col-xs-2"> ${lente['empresa']} </span></td>
-			<td><span class="description col-xs-2"> ${lente['tipo']} </span></td>
-			<td><span class="description col-xs-2" style="color: ${color}"> R$ ${lente['preco']} </span></td>
-			<td><span class="description col-xs-1" style="color: ${color}"> R$ ${lente['venda']} </span></td>
-		</tr>`;
-		document.getElementById('source-html').innerHTML += html_docx; 
-
-		const html = `
-		<div class="row align-items-center" style="background-color: ${background_line}; height: 7%; margin-bottom: 1%">
-			<span class="description col-xs-2"> ${lente['descricao']} </span>
-			<span class="description col-xs-2"> ${lente['empresa']} </span>
-			<span class="description col-xs-2"> ${lente['tipo']} </span>
-			<span class="description col-xs-2" style="color: ${color}"> R$ ${lente['preco']} </span>
-			<span class="description col-xs-1" style="color: ${color}"> R$ ${lente['venda']} </span>
-			<button class="btn btn-danger col-xs-1" onclick="confirmarDelecaoLente(\'${lente['uuid']}\')" style="height: 100%; margin-right: 0.5%">
-				<center>
-					<img src="../../resources/trash.png" class="image-buttons"/> 
-					Excluir
-				</center>
-			</button>
-			<button class="btn btn-primary col-xs-1" onclick="editClient(\'${lente['uuid']}\')" style="height: 100%">
-				<center>
-					<img src="../../resources/edit.png" class="image-buttons"/> 
-					Editar
-				</center>
-			</button>
-		</div>`;
-
-		document.getElementById('container_lentes').innerHTML += html;
 	}
 }
 
