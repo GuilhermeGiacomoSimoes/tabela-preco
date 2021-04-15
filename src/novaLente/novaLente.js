@@ -1,31 +1,45 @@
 var database 		  = obterConfiguracaoFirebase();
 var editar            = false;
 var uuidLenteEditada  = '';
-resetarCampos()
+var arr 			  = [];
 
-verificaEdicao();
+resetarCampos(); 
+obterLentes(); 
+
 function verificaEdicao()  {
 	const url = window.location.href;
 	if (url.indexOf('?') != -1){
 
-		gerarLoading();
-
 		const lenteUUID = url.split('?')[1];
-		obterLente(lenteUUID);
+		const lente = obterLente(lenteUUID);
 
 		editar   		 = true;
 		uuidLenteEditada = lenteUUID;
+
+		preencherDadosLente(lente);
 	}
 }
 
 function obterLente(uuid) {
-	try {
-		let ref = database.ref('lentes/' + uuid);
-		ref.on('value', snapshot => {
-			preencherDadosLente(snapshot.val());
-			pararLoading();
-		}, err => {
+	let lente = {};
+	for (let key in arr){
+		let empresa = arr[key];
+		for (let uuidLente in empresa){
+			lente = empresa[uuidLente];
+		}
+	}	
 
+	return lente;
+}
+
+function obterLentes() {
+	try {
+		let ref = database.ref('lentes');
+		ref.on('value', snapshot => {
+			arr = snapshot.val();
+			verificaEdicao();
+		}, err => {
+			mostrarDialog("Algo deu errado! " + err);	
 		});
 	} catch(Exception){
 		console.log('deu ruim');

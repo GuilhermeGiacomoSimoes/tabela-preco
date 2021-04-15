@@ -196,7 +196,7 @@ function mostrarEsconderLentesNaoPromocionais() {
 
 function exportHTML(){
 	html2canvas(document.getElementById("source-html"), {
-		onrendered : function(canvas){
+		onrendered : function(canvas) {
 			var imgData = canvas.toDataURL('image/jpeg');
             var doc = new window.jspdf.jsPDF('p','mm','a4');
             doc.setFontSize(10);
@@ -206,5 +206,3 @@ function exportHTML(){
 		}
 	});
 }
-
-
