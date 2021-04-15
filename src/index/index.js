@@ -24,6 +24,17 @@ function obterLentes() {
 	}
 }
 
+function montarDocumentoParaImpressao( lentes ) {
+	const empresas = [];
+	let html = '';
+
+	for (let lente in lentes) {
+		if(empresas.indexOf(lente) != -1) {
+			empresas.push()
+		}
+	}
+}
+
 function confirmarDelecaoLente(uuidParametro) {
 	uuid = uuidParametro;	
 	let modal = document.getElementById('confirmaExclusao');

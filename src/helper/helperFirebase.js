@@ -45,3 +45,4 @@ function obterNumeroRandomico(min, max) {
 //		message => alert(message)
 //	);
 //} 
+
