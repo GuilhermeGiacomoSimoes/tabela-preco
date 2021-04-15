@@ -1,7 +1,7 @@
 var database       = obterConfiguracaoFirebase();
-var uuid           = undefined; 
+var uuid           = undefined;
 var todasAsLentes  = {};
-var lentesVisiveis = {}; 
+var lentesVisiveis = {};
 
 obterLentes();
 
@@ -9,13 +9,13 @@ function obterLentes() {
 	gerarLoading();
 
 	try {
-		var listaDeLentes = database.ref("lentes").orderByChild('descricao');	
+		var listaDeLentes = database.ref("lentes");	
 		listaDeLentes.on('value', snapshot => {
 			todasAsLentes = snapshot.val(); 
 			construirTabelaDeLentes(todasAsLentes);
 			document.getElementById('switchLentesPromocionais').checked = false;
+			montarDocumentoParaImpressao(todasAsLentes);
 			pararLoading();
-			exportHTML(); 
 		}, err => {
 			console.log(err);
 		});
