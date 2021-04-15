@@ -125,16 +125,16 @@ function gravarLente(lente) {
 	gerarLoading();
 
 	try {
-		database.ref("lentes/" + lente.uuid ).set(lente).then( snapshot => {
+		database.ref(`lentes/${lente.empresa}/${lente.uuid}`).set(lente).then( snapshot => {
 			pararLoading(); 
 			resetarCampos();
 			mostrarDialog("Salvo com sucesso", true);
-
 		}).catch(error => {
 			mostrarDialog("Algo deu errado! " + error);	
 		});	
-	}catch (exception) {
 
+	}catch (exception) {
+		mostrarDialog("Algo deu errado! " + exception);	
 	}
 
 	return true;
