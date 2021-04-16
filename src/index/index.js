@@ -24,15 +24,40 @@ function obterLentes() {
 	}
 }
 
-function montarDocumentoParaImpressao( lentes ) {
-	const empresas = [];
+function montarDocumentoParaImpressao( empresas ) {
 	let html = '';
+	for (let key in empresas){
 
-	for (let lente in lentes) {
-		if(empresas.indexOf(lente) != -1) {
-			empresas.push()
+		html += `
+			<tr style="background-color: #b8cce4; height: 7%; margin-bottom: 1%">
+				<td><span class="col-xs-2"> ${key} </span></td>
+			</tr>
+		`;
+
+		let empresa = empresas[key];
+		for (let uuidLente in empresa) {
+			let lente = empresa[uuidLente];
+
+			let preco = lente.preco;
+			if (lente['promocao']) {
+				color = "#FF0000";
+				preco = lente['precoPromocional']; 
+			}
+
+			let venda = preco * lente['multiplicador'];
+
+			html += `
+				<tr style="background-color: #fff; height: 7%; margin-bottom: 1%">
+					<td><span class="col-xs-2" style="font-color: #000"> ${lente.descricao} </span></td>
+					<td><span class="col-xs-2" style="font-color: #000"> ${lente.tipo} </span></td>
+					<td><span class="col-xs-2" style="font-color: #000"> ${preco} </span></td>
+				</tr>
+			`;
 		}
-	}
+	}	
+
+	document.getElementById('source-html').innerHTML += html; 
+	console.log(html)
 }
 
 function confirmarDelecaoLente(uuidParametro) {
