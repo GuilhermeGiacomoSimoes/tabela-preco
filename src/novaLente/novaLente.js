@@ -75,7 +75,7 @@ function preencherDadosLente(snapshot) {
 		edtPrecoPromocional.value = precoPromocao; 
 		edtPorcentagemDesconto.value = porcentagemDesconto;
 
-		flagPromocao()
+		flagPromocao();
 	}
 
 	edtDescricao 	  .value = descricao			 ;	
@@ -165,7 +165,9 @@ function cadastrar() {
 	let multiplicador 	= document.getElementById('multiplicador')	.value;
 	let uuid 			= editar ? uuidLenteEditada : gerarUUID();
 	let promocao        = document.getElementById('promocao').checked;
-	let venda          = preco * multiplicador;
+	let venda           = preco * multiplicador;
+	let	esferico 		= document.getElementById('esferico');   
+	let	cilindrico  	= document.getElementById('cilindrico');   
 
 	let precoPromocional    = null; 
     let porcentagemDesconto = null;
@@ -175,7 +177,7 @@ function cadastrar() {
 		porcentagemDesconto  = document.getElementById('porcentagemDoDesconto').value;
 	}
 
-	let lente = {uuid, descricao, empresa, tipo, preco, multiplicador, promocao, precoPromocional, porcentagemDesconto, venda};
+	let lente = {uuid, descricao, empresa, tipo, preco, multiplicador, promocao, precoPromocional, porcentagemDesconto, venda, esferico, cilindrico};
 	gravarLente(lente);
 }
 
