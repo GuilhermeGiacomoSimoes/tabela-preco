@@ -33,11 +33,13 @@ function obterLente(uuid) {
 }
 
 function obterLentes() {
+	gerarLoading(); 
 	try {
 		let ref = database.ref('lentes');
 		ref.on('value', snapshot => {
 			arr = snapshot.val();
 			verificaEdicao();
+			pararLoading();
 		}, err => {
 			mostrarDialog("Algo deu errado! " + err);	
 		});
