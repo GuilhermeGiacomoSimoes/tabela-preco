@@ -44,13 +44,15 @@ function montarDocumentoParaImpressao( empresas ) {
 				preco = lente['precoPromocional']; 
 			}
 
-			let venda = preco * lente['multiplicador'];
+			let venda = "R$ " + ( preco * lente['multiplicador'] );
 
 			html += `
 				<tr style="background-color: #fff; height: 7%; margin-bottom: 1%">
 					<td><span class="col-xs-2" style="font-color: #000"> ${lente.descricao} </span></td>
+					<td><span class="col-xs-2" style="font-color: #000"> ${lente.esferico} </span></td>
+					<td><span class="col-xs-2" style="font-color: #000"> ${lente.cilindrico} </span></td>
 					<td><span class="col-xs-2" style="font-color: #000"> ${lente.tipo} </span></td>
-					<td><span class="col-xs-2" style="font-color: #000"> ${preco} </span></td>
+					<td><span class="col-xs-2" style="font-color: #000"> ${venda} </span></td>
 				</tr>
 			`;
 		}
