@@ -166,8 +166,8 @@ function cadastrar() {
 	let uuid 			= editar ? uuidLenteEditada : gerarUUID();
 	let promocao        = document.getElementById('promocao').checked;
 	let venda           = preco * multiplicador;
-	let	esferico 		= document.getElementById('esferico');   
-	let	cilindrico  	= document.getElementById('cilindrico');   
+	let	esferico 		= document.getElementById('esferico').value;   
+	let	cilindrico  	= document.getElementById('cilindrico').value;   
 
 	let precoPromocional    = null; 
     let porcentagemDesconto = null;
