@@ -110,15 +110,6 @@ function construirTabelaDeLentes(empresas){
 
 			let venda = preco * lente['multiplicador'];
 
-			let html_docx = `
-				<tr style="background-color: #fff; height: 7%; margin-bottom: 1%">
-					<td><span class="description col-xs-2"> ${lente['descricao']} </span></td>
-					<td><span class="description col-xs-2"> ${lente['tipo']} </span></td>
-					<td><span class="description col-xs-2" style="color: ${color}"> R$ ${lente['preco']} </span></td>
-					<td><span class="description col-xs-1" style="color: ${color}"> R$ ${lente['venda']} </span></td>
-				</tr>`;
-			document.getElementById('source-html').innerHTML += html_docx; 
-
 			const html = `
 			<div class="row align-items-center" style="background-color: ${background_line}; height: 7%; margin-bottom: 1%">
 				<span class="description col-xs-2"> ${lente['descricao']} </span>
