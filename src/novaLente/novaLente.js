@@ -58,6 +58,10 @@ function preencherDadosLente(snapshot) {
 	let	cbPromocao       = document.getElementById('promocao'	    );   
 	let	edtPrecoPromocional    = document.getElementById('precoPromocional' );   
 	let	edtPorcentagemDesconto = document.getElementById('porcentagemDoDesconto' );   
+	let	edtiCilindrico = document.getElementById('cilindrico');   
+	let	edtEsferico= document.getElementById('esferico');   
+	let	edtIndice= document.getElementById('indice');   
+	let	edtDiametro = document.getElementById('diametro');   
 
 	let	descricao 	  = snapshot['descricao'];  
 	let	empresa   	  = snapshot['empresa']; 
@@ -65,6 +69,10 @@ function preencherDadosLente(snapshot) {
 	let	preco     	  = snapshot['preco']; 
 	let	multiplicador = snapshot['multiplicador'];    
 	let	promocao      = snapshot['promocao'];    
+	let	cilindrico    = snapshot['cilindrico'];    
+	let	esferico      = snapshot['esferico'];    
+	let indice        = snapshot['indice'];    
+	let diametro        = snapshot['diametro'];    
 
 	if (promocao) {
 		cbPromocao.checked = true;
@@ -83,7 +91,11 @@ function preencherDadosLente(snapshot) {
 	edtTipo      	  .value = tipo					 ;	
 	edtPreco     	  .value = preco				 ;	
 	edtMultiplicador  .value = multiplicador		 ;
-	edtVenda 	 	  .value = 	preco * multiplicador;
+	edtVenda 	 	  .value = preco * multiplicador;
+	edtiCilindrico 	  .value = cilindrico;
+	edtEsferico 	  .value = esferico;
+	edtIndice 	 	  .value = indice;
+	edtDiametro       .value = diametro;
 
 }
 
@@ -155,19 +167,25 @@ function resetarCampos() {
 	document.getElementById('promocao') .checked=false;
 	document.getElementById('precoPromocional').value="";
 	document.getElementById('porcentagemDoDesconto').value = '';
+	document.getElementById('indice').value = '';
+	document.getElementById('cilindrico').value = '';
+	document.getElementById('esferico').value = '';
+	document.getElementById('diametro').value = '';
 }
 
 function cadastrar() {
-	let descricao 		= document.getElementById('descricao')		.value;
-	let empresa 		= document.getElementById('empresa')		.value;
-	let tipo 			= document.getElementById('tipo')			.value;
-	let preco 			= document.getElementById('preco')			.value;
-	let multiplicador 	= document.getElementById('multiplicador')	.value;
+	let descricao 		= document.getElementById('descricao').value.toUpperCase();
+	let empresa 		= document.getElementById('empresa').value.toUpperCase();
+	let tipo 			= document.getElementById('tipo').value.toUpperCase();
+	let preco 			= document.getElementById('preco').value;
+	let multiplicador 	= document.getElementById('multiplicador').value;
 	let uuid 			= editar ? uuidLenteEditada : gerarUUID();
 	let promocao        = document.getElementById('promocao').checked;
 	let venda           = preco * multiplicador;
 	let	esferico 		= document.getElementById('esferico').value;   
 	let	cilindrico  	= document.getElementById('cilindrico').value;   
+	let	indice 			= document.getElementById('indice').value;   
+	let	diametro 		= document.getElementById('diametro').value;   
 
 	let precoPromocional    = null; 
     let porcentagemDesconto = null;
@@ -177,7 +195,23 @@ function cadastrar() {
 		porcentagemDesconto  = document.getElementById('porcentagemDoDesconto').value;
 	}
 
-	let lente = {uuid, descricao, empresa, tipo, preco, multiplicador, promocao, precoPromocional, porcentagemDesconto, venda, esferico, cilindrico};
+	let lente = {
+		uuid, 
+		descricao, 
+		empresa, 
+		tipo, 
+		preco, 
+		multiplicador, 
+		promocao, 
+		precoPromocional, 
+		porcentagemDesconto, 
+		venda, 
+		esferico, 
+		cilindrico, 
+		indice, 
+		diametro
+	};
+
 	gravarLente(lente);
 }
 

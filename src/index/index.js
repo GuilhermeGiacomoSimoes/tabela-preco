@@ -53,16 +53,17 @@ function montarDocumentoParaImpressao( empresas ) {
 			let venda = "R$ " + ( preco * lente['multiplicador'] );
 
 			html += `
-				<tr style="background-color: #fff; height: 7%; margin-bottom: 1%">
-					<td><span class="col-xs-2" style="font-color: #000"> ${lente.descricao} </span></td>
-					<td><span class="col-xs-2" style="font-color: #000"> ${lente.esferico} </span></td>
-					<td><span class="col-xs-2" style="font-color: #000"> ${lente.cilindrico} </span></td>
-					<td><span class="col-xs-2" style="font-color: #000"> ${lente.tipo} </span></td>
-					<td><span class="col-xs-2" style="font-color: #000"> ${venda} </span></td>
+				<tr class="row" style="background-color: #fff; height: 7%; margin-bottom: 1%">
+					<td><span style="color: #000; margin: 4%"> ${lente.descricao} </span></td>
+					<td><span style="color: #000; margin: 4%"> ${lente.esferico} </span></td>
+					<td><span style="color: #000; margin: 4%"> ${lente.cilindrico} </span></td>
+					<td><span style="color: #000; margin: 4%"> ${lente.indice} </span></td>
+					<td><span style="color: #000; margin: 4%"> ${lente.diametro} </span></td>
+					<td><span style="color: ${color}; margin: 4%"> ${venda} </span></td>
 				</tr>
 			`;
 		}
-	}	
+	}
 
 	document.getElementById('source-html').innerHTML += html; 
 	console.log(html)
