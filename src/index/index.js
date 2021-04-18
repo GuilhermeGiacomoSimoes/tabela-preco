@@ -66,7 +66,6 @@ function montarDocumentoParaImpressao( empresas ) {
 	}
 
 	document.getElementById('source-html').innerHTML += html; 
-	console.log(html)
 }
 
 function confirmarDelecaoLente(uuidParametro, empresaParametro) {
@@ -112,7 +111,7 @@ function construirTabelaDeLentes(empresas){
 			let preco       = lente['preco'];
 			index ++;	
 
-			let background_line = ( index % 2 != 0 ) ? "#d3d3d3" : "#ffffff"; 
+			let background_line = ( index % 2 != 0 ) ? "#e5e4e2" : "#ffffff"; 
 
 			if (promocional) {
 				color = "#FF0000";
