@@ -121,19 +121,19 @@ function construirTabelaDeLentes(empresas){
 			let venda = preco * lente['multiplicador'];
 
 			const html = `
-			<div class="row align-items-center" style="background-color: ${background_line}; height: 7%; margin-bottom: 1%">
-				<span class="description col-xs-2"> ${lente['descricao']} </span>
-				<span class="description col-xs-2"> ${lente['empresa']} </span>
-				<span class="description col-xs-2"> ${lente['tipo']} </span>
-				<span class="description col-xs-2" style="color: ${color}"> R$ ${lente['preco']} </span>
-				<span class="description col-xs-1" style="color: ${color}"> R$ ${lente['venda']} </span>
-				<button class="btn btn-danger col-xs-1" onclick="confirmarDelecaoLente(\'${lente['uuid']}\')" style="height: 100%; margin-right: 0.5%">
+			<div class="row align-items-center" style="background-color: ${background_line}; height: 50px; margin-bottom: 1%">
+				<span class="description col-md-2"> ${lente['descricao']} </span>
+				<span class="description col-md-2"> ${lente['empresa']} </span>
+				<span class="description col-md-2"> ${lente['tipo']} </span>
+				<span class="description col-md-2" style="color: ${color}"> R$ ${lente['preco']} </span>
+				<span class="description col-md-1" style="color: ${color}"> R$ ${venda} </span>
+				<button class="btn btn-danger col-md-1" onclick="confirmarDelecaoLente(\'${lente['uuid']}\', \'${lente['empresa']}\')" style="width: 120px; height: 50px; margin-right: 0.5%">
 					<center>
 						<img src="../../resources/trash.png" class="image-buttons"/> 
 						Excluir
 					</center>
 				</button>
-				<button class="btn btn-primary col-xs-1" onclick="editClient(\'${lente['uuid']}\')" style="height: 100%">
+				<button class="btn btn-primary col-md-1" onclick="editClient(\'${lente['uuid']}\')" style="width: 120px; height: 50px;">
 					<center>
 						<img src="../../resources/edit.png" class="image-buttons"/> 
 						Editar
@@ -156,6 +156,7 @@ function filtrar() {
 	const texto         = document.getElementById("busca").value;	
 
 	if (texto != "" && texto != undefined && texto != null) {
+
 		for (let key in todasAsLentes) {
 			let lente = todasAsLentes[key];
 			let add   = false;

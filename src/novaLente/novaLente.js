@@ -20,7 +20,7 @@ function verificaEdicao()  {
 	}
 }
 
-function obterLente(uuid) {
+function obterLente() {
 	let lente = {};
 	for (let key in arr){
 		let empresa = arr[key];
