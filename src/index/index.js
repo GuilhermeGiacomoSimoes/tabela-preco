@@ -217,7 +217,6 @@ function pararLoading() {
 }
 
 function mostrarEsconderLentesNaoPromocionais() {
-	let valor = document.getElementById('switchLentesPromocionais').checked;
 	filtrar();
 }
 
