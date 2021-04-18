@@ -29,15 +29,20 @@ function montarDocumentoParaImpressao( empresas ) {
 	for (let key in empresas){
 
 		html += `
-			<tr style="background-color: #b8cce4; height: 7%; margin-bottom: 1%">
-				<td><span class="col-xs-2"> ${key} </span></td>
+			<tr class="row" style="background-color: #b8cce4; height: 7%; margin-bottom: 1%">
+				<td><span style="margin: 4%"> ${key} </span></td>
+				<td><span style="margin: 4%"> Esférico </span></td>
+				<td><span style="margin: 4%"> Cilindicro </span></td>
+				<td><span style="margin: 4%"> Índice </span></td>
+				<td><span style="margin: 4%"> Diâmetro </span></td>
+				<td><span style="margin: 4%"> Preço </span></td>
 			</tr>
 		`;
 
 		let empresa = empresas[key];
 		for (let uuidLente in empresa) {
 			let lente = empresa[uuidLente];
-
+			let color = "#000000";
 			let preco = lente.preco;
 			if (lente['promocao']) {
 				color = "#FF0000";
@@ -216,9 +221,7 @@ function exportHTML(){
 	html2canvas(document.getElementById("source-html"), {
 		onrendered : function(canvas) {
 			var imgData = canvas.toDataURL('image/jpeg');
-            var doc = new window.jspdf.jsPDF('p','mm','a4');
-            doc.setFontSize(10);
-            doc.text(10, 15, 'Filter section will be printed where.')
+            var doc = new window.jspdf.jsPDF({orientation : 'landscape'});
             doc.addImage(imgData, 'jpeg', 10, 20);
             doc.save('sample.pdf');
 		}
