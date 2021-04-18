@@ -1,5 +1,6 @@
 var database       = obterConfiguracaoFirebase();
 var uuid           = undefined;
+var empresa        = undefined; 
 var todasAsLentes  = {};
 var lentesVisiveis = {};
 
@@ -67,8 +68,9 @@ function montarDocumentoParaImpressao( empresas ) {
 	console.log(html)
 }
 
-function confirmarDelecaoLente(uuidParametro) {
-	uuid = uuidParametro;	
+function confirmarDelecaoLente(uuidParametro, empresaParametro) {
+	uuid = uuidParametro;
+	empresa = empresaParametro;
 	let modal = document.getElementById('confirmaExclusao');
 	modal.style.display = 'block';
 }
@@ -82,7 +84,8 @@ function fecharModal() {
 function deletaLente() {
 	try {
 		let uuid = this.uuid; 
-		let lenteRef = this.database.ref("lentes/" + uuid);
+		let empresa = this.empresa;
+		let lenteRef = this.database.ref(`lentes/${empresa}/${uuid}`);
 		lenteRef.remove();
 
 		location.reload();
