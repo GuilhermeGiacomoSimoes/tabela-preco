@@ -157,45 +157,55 @@ function filtrar() {
 
 	if (texto != "" && texto != undefined && texto != null) {
 
-		for (let key in todasAsLentes) {
-			let lente = todasAsLentes[key];
-			let add   = false;
+		for (let key_empresa in todasAsLentes) {
+			let empresa = todasAsLentes[key_empresa];
 
-			for (let keyLente in lente) {
-				let valor = ""+lente[keyLente];
+			for (let uuidLente in empresa){
 
-				if (valor.indexOf(texto) != -1) {
-					add = true;
-					break;
+				let lente = empresa[uuidLente];
+				let add   = false;
+
+				for (let keyLente in lente) {
+					let valor = ""+lente[keyLente];
+
+					if (valor.indexOf(texto) != -1) {
+						add = true;
+						break;
+					}
 				}
-			}
 
-			if(valorSwitch && lente['promocao'] && add) {
-				add = true;
-			}
-			else if(valorSwitch && !lente['promocao']) {
-				add = false; 
-			}
-			else if (!valorSwitch && add) {
-				add = true;
-			}
+				if(valorSwitch && lente['promocao'] && add) {
+					add = true;
+				}
+				else if(valorSwitch && !lente['promocao']) {
+					add = false; 
+				}
+				else if (!valorSwitch && add) {
+					add = true;
+				}
 
-			if (add) {
-				lentesFiltradas[lente.uuid] = lente;	
+				if (add) {
+					lentesFiltradas[key_empresa][uuidLente] = lente;
+				}
 			}
 		}
 	}
 
 	else {
 		for (let key in todasAsLentes) {
-			let lente = todasAsLentes[key];
+			let empresa = todasAsLentes[key];
 
-			if (valorSwitch && lente['promocao']) {
-				lentesFiltradas[lente.uuid] = lente;
-			}	
-			else if (!valorSwitch) {
-				lentesFiltradas[lente.uuid] = lente;
+			for (let uuidLente in empresa){
+				let lente = empresa[uuidLente];
+
+				if (valorSwitch && lente['promocao']) {
+					lentesFiltradas[lente.uuid] = lente;
+				}	
+				else if (!valorSwitch) {
+					lentesFiltradas[key][uuidLente] = lente;
+				}
 			}
+
 		}	
 	}
 		
