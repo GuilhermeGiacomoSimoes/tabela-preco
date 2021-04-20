@@ -204,7 +204,13 @@ function filtrar() {
 				let lente = empresa[uuidLente];
 
 				if (valorSwitch && lente['promocao']) {
-					lentesFiltradas[lente.uuid] = lente;
+					if(lentesFiltradas[key]) {
+						lentesFiltradas[key][uuidLente] = lente;
+					}
+					else {
+						lentesFiltradas[key] = {};
+						lentesFiltradas[key][uuidLente] = lente;
+					}
 				}	
 				else if (!valorSwitch) {
 					if(lentesFiltradas[key]) {
