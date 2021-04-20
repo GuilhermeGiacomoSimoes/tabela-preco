@@ -156,7 +156,6 @@ function filtrar() {
 	const texto         = document.getElementById("busca").value;	
 
 	if (texto != "" && texto != undefined && texto != null) {
-
 		for (let key_empresa in todasAsLentes) {
 			let empresa = todasAsLentes[key_empresa];
 
@@ -185,7 +184,13 @@ function filtrar() {
 				}
 
 				if (add) {
-					lentesFiltradas[key_empresa][uuidLente] = lente;
+					if(lentesFiltradas[key_empresa]) {
+						lentesFiltradas[key_empresa][uuidLente] = lente;
+					}
+					else {
+						lentesFiltradas[key_empresa] = {}; 
+						lentesFiltradas[key_empresa][uuidLente] = lente;
+					}
 				}
 			}
 		}
@@ -202,10 +207,15 @@ function filtrar() {
 					lentesFiltradas[lente.uuid] = lente;
 				}	
 				else if (!valorSwitch) {
-					lentesFiltradas[key][uuidLente] = lente;
+					if(lentesFiltradas[key]) {
+						lentesFiltradas[key][uuidLente] = lente;
+					}
+					else {
+						lentesFiltradas[key] = {};
+						lentesFiltradas[key][uuidLente] = lente;
+					}
 				}
 			}
-
 		}	
 	}
 		
