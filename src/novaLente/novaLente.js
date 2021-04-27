@@ -50,7 +50,7 @@ function obterLentes() {
 }
 
 function preencherDadosLente(snapshot) {
-	let	edtDescricao	 = document.getElementById('descricao'		);  
+	let	edtDescricao	 = document.getElementById('descricao'		);
 	let	edtEmpresa  	 = document.getElementById('empresa'		); 
 	let	edtTipo     	 = document.getElementById('tipo'			); 
 	let	edtPreco    	 = document.getElementById('preco'			);   
@@ -143,20 +143,20 @@ function gravarLente(lente) {
 		database.ref(`lentes/${lente.empresa}/${lente.uuid}`).set(lente).then( snapshot => {
 			pararLoading(); 
 			resetarCampos();
-			mostrarDialog("Salvo com sucesso", true);
+			mostrarDialog("Salvo com sucesso", editar);
+			editar = false;
 		}).catch(error => {
-			mostrarDialog("Algo deu errado! " + error);	
+			mostrarDialog("Algo deu errado! " + error, editar);	
 		});	
 
 	}catch (exception) {
-		mostrarDialog("Algo deu errado! " + exception);	
+		mostrarDialog("Algo deu errado! " + exception, editar);	
 	}
 
 	return true;
 }
 
 function resetarCampos() {
-	editar            = false;
 	uuidLenteEditada  = '';
 
 	document.getElementById('descricao')    .value="";
@@ -232,7 +232,6 @@ precoInput.addEventListener('change', _=> {
 	document.getElementById('venda').value = venda;
 });
 
-
 function gerarLoading() {
 	let modal = document.getElementById("loading");
 	modal.style.display = "block";
@@ -253,7 +252,7 @@ function mostrarDialog(mensagem, voltar) {
 	btnFechar.onclick = _=> {
 		modal.style.display = "none";
 
-		if (editar) { 
+		if (voltar) { 
 			window.location.href = '../index/index.html';  
 		}
 	}
