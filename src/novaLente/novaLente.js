@@ -20,16 +20,17 @@ function verificaEdicao()  {
 	}
 }
 
-function obterLente() {
-	let lente = {};
+function obterLente(uuid) {
 	for (let key in arr){
 		let empresa = arr[key];
 		for (let uuidLente in empresa){
-			lente = empresa[uuidLente];
+			if (uuidLente == uuid){
+				return empresa[uuid]; 
+			}
 		}
 	}	
 
-	return lente;
+	return null;
 }
 
 function obterLentes() {
