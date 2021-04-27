@@ -153,7 +153,7 @@ function busca() {
 function filtrar() {
 	let lentesFiltradas = {};
 	const valorSwitch   = document.getElementById('switchLentesPromocionais').checked;
-	const texto         = document.getElementById("busca").value;	
+	const texto         = document.getElementById("busca").value.toUpperCase();	
 
 	if (texto != "" && texto != undefined && texto != null) {
 		for (let key_empresa in todasAsLentes) {
