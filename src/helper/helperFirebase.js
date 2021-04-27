@@ -31,18 +31,3 @@ function obterNumeroRandomico(min, max) {
 	max = Math.floor(max - 1);
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
-//enviarEmail(); 
-//function enviarEmail() {
-//
-//	Email.send({
-//		SecureToken: "7de3e749-d76e-406c-b8c9-ff8c3aa09560",
-//		To : 'trintaeoitogc@gmail.com',
-//		From : "modelo.montagem@hotmail.com",
-//		Subject : "subject",
-//		Body : "bodyyyyy "
-//	}).then(
-//		message => alert(message)
-//	);
-//} 
-
