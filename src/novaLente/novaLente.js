@@ -2,6 +2,7 @@ var database 		  = obterConfiguracaoFirebase();
 var editar            = false;
 var uuidLenteEditada  = '';
 var arr 			  = [];
+var msgErro			  = '';
 
 resetarCampos(); 
 obterLentes(); 
@@ -42,7 +43,8 @@ function obterLentes() {
 			verificaEdicao();
 			pararLoading();
 		}, err => {
-			mostrarDialog("Algo deu errado! " + err);	
+			msgErro = error;
+			document.getElementById('erro_dialog').style.display = 'block';
 		});
 	} catch(Exception){
 		console.log('deu ruim');
@@ -146,7 +148,8 @@ function gravarLente(lente) {
 			mostrarDialog("Salvo com sucesso", editar);
 			editar = false;
 		}).catch(error => {
-			mostrarDialog("Algo deu errado! " + error, editar);	
+			msgErro = error;
+			document.getElementById('erro_dialog').style.display = 'block';
 		});	
 
 	}catch (exception) {

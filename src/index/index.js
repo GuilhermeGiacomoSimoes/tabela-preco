@@ -3,6 +3,7 @@ var uuid           = undefined;
 var empresa        = undefined; 
 var todasAsLentes  = {};
 var lentesVisiveis = {};
+var msgErro 	   = "";
 
 obterLentes();
 
@@ -18,9 +19,11 @@ function obterLentes() {
 			montarDocumentoParaImpressao(todasAsLentes);
 			pararLoading();
 		}, err => {
-			console.log(err);
+			msgErro = err;
+			document.getElementById('erro_dialog').style.display = 'block';
 		});
 	}catch (exception) {
+		
 		console.log("deu ruim: " + exception);
 	}
 }
@@ -86,7 +89,12 @@ function deletaLente() {
 		let uuid = this.uuid; 
 		let empresa = this.empresa;
 		let lenteRef = this.database.ref(`lentes/${empresa}/${uuid}`);
-		lenteRef.remove();
+		lenteRef.remove().then( _=> {
+
+		}).catch( err =>{
+			msgErro = err;
+			document.getElementById('erro_dialog').style.display = 'block';
+		});
 
 		location.reload();
 	}catch (exception) {
