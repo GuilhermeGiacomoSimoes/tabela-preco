@@ -78,9 +78,9 @@ function confirmarDelecaoLente(uuidParametro, empresaParametro) {
 	modal.style.display = 'block';
 }
 
-function fecharModal() {
+function fecharModal(id) {
 	uuid = undefined; 
-	let modal = document.getElementById('confirmaExclusao');
+	let modal = document.getElementById(id);
 	modal.style.display = 'none';
 }
 
