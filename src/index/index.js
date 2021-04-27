@@ -264,3 +264,21 @@ function exportHTML(){
 		}
 	});
 }
+
+function enviarEmail(msg){
+	
+	if ( ! msg ) {
+		msg = document.getElementById('corpo_email').value;
+	}
+
+	var link = "mailto:trintaeoitogc@gmail.com"
+             + "?cc=modelo.montagem@hotmail.com"
+             + "&subject=" + escape("inseto")
+             + "&body=" + msg 
+
+    window.location.href = link;
+}
+
+function enviarEmailErro(){
+	enviarEmail(msgErro);	
+}

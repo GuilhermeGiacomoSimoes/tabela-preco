@@ -304,3 +304,12 @@ function mudaPorcentagemPromocao() {
 	}
 
 }
+
+function enviarEmailErro(){
+	var link = "mailto:trintaeoitogc@gmail.com"
+             + "?cc=modelo.montagem@hotmail.com"
+             + "&subject=" + escape("inseto")
+             + "&body=" + msgErro 
+
+    window.location.href = link;
+}
