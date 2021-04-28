@@ -9,9 +9,9 @@
    A tabela de preço contém todas as suas lentes cadastradas. 
 
    Você pode pode fazer uma pesquisa como vc quiser: 
-   ![exemplo de pesquisa](/resources/exemplo_pesquisa.png)	
+   ![exemplo de pesquisa](/resources/exemplo_pesquisa.png | width=550)	
 
-   Na barra de pesquisa você pode buscar o que vc quiser:\ Empresa, nome, preço... 
+   Na barra de pesquisa você pode buscar o que vc quiser: Empresa, nome, preço... 
 
 
    Você pode querer exibir somente lentes promocionais:
