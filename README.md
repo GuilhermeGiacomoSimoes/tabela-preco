@@ -8,44 +8,49 @@
 ### Tabela de preço
    A tabela de preço contém todas as suas lentes cadastradas. 
 
-   Você pode pode fazer uma pesquisa como vc quiser: 
-   ![exemplo de pesquisa](/resources/exemplo_pesquisa.png =450x450)	
-
+   Você pode pode fazer uma pesquisa como vc quiser: <br>
+   <img src="/resources/exemplo_pesquisa.png" />	<br>
    Na barra de pesquisa você pode buscar o que vc quiser: Empresa, nome, preço... 
 
 
+
+
    Você pode querer exibir somente lentes promocionais:
-   ![exemplo de pesquisa](/resources/somente_promocionais.png)	
-
-   Esse switch caso você o habilite vai filtrar a lista de lentes somente com preço promocional. 
-
-
-   Caso você tenha algum problema, além de me mandar mensagem, outra coisa que pode te auxiliar é o botão de envio de email:
-   ![Botão envio de email](/resources/botao_envio_email.png)	
+   <img src="/resources/somente_promocionais.png" />	<br>
+   Esse switch caso você o habilite vai filtrar a lista de lentes somente com preço promocional. <br>
 
 
-   Esse botão vai abrir uma caixa de diálogo onde você pode digitar o que está ocasionando seu problema:  
-   ![Diálogo de email](/resources/modal_email.png)	
+
+   Caso você tenha algum problema, além de me mandar mensagem, outra coisa que pode te auxiliar é o botão de envio de email: <br>
+   <img src="/resources/botao_envio_email.png" />	<br>
 
 
-   O botão de exportar PDF vai pegar toda a sua tabela de preço e transformar em um arquivo PDF:  
-   ![Exportar PDF](/resources/exportar_pdf.png)	
 
-   Este é um exemplo de PDF: 
-   ![Exemplo PDF](/resources/exemplo_pdf.png)	
+   Esse botão vai abrir uma caixa de diálogo onde você pode digitar o que está ocasionando seu problema:  <br>
+   <img src="/resources/modal_email.png" />	<br>
+
+
+   O botão de exportar PDF vai pegar toda a sua tabela de preço e transformar em um arquivo PDF:  <br>
+   <img src="/resources/exportar_pdf.png" />	<br>
+
+
+   Este é um exemplo de PDF: <br>
+   <img src="/resources/exemplo_pdf.png" />	<br>
 
 
    Os botões de **excluir** e de **editar** já são autoexplicativos. 
 
 
 ### Nova lente
-   Esse é um exemplo do cadastro de uma nova lente preenchido: 
-   ![Exemplo preenchimento](/resources/exemplo_cadastro.png)	
+   Esse é um exemplo do cadastro de uma nova lente preenchido: <br>
+   <img src="/resources/exemplo_cadastro.png" />	<br>
+
 
    Vamos ver alguns detalhes...
 
-   Os campos **Esférico** e **Cilíndrico** devem ser preenchidos da seguinte forma: 
-   ![Exemplo esférico e cilíndrico](/resources/esferico_cilindrico.png)	
+   Os campos **Esférico** e **Cilíndrico** devem ser preenchidos da seguinte forma: <br>
+   <img src="/resources/esferico_cilindrico.png" />	<br>
+
 
    O campo **Preço de venda** você não vai conseguir preencher, o que vc deve fazer é colocar um Multiplicador no campo a cima. Ele vai calcular o preço de venda altomaticamente.
 
@@ -54,8 +59,9 @@
    **É extremamente importante que você acerto o nome da Empresa, é isso que vai determinar de qual empresa aquela lente pertence**
    Caso você cadastre com um nome de empresa errado, por exmplo:\ Hooyalux (com dois 'O's) ele vai assumir que Hooyalux é uma empresa diferente da Hoyalux.
 
-   Seção da promoção 
-   ![Exemplo de promoção](/resources/secao_promocao.png)	
+   Seção da promoção <br>
+   <img src="/resources/secao_promocao.png" />	<br>
+   
    Essa seção é exibida quando você seleciona o check_box [x] 
    Agora você tem duas opções, ou coloca uma porcentagem de desconto (como '15' por cento) ou coloca um preço promocioal.
    **Atente-se de que você não deve colocar o simbolo de porcentagem % , somente o valor numérico**
