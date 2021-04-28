@@ -8,30 +8,30 @@
 ### Tabela de preço
    A tabela de preço contém todas as suas lentes cadastradas. 
 
-   Você pode pode fazer uma pesquisa como vc quiser: 
+   Você pode pode fazer uma pesquisa como vc quiser:<br> 
    ![exemplo de pesquisa](/resources/exemplo_pesquisa.png)	
 
-   Na barra de pesquisa você pode buscar o que vc quiser: Empresa, nome, preço... 
+   Na barra de pesquisa você pode buscar o que vc quiser:<br> Empresa, nome, preço... 
 
 
-   Você pode querer exibir somente lentes promocionais:
+   Você pode querer exibir somente lentes promocionais:<br>
    ![exemplo de pesquisa](/resources/somente_promocionais.png)	
 
    Esse switch caso você o habilite vai filtrar a lista de lentes somente com preço promocional. 
 
 
-   Caso você tenha algum problema, além de me mandar mensagem, outra coisa que pode te auxiliar é o botão de envio de email:
+   Caso você tenha algum problema, além de me mandar mensagem, outra coisa que pode te auxiliar é o botão de envio de email:<br>
    ![Botão envio de email](/resources/botao_envio_email.png)	
 
 
-   Esse botão vai abrir uma caixa de diálogo onde você pode digitar o que está ocasionando seu problema:  
+   Esse botão vai abrir uma caixa de diálogo onde você pode digitar o que está ocasionando seu problema:<br>  
    ![Diálogo de email](/resources/modal_email.png)	
 
 
-   O botão de exportar PDF vai pegar toda a sua tabela de preço e transformar em um arquivo PDF:  
+   O botão de exportar PDF vai pegar toda a sua tabela de preço e transformar em um arquivo PDF:<br>  
    ![Exportar PDF](/resources/exportar_pdf.png)	
 
-   Este é um exemplo de PDF: 
+   Este é um exemplo de PDF:<br> 
    ![Exemplo PDF](/resources/exemplo_pdf.png)	
 
 
@@ -39,12 +39,12 @@
 
 
 ### Nova lente
-   Esse é um exemplo do cadastro de uma nova lente preenchido: 
+   Esse é um exemplo do cadastro de uma nova lente preenchido:<br> 
    ![Exemplo preenchimento](/resources/exemplo_cadastro.png)	
 
    Vamos ver alguns detalhes...
 
-   Os campos **Esférico** e **Cilíndrico** devem ser preenchidos da seguinte forma:  
+   Os campos **Esférico** e **Cilíndrico** devem ser preenchidos da seguinte forma:<br>  
    ![Exemplo esférico e cilíndrico](/resources/esferico_cilindrico.png)	
 
    O campo **Preço de venda** você não vai conseguir preencher, o que vc deve fazer é colocar um Multiplicador no campo a cima. Ele vai calcular o preço de venda altomaticamente.
@@ -52,7 +52,7 @@
    Todos os campos que você preencher vão ser cadastrados com letra maiúscula, mesmo que você cadastre com letras minúscula. 
 
    **É extremamente importante que você acerto o nome da Empresa, é isso que vai determinar de qual empresa aquela lente pertence**
-   Caso você cadastre com um nome de empresa errado, por exmplo: Hooyalux (com dois 'O's) ele vai assumir que Hooyalux é uma empresa diferente da Hoyalux.
+   Caso você cadastre com um nome de empresa errado, por exmplo:<br> Hooyalux (com dois 'O's) ele vai assumir que Hooyalux é uma empresa diferente da Hoyalux.
 
    Seção da promoção 
    ![Exemplo de promoção](/resources/secao_promocao.png)	
