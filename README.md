@@ -8,30 +8,30 @@
 ### Tabela de preço
    A tabela de preço contém todas as suas lentes cadastradas. 
 
-   Você pode pode fazer uma pesquisa como vc quiser:\ 
+   Você pode pode fazer uma pesquisa como vc quiser: 
    ![exemplo de pesquisa](/resources/exemplo_pesquisa.png)	
 
    Na barra de pesquisa você pode buscar o que vc quiser:\ Empresa, nome, preço... 
 
 
-   Você pode querer exibir somente lentes promocionais:\
+   Você pode querer exibir somente lentes promocionais:
    ![exemplo de pesquisa](/resources/somente_promocionais.png)	
 
    Esse switch caso você o habilite vai filtrar a lista de lentes somente com preço promocional. 
 
 
-   Caso você tenha algum problema, além de me mandar mensagem, outra coisa que pode te auxiliar é o botão de envio de email:\
+   Caso você tenha algum problema, além de me mandar mensagem, outra coisa que pode te auxiliar é o botão de envio de email:
    ![Botão envio de email](/resources/botao_envio_email.png)	
 
 
-   Esse botão vai abrir uma caixa de diálogo onde você pode digitar o que está ocasionando seu problema:\  
+   Esse botão vai abrir uma caixa de diálogo onde você pode digitar o que está ocasionando seu problema:  
    ![Diálogo de email](/resources/modal_email.png)	
 
 
-   O botão de exportar PDF vai pegar toda a sua tabela de preço e transformar em um arquivo PDF:\  
+   O botão de exportar PDF vai pegar toda a sua tabela de preço e transformar em um arquivo PDF:  
    ![Exportar PDF](/resources/exportar_pdf.png)	
 
-   Este é um exemplo de PDF:\ 
+   Este é um exemplo de PDF: 
    ![Exemplo PDF](/resources/exemplo_pdf.png)	
 
 
@@ -39,12 +39,12 @@
 
 
 ### Nova lente
-   Esse é um exemplo do cadastro de uma nova lente preenchido:\ 
+   Esse é um exemplo do cadastro de uma nova lente preenchido: 
    ![Exemplo preenchimento](/resources/exemplo_cadastro.png)	
 
    Vamos ver alguns detalhes...
 
-   Os campos **Esférico** e **Cilíndrico** devem ser preenchidos da seguinte forma:\  
+   Os campos **Esférico** e **Cilíndrico** devem ser preenchidos da seguinte forma: 
    ![Exemplo esférico e cilíndrico](/resources/esferico_cilindrico.png)	
 
    O campo **Preço de venda** você não vai conseguir preencher, o que vc deve fazer é colocar um Multiplicador no campo a cima. Ele vai calcular o preço de venda altomaticamente.
