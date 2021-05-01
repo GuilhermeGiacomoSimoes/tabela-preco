@@ -314,3 +314,13 @@ function enviarEmailErro(){
 
     window.location.href = link;
 }
+
+$(document).ready(function() {
+	$("#preco").maskMoney({
+         prefix: "R$:",
+         decimal: ",",
+         thousands: "."
+	});
+	
+});
+

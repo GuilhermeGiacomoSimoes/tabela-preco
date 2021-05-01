@@ -14,6 +14,7 @@
 			  src="https://code.jquery.com/jquery-3.6.0.js"
 			  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
 			  crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js" integrity="sha512-Rdk63VC+1UYzGSgd3u2iadi0joUrcwX0IWp2rTh6KXFoAmgOjRS99Vynz1lJPT8dLjvo6JZOqpAHJyfCEZ5KoA==" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 
@@ -24,10 +25,10 @@
 					Tipo: <input class="form-control"id="tipo" placeholder="lente" style="margin-bottom: 1%; width: 80%" maxlength="10"></input> 
 					Esférico: <input class="form-control"id="esferico" placeholder="+0,25 A +4,00" style="margin-bottom: 1%; width: 80%" maxlength="15"></input> 
 					Cilíndrico: <input class="form-control"id="cilindrico" placeholder="-0,25 A -4,00" style="margin-bottom: 1%; width: 80%" maxlength="15"></input> 
-					Índice de refração: <input class="form-control"id="indice" type="number"placeholder="1.49" style="margin-bottom: 1%; width: 80%" maxlength="4"></input> 
-					diametro: <input class="form-control"id="diametro" type="number"placeholder="70" style="margin-bottom: 1%; width: 80%" maxlength="2"></input> 
-					Preço: <input class="form-control"id="preco" placeholder="127.89" type="number" min="0" style="margin-bottom: 1%; width: 80%" maxlength="7"></input> 
-					Multiplicador: <input class="form-control"id="multiplicador" type="number" min="0" placeholder="2.8" style="margin-bottom: 1%; width: 80%" maxlength="1"></input> 
+					Índice de refração: <input class="form-control"id="indice" type="number" placeholder="1.49" style="margin-bottom: 1%; width: 80%" maxlength="4"></input> 
+					diametro: <input class="form-control"id="diametro" type="number" min="0" step="1" placeholder="70" style="margin-bottom: 1%; width: 80%" maxlength="2"></input> 
+					Preço: <input class="form-control"id="preco" placeholder="127,89" type="number" min="0" style="margin-bottom: 1%; width: 80%" maxlength="7"></input> 
+					Multiplicador: <input class="form-control"id="multiplicador" type="number" min="0" step="1" placeholder="2.8" style="margin-bottom: 1%; width: 80%" maxlength="1"></input> 
 					Preço de venda: <input class="form-control"id="venda" placeholder="" style="margin-bottom: 1%; width: 80%" readonly></input> 
 					Promoção:	<input type="checkbox" id="promocao" onchange="flagPromocao()"> <br> <br>
 
@@ -56,11 +57,10 @@
 		</div>
 
 		<div id="dialogRetorno" class="modal">
-		  	<div class="modal-content" style="max-width: 40%; max-height: 40%">
+		  	<div class="modal-content" style="max-width: 80%; max-height: 80%">
 				<span class="close">&times;</span>
 				<span style="font-size: 30px; margin-left: 4%; margin-bottom: 2%" id="mensagemRetorno"></span>
 		  	</div>
-
 		</div>
 
 		<div id="erro_dialog" class="modal">
