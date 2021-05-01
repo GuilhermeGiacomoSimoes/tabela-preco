@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "743281858698",
+    "firebase_url": "https://tabela-preco-5ed67.firebaseio.com",
+    "project_id": "tabela-preco-5ed67",
+    "storage_bucket": "tabela-preco-5ed67.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:743281858698:android:cab655056751d0f89ef573",
+        "android_client_info": {
+          "package_name": "com.example.tabelapreco"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "743281858698-r37d3nos8mjdkf17qrhnpi8lna84lvrt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGulXhBDdke53Lj0blg6IyqBq718GVqn0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "743281858698-r37d3nos8mjdkf17qrhnpi8lna84lvrt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
