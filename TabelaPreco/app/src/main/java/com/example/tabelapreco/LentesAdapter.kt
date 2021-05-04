@@ -26,7 +26,10 @@ class LentesAdapter(private val list: ArrayList<Lente>, private val context: Con
         }
 
         if(position % 2 == 0) {
-            layout.setBackgroundColor(0xf3f6f6)
+            layout.setBackgroundResource(R.color.pairs)
+        }
+        else{
+            layout.setBackgroundResource(R.color.odd)
         }
 
         val descricao = layout.findViewById<TextView>(R.id.descricao)
