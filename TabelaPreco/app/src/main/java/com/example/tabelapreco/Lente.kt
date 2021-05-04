@@ -1,6 +1,6 @@
 package com.example.tabelapreco
 
-class TabelaModel {
+class Lente {
     lateinit var cilindrico: String
     lateinit var descricao: String
     lateinit var empresa: String
