@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
     private val firebase = FirebaseDatabase.getInstance().reference
     private var listaLente = ArrayList<Lente>()
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
