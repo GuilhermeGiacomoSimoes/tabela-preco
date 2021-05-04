@@ -1,8 +1,12 @@
 package com.example.tabelapreco
 
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.WindowManager
 import android.widget.ListView
+import androidx.annotation.RequiresApi
+import androidx.core.content.ContextCompat
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -12,7 +16,7 @@ import java.util.ArrayList
 class MainActivity : AppCompatActivity() {
 
     private val firebase = FirebaseDatabase.getInstance().reference
-    private val listaLente = ArrayList<Lente>()
+    private var listaLente = ArrayList<Lente>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
