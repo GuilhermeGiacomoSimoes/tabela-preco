@@ -38,15 +38,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun obterTodasLentes() {
-        val list = ArrayList<Empresa>()
+        val list = ArrayList<Lente>()
 
         try {
             firebase.child("lentes").addValueEventListener(object: ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     for (data in snapshot.children) {
-                        if(data.getValue(Empresa ::class.java) != null) {
-                            val empresa = data.getValue(Empresa ::class.java)
-                            list.add(empresa !!)
+                        for(lente in data.children) {
+                            val l = lente.getValue(Lente ::class.java)
+                            if(l != null){
+                                list.add(l)
+                            }
                         }
                     }
 
@@ -60,9 +62,5 @@ class MainActivity : AppCompatActivity() {
         }catch (e: Exception) {
 
         }
-    }
-
-    private class Empresa {
-        var lentes = ArrayList<Lente>()
     }
 }
