@@ -205,16 +205,16 @@ function cadastrar() {
 		descricao, 
 		empresa, 
 		tipo, 
-		preco, 
-		multiplicador, 
+		preco: parseFloat(preco), 
+		multiplicador: parseInt(multiplicador), 
 		promocao, 
-		precoPromocional, 
-		porcentagemDesconto, 
-		venda, 
+		precoPromocional : parseFloat(precoPromocional) || 0, 
+		porcentagemDesconto : parseInt(porcentagemDesconto) || 0, 
+		venda : parseInt(venda), 
 		esferico, 
 		cilindrico, 
-		indice, 
-		diametro
+		indice : parseInt(indice), 
+		diametro : parseInt(diametro) || 0
 	};
 
 	gravarLente(lente);
@@ -315,12 +315,12 @@ function enviarEmailErro(){
     window.location.href = link;
 }
 
-$(document).ready(function() {
-	$("#preco").maskMoney({
-         prefix: "R$:",
-         decimal: ",",
-         thousands: "."
-	});
-	
-});
+//$(document).ready(function() {
+//	$("#preco").maskMoney({
+//         prefix: "R$:",
+//         decimal: ",",
+//         thousands: "."
+//	});
+//	
+//});
 
