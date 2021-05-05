@@ -31,14 +31,10 @@ class MainActivity : AppCompatActivity() {
         obterTodasLentes()
     }
 
-    private fun organizarLista(list: ArrayList<Empresa>) {
-        for(empresa in list){
-            listaLente.addAll(empresa.lentes)
-        }
-
+    private fun organizarLista(list: ArrayList<Lente>) {
+        listaLente = list
         val tabela = findViewById<ListView>(R.id.tabela)
-
-        tabela.adapter = LentesAdapter(listaLente, this)
+        tabela.adapter = LentesAdapter(list, this)
     }
 
     private fun obterTodasLentes() {
