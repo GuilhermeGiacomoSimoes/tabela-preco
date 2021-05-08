@@ -23,6 +23,8 @@
             android:background="@drawable/background_edit_text"
             android:layout_gravity="center"
             android:layout_margin="10sp"
+            android:id="@+id/edt_pesquisa"
+            android:textColor="#000"
             />
 
         <LinearLayout

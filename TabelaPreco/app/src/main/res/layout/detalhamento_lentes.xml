@@ -3,9 +3,207 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="#fff"
+    android:background="#fff"
+    android:padding="10dp"
+    android:orientation="vertical"
+    android:alpha="0.9"
     >
 
-    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CR-39 1.49"
+        android:textColor="#808080"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:id="@+id/descricao"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Preço"
+            android:textColor="#808080"
+            android:textSize="15dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="R$ 100,00"
+            android:textColor="#808080"
+            android:textSize="15dp"
+            android:layout_weight="1"
+            android:textAlignment="textEnd"
+            android:id="@+id/txt_preco"
+            />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#e1e4e5"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Esférico"
+            android:textColor="#808080"
+            android:textSize="15dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="-8,00 A +6,00"
+            android:textColor="#808080"
+            android:textSize="15dp"
+            android:layout_weight="1"
+            android:textAlignment="textEnd"
+            android:id="@+id/txt_esferico"
+            />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#e1e4e5"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cilíndrico"
+            android:textColor="#808080"
+            android:textSize="15dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="-2,00 A +4,00"
+            android:textColor="#808080"
+            android:textSize="15dp"
+            android:layout_weight="1"
+            android:textAlignment="textEnd"
+            android:id="@+id/txt_cilindrico"
+            />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#e1e4e5"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Diâmetro"
+            android:textColor="#808080"
+            android:textSize="15dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="75"
+            android:textColor="#808080"
+            android:textSize="15dp"
+            android:layout_weight="1"
+            android:textAlignment="textEnd"
+            android:id="@+id/txt_diametro"
+            />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#e1e4e5"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Empresa"
+            android:textColor="#808080"
+            android:textSize="15dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hoyalux"
+            android:textColor="#808080"
+            android:textSize="15dp"
+            android:layout_weight="1"
+            android:textAlignment="textEnd"
+            android:id="@+id/txt_empresa"
+            />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#e1e4e5"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Índice de refração"
+            android:textColor="#808080"
+            android:textSize="15dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1.49"
+            android:textColor="#808080"
+            android:textSize="15dp"
+            android:layout_weight="1"
+            android:textAlignment="textEnd"
+            android:id="@+id/txt_indice"
+            />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#e1e4e5"
+        />
 
 </LinearLayout>
