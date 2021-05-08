@@ -28,7 +28,7 @@
    Depois clique em instalar  
    <img src="./web/resources/instalar_botao.jpg"  width="200"/>	<br>
 
-   Ele vai dizer que bloqueou a instalação porque vem de fonte desconhecida, mas você pode clicar em "instalar mesmo assim" 
+   Ele vai dizer que bloqueou a instalação porque vem de fonte desconhecida, mas você pode clicar em "instalar mesmo assim"  <br>
    <img src="./web/resources/instalar_mesmo_assim.jpg"  width="200"/>	<br>
 
    Depois de instalado ele vai pedir pra enviar o App pra revisão do google, mas não tem necessidade.  
