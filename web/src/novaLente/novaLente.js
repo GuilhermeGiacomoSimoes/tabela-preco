@@ -198,6 +198,7 @@ function cadastrar() {
 	if (promocao) {
 		precoPromocional     = document.getElementById('precoPromocional').value;
 		porcentagemDesconto  = document.getElementById('porcentagemDoDesconto').value;
+		venda = precoPromocional * multiplicador;
 	}
 
 	let lente = {
