@@ -2,9 +2,9 @@
 
 ## Seções 
 
-* [Abrindo tabela de preço](#abrindo_tabela_de_preco)
+* [Abrindo tabela de preço](#abrindo_tabela_de_preço)
 * [Instalação App](#instalação-app)
-* [Tabela de preço](#tabela-preco)
+* [Tabela de preço](#tabela-preço)
 * [Nova lente](#nova-lente)
 
 ### Abrindo tabela de preço
