@@ -1,12 +1,16 @@
 package com.example.tabelapreco
 
 import android.content.Context
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.LinearLayout
 import android.widget.TextView
-import java.util.ArrayList
+import androidx.appcompat.app.AppCompatActivity
+import java.text.NumberFormat
+import java.util.*
 
 class LentesAdapter(private val list: ArrayList<Lente>, private val context: Context): BaseAdapter() {
     override fun getCount() = list.size
@@ -14,7 +18,7 @@ class LentesAdapter(private val list: ArrayList<Lente>, private val context: Con
     override fun getItem(position: Int) = list[position]
 
     override fun getItemId(position: Int): Long {
-        TODO("Not yet implemented")
+        return 0
     }
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
@@ -36,7 +40,17 @@ class LentesAdapter(private val list: ArrayList<Lente>, private val context: Con
         val preco = layout.findViewById<TextView>(R.id.preco)
 
         descricao.text = list[position].descricao
-        preco.text = list[position].preco.toString()
+        preco.text = NumberFormat.getCurrencyInstance( Locale("pt", "BR") ).format(list[position].venda)
+
+        if(list[position].promocao){
+            preco.setTextColor(Color.RED)
+        }
+
+        val item = layout.findViewById<LinearLayout>(R.id.ll_lente_lista)
+
+        item.setOnClickListener {
+            DetalhamentoLentes.show(list[position], context, (context as AppCompatActivity).supportFragmentManager)
+        }
 
         return layout
     }
