@@ -126,13 +126,16 @@ function construirTabelaDeLentes(empresas){
 				preco = lente['precoPromocional']; 
 			}
 
+			const precoVendaShow = formatarParaReal(lente['venda']);
+			const precoCustoShow = formatarParaReal(preco);
+
 			const html = `
 			<div class="row align-items-center" style="background-color: ${background_line}; height: 50px; margin-bottom: 1%">
 				<span class="description col-md-2"> ${lente['descricao']} </span>
 				<span class="description col-md-2"> ${lente['empresa']} </span>
 				<span class="description col-md-2"> ${lente['tipo']} </span>
-				<span class="description col-md-2" style="color: ${color}"> R$ ${preco} </span>
-				<span class="description col-md-1" style="color: ${color}"> R$ ${lente['venda']} </span>
+				<span class="description col-md-2" style="color: ${color}"> ${precoCustoShow} </span>
+				<span class="description col-md-1" style="color: ${color}"> ${precoVendaShow} </span>
 				<button class="btn btn-danger col-md-1" onclick="confirmarDelecaoLente(\'${lente['uuid']}\', \'${lente['empresa']}\')" style="width: 120px; height: 50px; margin-right: 0.5%">
 					<center>
 						<img src="../../resources/trash.png" class="image-buttons"/> 
