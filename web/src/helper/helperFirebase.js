@@ -33,9 +33,5 @@ function obterNumeroRandomico(min, max) {
 }
 
 function formatarParaReal( nmr ) {
-	return nmr.toLocateString('pt-BR',{ style: 'currency', currency: 'BRL' }); 
-}
-
-function moedaParaDouble( txt ){
-
+	return parseFloat(nmr).toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' }); 
 }
