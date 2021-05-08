@@ -4,7 +4,7 @@
 
 * [Abrindo tabela de preço](#abrindo-tabela-de-preço)
 * [Instalação App](#instalação-app)
-* [Tabela de preço](#tabela-preço)
+* [Tabela de preço](#tabela-de-preço)
 * [Nova lente](#nova-lente)
 
 ### Abrindo tabela de preço
