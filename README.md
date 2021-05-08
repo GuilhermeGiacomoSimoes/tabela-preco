@@ -26,16 +26,16 @@
 
 
    Depois clique em instalar  
-   <img src="./web/resources/instalar_botao.jpg" />	<br>
+   <img src="./web/resources/instalar_botao.jpg"  width="200"/>	<br>
 
    Ele vai dizer que bloqueou a instalação porque vem de fonte desconhecida, mas você pode clicar em "instalar mesmo assim" 
-   <img src="./web/resources/instalar_mesmo_assim.jpg" />	<br>
+   <img src="./web/resources/instalar_mesmo_assim.jpg"  width="200"/>	<br>
 
    Depois de instalado ele vai pedir pra enviar o App pra revisão do google, mas não tem necessidade.  
-   <img src="./web/resources/nao_enviar.jpg" />	<br>
+   <img src="./web/resources/nao_enviar.jpg"  width="200"/>	<br>
 
    Depois de instalado você pode procurar o app da tabela de preços nos seus aplicativos, e você verá algo como isso
-   <img src="./web/resources/tela_inicial_app.jpg" /> <br>
+   <img src="./web/resources/tela_inicial_app.jpg"  width="200"/> <br>
 
   O App é muito simples, temos a tabela de preço ja amostra na primeira tela, e caso queira ver mais detalhes de uma determinada lente, é só clicar em cima dela. 
   Os preços em vermelho são os preços promocionais.
