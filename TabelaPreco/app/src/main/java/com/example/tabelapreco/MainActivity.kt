@@ -68,6 +68,8 @@ class MainActivity : AppCompatActivity() {
         try {
             firebase.child("lentes").addValueEventListener(object: ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
+                    list.clear()
+
                     for (data in snapshot.children) {
                         for(lente in data.children) {
                             val l = lente.getValue(Lente ::class.java)
