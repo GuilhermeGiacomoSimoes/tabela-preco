@@ -214,7 +214,7 @@ function cadastrar() {
 		venda : parseFloat(venda), 
 		esferico, 
 		cilindrico, 
-		indice : parseInt(indice), 
+		indice : parseFloat(indice), 
 		diametro : parseInt(diametro) || 0
 	};
 
