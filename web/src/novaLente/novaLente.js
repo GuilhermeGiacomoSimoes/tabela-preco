@@ -43,7 +43,7 @@ function obterLentes() {
 			verificaEdicao();
 			pararLoading();
 		}, err => {
-			msgErro = error;
+			msgErro = err;
 			document.getElementById('erro_dialog').style.display = 'block';
 		});
 	} catch(Exception){

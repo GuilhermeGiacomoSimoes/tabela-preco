@@ -47,21 +47,20 @@ function montarDocumentoParaImpressao( empresas ) {
 		for (let uuidLente in empresa) {
 			let lente = empresa[uuidLente];
 			let color = "#000000";
-			let preco = lente.preco;
+
 			if (lente['promocao']) {
 				color = "#FF0000";
-				preco = lente['precoPromocional']; 
 			}
 
-			let venda = "R$ " + ( preco * lente['multiplicador'] );
+			let venda = formatarParaReal(lente['venda']);
 
 			html += `
 				<tr class="row" style="background-color: #fff; height: 7%; margin-bottom: 1%">
-					<td><span style="color: #000; margin: 4%"> ${lente.descricao} </span></td>
-					<td><span style="color: #000; margin: 4%"> ${lente.esferico} </span></td>
-					<td><span style="color: #000; margin: 4%"> ${lente.cilindrico} </span></td>
-					<td><span style="color: #000; margin: 4%"> ${lente.indice} </span></td>
-					<td><span style="color: #000; margin: 4%"> ${lente.diametro} </span></td>
+					<td><span style="color: #000;"> ${lente.descricao} </span></td>
+					<td><span style="color: #000;"> ${lente.esferico} </span></td>
+					<td><span style="color: #000;"> ${lente.cilindrico} </span></td>
+					<td><span style="color: #000;"> ${lente.indice} </span></td>
+					<td><span style="color: #000;"> ${lente.diametro} </span></td>
 					<td><span style="color: ${color}; margin: 4%"> ${venda} </span></td>
 				</tr>
 			`;
