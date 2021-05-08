@@ -211,7 +211,7 @@ function cadastrar() {
 		promocao, 
 		precoPromocional : parseFloat(precoPromocional) || 0, 
 		porcentagemDesconto : parseInt(porcentagemDesconto) || 0, 
-		venda : parseInt(venda), 
+		venda : parseFloat(venda), 
 		esferico, 
 		cilindrico, 
 		indice : parseInt(indice), 
