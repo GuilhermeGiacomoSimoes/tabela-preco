@@ -22,7 +22,7 @@
 
 
    Agora no telefone, acesse o gerenciador de arquvos, e no diretório raiz, vc vai ver o apk, clique nele: 
-   <img src="./web/resources/apk_diretorio.jpg" width="100"/>	<br>
+   <img src="./web/resources/apk_diretorio.jpg" width="200"/>	<br>
 
 
    Depois clique em instalar  
