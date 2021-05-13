@@ -5,6 +5,7 @@ var todasAsLentes  = {};
 var lentesVisiveis = {};
 var msgErro 	   = "";
 
+//comentário teste
 obterLentes();
 
 function obterLentes() {
