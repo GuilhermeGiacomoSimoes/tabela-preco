@@ -7,6 +7,7 @@ var msgErro 	   = "";
 
 //comentário teste
 obterLentes();
+//mais um
 
 function obterLentes() {
 	gerarLoading();
