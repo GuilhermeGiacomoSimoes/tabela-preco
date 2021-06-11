@@ -258,7 +258,7 @@ function mostrarDialog(mensagem, voltar) {
 		modal.style.display = "none";
 
 		if (voltar) { 
-			window.location.href = '../index/index.html';  
+			window.location.href = '../telaInicial/telaInicial.html';  
 		}
 	}
 
@@ -267,7 +267,7 @@ function mostrarDialog(mensagem, voltar) {
     		modal.style.display = "none";
 
 			if (voltar) { 
-				window.location.href = '../index/index.html';  
+				window.location.href = '../telaInicial/telaInicial.html';  
 			}
   		}
 	}
