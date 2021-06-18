@@ -6,6 +6,7 @@ var lentesVisiveis = {};
 var msgErro 	   = "";
 
 obterLentes();
+verificarLogin('tela_inicial');
 
 function obterLentes() {
 	gerarLoading();
