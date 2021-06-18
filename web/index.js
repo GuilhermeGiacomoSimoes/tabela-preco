@@ -1,6 +1,6 @@
 var database = obterConfiguracaoFirebase();
 
-//verificarLogin('index');
+verificarLogin('index');
 
 function logar() {
 	const email = document.getElementById("txtLogin").value;
