@@ -1,5 +1,3 @@
-let tentativas = 0;
-
 function obterConfiguracaoFirebase() {
 	var firebaseConfig = {
 		apiKey: "AIzaSyBOb971R81rzDuTvolsFhNDq3-vcd19kYs",
