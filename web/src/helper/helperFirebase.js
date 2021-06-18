@@ -85,6 +85,7 @@ function redirecionar(param) {
 }
 
 function verificaLoginFirebase(){
-	const login = localStorage.getItem('token_tabela_preco'); 
-	verificaRedirecionamento(login);
+	firebase.auth().onAuthStateChanged(function(user) {
+		verificaRedirecionamento(user)
+	});
 }
