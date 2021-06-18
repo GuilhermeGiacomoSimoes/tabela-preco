@@ -6,7 +6,6 @@ var lentesVisiveis = {};
 var msgErro 	   = "";
 
 obterLentes();
-//mais um
 
 function obterLentes() {
 	gerarLoading();
