@@ -1,3 +1,5 @@
+let tentativas = 0;
+
 function obterConfiguracaoFirebase() {
 	var firebaseConfig = {
 		apiKey: "AIzaSyBOb971R81rzDuTvolsFhNDq3-vcd19kYs",
@@ -34,4 +36,55 @@ function obterNumeroRandomico(min, max) {
 
 function formatarParaReal( nmr ) {
 	return parseFloat(nmr).toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' }); 
+}
+
+function verificarLogin( local) {
+	param = local;
+	verificaLoginFirebase();
+}
+
+function verificaRedirecionamento( logado ) {
+	if ( logado ){
+		if ( param == 'index' ){
+			redirecionar(param);
+		}
+	}
+	else {
+		if ( param == 'tela_inicial' ){
+			redirecionar(param);
+		}
+	}
+}
+
+function redirecionar(param) {
+	let url_redirecionamento = {}; 
+	const url = window.location.href; 
+
+	const redirecionar_para = 
+		param == 'index' 
+		? 'tela_inicial' 
+		: 'index';
+
+	if ( url.includes('vercel') ) {
+		url_redirecionamento = { 
+			index : 'https://tabelapreco.vercel.app/',
+			tela_inicial : 'https://tabelapreco.vercel.app/src/telaInicial/telaInicial.html' 
+		}; 
+	}
+	else {
+		var index = url.indexOf('tabela-preco');
+		const prefix = url.substring(0, index + 12); 
+
+		url_redirecionamento = { 
+			tela_inicial : prefix + '/web/src/telaInicial/telaInicial.html',
+			index : prefix + '/web/index.html' 
+		};
+	}
+
+	window.location.href = url_redirecionamento[redirecionar_para]; 
+}
+
+function verificaLoginFirebase(){
+	const login = localStorage.getItem('token_tabela_preco'); 
+	verificaRedirecionamento(login);
 }
