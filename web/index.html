@@ -1,12 +1,87 @@
-
 <html>
 	<head>
-		<title> TITULO TESTE </title>
+		<title> LOGIN </title>
 	</head>
 
-	<body>
-		<h1> TITULO </h1>>
+	<body style="padding: 10%">
+
+  		<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+  		<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+
+		<script src="./src/helper/helperFirebase.js"></script>
+		<script src="./index.js"></script>
+
+		<center>
+			<h1 style="margin-bottom: 2%;"> LOGIN </h1>
+
+			<span style="color: 808080;margin-bottom: 2%;"> 
+			Tabela de preço exclusiva da Óptica Modelo
+			</span><br>
+
+			<input type="text" placeholder="login" id="txtLogin"></input><br>
+			<input type="password" placeholder="senha" id="txtSenha"></input><br>
+
+			<button onclick="logar()"> Entrar </button>
+
+		</center>
 	</body>
-</html>>
+</html>
 
+<style> 
 
+button {
+	background-color: rgb(37, 99, 235);
+	font-weight: bold;
+	color: white;
+	padding: 10px 16px;
+	font-size: 1rem;
+	border-radius: .5rem;
+	transition: all .15s cubic-bezier(0.4,0,0.2,1);
+	border: none;
+	cursor: pointer;
+	width: 20%;
+}
+
+button:hover {
+	background-color: rgb(29,78,216);
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+button:active {
+	position: relative;
+	top: 1px;
+	right: 1px;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+input[type=text]{
+	width: 20%;
+	border: 2px solid #aaa;
+	border-radius: 4px;
+	margin: 8px 0px;
+	outline: none;
+	padding: 8px;
+	box-sizing: border-box;
+}
+
+input[type=text]:focus{
+	border-color:dodgerblue;
+	box-shadow: 0 0 8px 0 dodgerblue;
+}
+
+input[type=password]{
+	width: 20%;
+	border: 2px solid #aaa;
+	border-radius: 4px;
+	margin: 8px 0px;
+	outline: none;
+	padding: 8px;
+	box-sizing: border-box;
+}
+
+input[type=password]:focus{
+	border-color:dodgerblue;
+	box-shadow: 0 0 8px 0 dodgerblue;
+}
+</style>
