@@ -6,7 +6,9 @@ var lentesVisiveis = {};
 var msgErro 	   = "";
 
 obterLentes();
-verificarLogin('tela_inicial');
+if( window.location.href.contains('vercel') ){
+	verificarLogin('tela_inicial');
+}
 
 function obterLentes() {
 	gerarLoading();
