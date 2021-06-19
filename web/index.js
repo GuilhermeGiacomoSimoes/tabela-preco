@@ -15,6 +15,7 @@ function logar() {
 					verificarLogin('index');
 				}
 				else {
+					param = 'index';
 					verificaRedirecionamento(true);
 				}
 		  })
