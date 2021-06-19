@@ -1,3 +1,5 @@
+var param = null;
+
 function obterConfiguracaoFirebase() {
 	var firebaseConfig = {
 		apiKey: "AIzaSyBOb971R81rzDuTvolsFhNDq3-vcd19kYs",
