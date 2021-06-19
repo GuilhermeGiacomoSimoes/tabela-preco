@@ -48,7 +48,7 @@ function verificaRedirecionamento( logado ) {
 		}
 	}
 	else {
-		if ( param == 'tela_inicial' ){
+		if ( param == 'tela_inicial' || param == 'nova_lente'){
 			redirecionar(param);
 		}
 	}

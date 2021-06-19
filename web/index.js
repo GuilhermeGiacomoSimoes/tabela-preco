@@ -9,11 +9,7 @@ function logar() {
 	try {
 		firebase.auth().signInWithEmailAndPassword(email, senha)
 		  .then((userCredential) => {
-			// Signed in
-				console.log(userCredential.refreshToken)
-			  	localStorage.setItem('token_tabela_preco', userCredential.refreshToken); 
 				verificarLogin('index');
-			// ...
 		  })
 		  .catch((error) => {
 			var errorCode = error.code;
