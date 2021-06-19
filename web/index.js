@@ -1,6 +1,8 @@
 var database = obterConfiguracaoFirebase();
 
-verificarLogin('index');
+if (window.location.href.includes('vercel')) {
+	verificarLogin('index');
+}
 
 function logar() {
 	const email = document.getElementById("txtLogin").value;
