@@ -11,7 +11,12 @@ function logar() {
 	try {
 		firebase.auth().signInWithEmailAndPassword(email, senha)
 		  .then((userCredential) => {
-				verificarLogin('index');
+				if (window.location.href.includes('vercel')) {
+					verificarLogin('index');
+				}
+				else {
+					verificaRedirecionamento(true);
+				}
 		  })
 		  .catch((error) => {
 			var errorCode = error.code;
