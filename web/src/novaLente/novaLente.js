@@ -7,6 +7,10 @@ var msgErro			  = '';
 resetarCampos(); 
 obterLentes(); 
 
+if( window.location.href.contains('vercel') ){
+	verificarLogin('nova_lente');
+}
+
 function verificaEdicao()  {
 	const url = window.location.href;
 	if (url.indexOf('?') != -1){
