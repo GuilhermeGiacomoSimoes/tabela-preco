@@ -42,15 +42,8 @@ function verificarLogin( local) {
 }
 
 function verificaRedirecionamento( logado ) {
-	if ( logado ){
-		if ( param == 'index' ){
-			redirecionar(param);
-		}
-	}
-	else {
-		if ( param == 'tela_inicial' || param == 'nova_lente'){
-			redirecionar(param);
-		}
+	if ((logado && param == 'index') || ! logado && (param == 'tela_inicial' || param == 'nova_lente')){
+		redirecionar(param);
 	}
 }
 
