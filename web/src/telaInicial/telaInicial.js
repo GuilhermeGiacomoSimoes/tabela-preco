@@ -26,7 +26,6 @@ function obterLentes() {
 			document.getElementById('erro_dialog').style.display = 'block';
 		});
 	}catch (exception) {
-		
 		console.log("deu ruim: " + exception);
 	}
 }
