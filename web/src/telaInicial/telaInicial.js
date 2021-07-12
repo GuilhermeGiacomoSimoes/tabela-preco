@@ -284,3 +284,7 @@ function enviarEmail(msg){
 function enviarEmailErro(){
 	enviarEmail(msgErro);	
 }
+
+function deslogar() {
+		
+}
