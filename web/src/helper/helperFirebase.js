@@ -1,3 +1,5 @@
+var param = null;
+
 function obterConfiguracaoFirebase() {
 	var firebaseConfig = {
 		apiKey: "AIzaSyBOb971R81rzDuTvolsFhNDq3-vcd19kYs",
@@ -42,15 +44,8 @@ function verificarLogin( local) {
 }
 
 function verificaRedirecionamento( logado ) {
-	if ( logado ){
-		if ( param == 'index' ){
-			redirecionar(param);
-		}
-	}
-	else {
-		if ( param == 'tela_inicial' ){
-			redirecionar(param);
-		}
+	if ((logado && param == 'index') || ! logado && (param == 'tela_inicial' || param == 'nova_lente')){
+		redirecionar(param);
 	}
 }
 
@@ -64,13 +59,16 @@ function redirecionar(param) {
 		: 'index';
 
 	if ( url.includes('vercel') ) {
+		const index = url.indexOf('vercel.app');
+		const prefix = url.substr(0, index + 10);
+		
 		url_redirecionamento = { 
-			index : 'https://tabelapreco.vercel.app/',
-			tela_inicial : 'https://tabelapreco.vercel.app/src/telaInicial/telaInicial.html' 
+			index : prefix,
+			tela_inicial : prefix + '/src/telaInicial/telaInicial.html' 
 		}; 
 	}
 	else {
-		var index = url.indexOf('tabela-preco');
+		const index = url.indexOf('tabela-preco');
 		const prefix = url.substring(0, index + 12); 
 
 		url_redirecionamento = { 

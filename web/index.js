@@ -1,6 +1,8 @@
 var database = obterConfiguracaoFirebase();
 
-verificarLogin('index');
+if (window.location.href.includes('vercel')) {
+	verificarLogin('index');
+}
 
 function logar() {
 	const email = document.getElementById("txtLogin").value;
@@ -9,11 +11,13 @@ function logar() {
 	try {
 		firebase.auth().signInWithEmailAndPassword(email, senha)
 		  .then((userCredential) => {
-			// Signed in
-				console.log(userCredential.refreshToken)
-			  	localStorage.setItem('token_tabela_preco', userCredential.refreshToken); 
-				verificarLogin('index');
-			// ...
+				if (window.location.href.includes('vercel')) {
+					verificarLogin('index');
+				}
+				else {
+					param = 'index';
+					verificaRedirecionamento(true);
+				}
 		  })
 		  .catch((error) => {
 			var errorCode = error.code;

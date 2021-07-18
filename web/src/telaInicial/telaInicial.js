@@ -6,7 +6,9 @@ var lentesVisiveis = {};
 var msgErro 	   = "";
 
 obterLentes();
-verificarLogin('tela_inicial');
+if( window.location.href.contains('vercel') ){
+	verificarLogin('tela_inicial');
+}
 
 function obterLentes() {
 	gerarLoading();
@@ -24,7 +26,6 @@ function obterLentes() {
 			document.getElementById('erro_dialog').style.display = 'block';
 		});
 	}catch (exception) {
-		
 		console.log("deu ruim: " + exception);
 	}
 }
@@ -282,4 +283,12 @@ function enviarEmail(msg){
 
 function enviarEmailErro(){
 	enviarEmail(msgErro);	
+}
+
+function deslogar() {
+	firebase.auth().signOut().then(() => {
+		verificarLogin('tela_inicial');
+	}).catch((error) => {
+		console.log("Erro: ", error); 
+	});
 }
