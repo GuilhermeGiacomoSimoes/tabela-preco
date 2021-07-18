@@ -286,5 +286,9 @@ function enviarEmailErro(){
 }
 
 function deslogar() {
-		
+	firebase.auth().signOut().then(() => {
+		verificarLogin('tela_inicial');
+	}).catch((error) => {
+		console.log("Erro: ", error); 
+	});
 }
