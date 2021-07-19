@@ -147,3 +147,8 @@ input:checked + .slider:before {
     background-repeat: repeat-x;
 }
 
+.right {
+  position: absolute;
+  right: 0px;
+}
+
