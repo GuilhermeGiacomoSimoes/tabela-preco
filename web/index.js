@@ -38,3 +38,12 @@ function logar() {
 	}
 }
 
+function loading(param) {
+
+	const html = {
+		carregando : `<div class="spinner"></div>`,
+		estatico : `Entrar` 
+	}
+
+	document.getElementById('btnLogar').innerHTML = html[param] || `<button onclick="logar()"> Entrar </button>`;
+}
