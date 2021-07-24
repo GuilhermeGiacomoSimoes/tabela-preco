@@ -84,4 +84,19 @@ input[type=password]:focus{
 	border-color:dodgerblue;
 	box-shadow: 0 0 8px 0 dodgerblue;
 }
+
+.spinner {
+	border: 5px solid #2563EB;
+	border-top: 10px solid #ffffff;
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
 </style>
