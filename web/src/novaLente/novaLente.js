@@ -302,14 +302,15 @@ function verificarPrecoPromocional() {
 }
 
 function mudaPrecoPromocional() {
-	let precoPromocional     = document.getElementById('precoPromocional').value;
-	let preco                = document.getElementById('preco').value;
+	verificarPrecoPromocional();
 
-	if (precoPromocional != "" && preco != "") {
+	let precoPromocional     = Number(document.getElementById('precoPromocional').value).toFixed(2).trim();
+	let preco                = Number(document.getElementById('preco').value).toFixed(2).trim();
+
+	if (precoPromocional && preco) {
 		let porcentagem = (1 - (precoPromocional / preco ))  * 100 ;	
 		document.getElementById('porcentagemDoDesconto').value = Number(porcentagem).toFixed(2);
 	}
-
 }
 
 function mudaPorcentagemPromocao() {
