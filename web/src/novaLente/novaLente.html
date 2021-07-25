@@ -33,8 +33,8 @@
 					Promoção:	<input type="checkbox" id="promocao" onchange="flagPromocao()"> <br> <br>
 
 					<div id="flagPromocaoAtivada" style="display: none"> 
-						Preço promocional: <input class="form-control"id="precoPromocional" onchange="mudaPrecoPromocional()" placeholder="127.89" type="number" min="0" style="margin-bottom: 1%; width: 80%" maxlength="7"></input> 
-						Porcentagem do desconto: <input class="form-control"id="porcentagemDoDesconto" onchange="mudaPorcentagemPromocao()" placeholder="10" type="number" min="0" style="margin-bottom: 1%; width: 80%" maxlength="2"></input> 
+						Preço promocional: <input class="form-control"id="precoPromocional" onchange="mudaPrecoPromocional()" placeholder="127.89" type="number" min="0" style="margin-bottom: 1%; width: 80%" maxlength="7" onkeyup="this.onchange();" oninput="this.onchange();"></input> 
+						Porcentagem do desconto: <input class="form-control"id="porcentagemDoDesconto" onchange="mudaPorcentagemPromocao()" placeholder="10" type="number" min="0" max="100" style="margin-bottom: 1%; width: 80%" maxlength="2"></input> 
 					</div>
 
 					<button id="btnVoltar" class="btn btn-primary" onclick="location.href='../telaInicial/telaInicial.html';" style="width: 120px; height: 50px; margin-right: 3%; margin-bottom: 2%"> 

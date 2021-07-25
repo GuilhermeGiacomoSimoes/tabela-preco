@@ -93,11 +93,11 @@ function preencherDadosLente(snapshot) {
 		flagPromocao();
 	}
 
-	edtDescricao 	  .value = descricao			 ;	
-	edtEmpresa   	  .value = empresa				 ;	
-	edtTipo      	  .value = tipo					 ;	
-	edtPreco     	  .value = preco				 ;	
-	edtMultiplicador  .value = multiplicador		 ;
+	edtDescricao 	  .value = descricao;	
+	edtEmpresa   	  .value = empresa;	
+	edtTipo      	  .value = tipo;	
+	edtPreco     	  .value = preco;	
+	edtMultiplicador  .value = multiplicador;
 	edtVenda 	 	  .value = preco * multiplicador;
 	edtiCilindrico 	  .value = cilindrico;
 	edtEsferico 	  .value = esferico;
@@ -281,23 +281,36 @@ function mostrarDialog(mensagem, voltar) {
 function flagPromocao() {
 	let promocao = document.getElementById('promocao').checked;
 
+	document.getElementById('flagPromocaoAtivada').style.display = 'none';
+
 	if (promocao) {
 		document.getElementById('flagPromocaoAtivada').style.display = 'block';
 	}
-	else {
-		document.getElementById('flagPromocaoAtivada').style.display = 'none';
+}
+
+function verificarPrecoPromocional() {
+
+	let precoPromocional     = Number(document.getElementById('precoPromocional').value);
+	let preco                = Number(document.getElementById('preco').value);
+
+	if ( precoPromocional >= preco )	{
+		precoPromocional = preco - 1;
+		document.getElementById('precoPromocional').value = precoPromocional;
 	}
+
+	return precoPromocional;
 }
 
 function mudaPrecoPromocional() {
-	let precoPromocional     = document.getElementById('precoPromocional').value;
-	let preco                = document.getElementById('preco').value;
+	verificarPrecoPromocional();
 
-	if (precoPromocional != "" && preco != "") {
+	let precoPromocional     = Number(document.getElementById('precoPromocional').value).toFixed(2).trim();
+	let preco                = Number(document.getElementById('preco').value).toFixed(2).trim();
+
+	if (precoPromocional && preco) {
 		let porcentagem = (1 - (precoPromocional / preco ))  * 100 ;	
 		document.getElementById('porcentagemDoDesconto').value = Number(porcentagem).toFixed(2);
 	}
-
 }
 
 function mudaPorcentagemPromocao() {
@@ -308,7 +321,6 @@ function mudaPorcentagemPromocao() {
 		let precoPromocional = preco - (preco * ( porcentagem / 100 ));
 		document.getElementById('precoPromocional').value = precoPromocional;	
 	}
-
 }
 
 function enviarEmailErro(){
@@ -319,13 +331,3 @@ function enviarEmailErro(){
 
     window.location.href = link;
 }
-
-//$(document).ready(function() {
-//	$("#preco").maskMoney({
-//         prefix: "R$:",
-//         decimal: ",",
-//         thousands: "."
-//	});
-//	
-//});
-
