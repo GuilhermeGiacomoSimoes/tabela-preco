@@ -286,9 +286,19 @@ function flagPromocao() {
 	if (promocao) {
 		document.getElementById('flagPromocaoAtivada').style.display = 'block';
 	}
-	else {
-		document.getElementById('flagPromocaoAtivada').style.display = 'none';
+}
+
+function verificarPrecoPromocional() {
+
+	let precoPromocional     = Number(document.getElementById('precoPromocional').value);
+	let preco                = Number(document.getElementById('preco').value);
+
+	if ( precoPromocional >= preco )	{
+		precoPromocional = preco - 1;
+		document.getElementById('precoPromocional').value = precoPromocional;
 	}
+
+	return precoPromocional;
 }
 
 function mudaPrecoPromocional() {
