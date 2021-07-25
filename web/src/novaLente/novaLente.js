@@ -331,3 +331,16 @@ function enviarEmailErro(){
 
     window.location.href = link;
 }
+
+function isNumber(e = window.event) {
+	return e.charCode = 44 || e.charCode == 190 || e.charCode == 46 || (e.charCode >= 48 && e.charCode <= 57);
+}
+
+$(function(){
+	$(".mascara").maskMoney({
+		prefix: 'R$ ',
+		allowNegative: true,
+		thousands: '.',
+		decimal: ','
+	});
+});
