@@ -93,11 +93,11 @@ function preencherDadosLente(snapshot) {
 		flagPromocao();
 	}
 
-	edtDescricao 	  .value = descricao			 ;	
-	edtEmpresa   	  .value = empresa				 ;	
-	edtTipo      	  .value = tipo					 ;	
-	edtPreco     	  .value = preco				 ;	
-	edtMultiplicador  .value = multiplicador		 ;
+	edtDescricao 	  .value = descricao;	
+	edtEmpresa   	  .value = empresa;	
+	edtTipo      	  .value = tipo;	
+	edtPreco     	  .value = preco;	
+	edtMultiplicador  .value = multiplicador;
 	edtVenda 	 	  .value = preco * multiplicador;
 	edtiCilindrico 	  .value = cilindrico;
 	edtEsferico 	  .value = esferico;
