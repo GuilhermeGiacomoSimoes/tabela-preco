@@ -321,7 +321,6 @@ function mudaPorcentagemPromocao() {
 		let precoPromocional = preco - (preco * ( porcentagem / 100 ));
 		document.getElementById('precoPromocional').value = precoPromocional;	
 	}
-
 }
 
 function enviarEmailErro(){
@@ -332,13 +331,3 @@ function enviarEmailErro(){
 
     window.location.href = link;
 }
-
-//$(document).ready(function() {
-//	$("#preco").maskMoney({
-//         prefix: "R$:",
-//         decimal: ",",
-//         thousands: "."
-//	});
-//	
-//});
-
