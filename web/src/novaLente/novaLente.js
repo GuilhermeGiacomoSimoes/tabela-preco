@@ -281,6 +281,8 @@ function mostrarDialog(mensagem, voltar) {
 function flagPromocao() {
 	let promocao = document.getElementById('promocao').checked;
 
+	document.getElementById('flagPromocaoAtivada').style.display = 'none';
+
 	if (promocao) {
 		document.getElementById('flagPromocaoAtivada').style.display = 'block';
 	}
