@@ -199,16 +199,15 @@ function cadastrar() {
 	let precoPromocional    = null; 
     let porcentagemDesconto = null;
 
+	preco = dinheiroParaDouble(preco);
+	let venda = preco * multiplicador;
+
 	if (promocao) {
 		precoPromocional     = document.getElementById('precoPromocional').value;
 		porcentagemDesconto  = document.getElementById('porcentagemDoDesconto').value;
-
 		precoPromocional = dinheiroParaDouble(precoPromocional);
-
 		venda = precoPromocional * multiplicador;
 	}
-
-	preco = dinheiroParaDouble(preco);
 
 	let lente = {
 		uuid, 
