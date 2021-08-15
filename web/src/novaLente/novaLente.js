@@ -99,7 +99,7 @@ function preencherDadosLente(snapshot) {
 	edtTipo      	  .value = tipo;	
 	edtPreco     	  .value = doubleParaDinheiro(preco);	
 	edtMultiplicador  .value = multiplicador;
-	edtVenda 	 	  .value = preco * multiplicador;
+	edtVenda 	 	  .value = doubleParaDinheiro(venda);
 	edtiCilindrico 	  .value = cilindrico;
 	edtEsferico 	  .value = esferico;
 	edtIndice 	 	  .value = indice;
@@ -191,7 +191,6 @@ function cadastrar() {
 	let multiplicador 	= document.getElementById('multiplicador').value;
 	let uuid 			= editar ? uuidLenteEditada : gerarUUID();
 	let promocao        = document.getElementById('promocao').checked;
-	let venda           = preco * multiplicador;
 	let	esferico 		= document.getElementById('esferico').value;   
 	let	cilindrico  	= document.getElementById('cilindrico').value;   
 	let	indice 			= document.getElementById('indice').value;   
