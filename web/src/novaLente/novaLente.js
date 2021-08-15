@@ -202,8 +202,13 @@ function cadastrar() {
 	if (promocao) {
 		precoPromocional     = document.getElementById('precoPromocional').value;
 		porcentagemDesconto  = document.getElementById('porcentagemDoDesconto').value;
+
+		precoPromocional = dinheiroParaDouble(precoPromocional);
+
 		venda = precoPromocional * multiplicador;
 	}
+
+	preco = dinheiroParaDouble(preco);
 
 	let lente = {
 		uuid, 
@@ -290,12 +295,15 @@ function flagPromocao() {
 
 function verificarPrecoPromocional() {
 
-	let precoPromocional     = Number(document.getElementById('precoPromocional').value);
-	let preco                = Number(document.getElementById('preco').value);
+	let precoPromocional     = document.getElementById('precoPromocional').value;
+	let preco                = document.getElementById('preco').value;
+
+    precoPromocional = dinheiroParaDouble(precoPromocional);
+    preco            = dinheiroParaDouble(preco)
 
 	if ( precoPromocional >= preco )	{
 		precoPromocional = preco - 1;
-		document.getElementById('precoPromocional').value = precoPromocional;
+		document.getElementById('precoPromocional').value = doubleParaDinheiro(precoPromocional);
 	}
 
 	return precoPromocional;
@@ -304,8 +312,11 @@ function verificarPrecoPromocional() {
 function mudaPrecoPromocional() {
 	verificarPrecoPromocional();
 
-	let precoPromocional     = Number(document.getElementById('precoPromocional').value).toFixed(2).trim();
-	let preco                = Number(document.getElementById('preco').value).toFixed(2).trim();
+	let precoPromocional     = document.getElementById('precoPromocional').value;
+	let preco                = document.getElementById('preco').value;
+
+    precoPromocional = dinheiroParaDouble(precoPromocional);
+    preco            = dinheiroParaDouble(preco)
 
 	if (precoPromocional && preco) {
 		let porcentagem = (1 - (precoPromocional / preco ))  * 100 ;	
@@ -317,10 +328,34 @@ function mudaPorcentagemPromocao() {
 	let porcentagem = document.getElementById('porcentagemDoDesconto').value;
 	let preco       = document.getElementById('preco').value;
 
-	if (porcentagem != "" && preco != "") {
+    precoPromocional = dinheiroParaDouble(precoPromocional);
+    preco            = dinheiroParaDouble(preco)
+
+	if (porcentagem && preco) {
 		let precoPromocional = preco - (preco * ( porcentagem / 100 ));
-		document.getElementById('precoPromocional').value = precoPromocional;	
+		document.getElementById('precoPromocional').value = doubleParaDinheiro(precoPromocional);	
 	}
+}
+
+function dinheiroParaDouble( param ) {
+	let arrParam = param.split('R$');
+	let somenteValorEmNumero = arrParam[1];
+	
+	for ( let i=0; i<somenteValorEmNumero.length; i++ ){
+		if ( somenteValorEmNumero[i].toString() == '.' ) {
+			somenteValorEmNumero[i] = '';
+		}
+		if( somenteValorEmNumero[i].toString() == ',' ){
+			somenteValorEmNumero[i] = '.'; 
+		}
+	}
+
+	return Number(somenteValorEmNumero);
+}
+
+function doubleParaDinheiro( param ) {
+	param = param.toString().replace('.', ',') 
+	return `R$ ${param}`; 
 }
 
 function enviarEmailErro(){
@@ -332,15 +367,13 @@ function enviarEmailErro(){
     window.location.href = link;
 }
 
-function isNumber(e = window.event) {
-	return e.charCode = 44 || e.charCode == 190 || e.charCode == 46 || (e.charCode >= 48 && e.charCode <= 57);
-}
-
 $(function(){
-	$(".mascara").maskMoney({
-		prefix: 'R$ ',
-		allowNegative: true,
-		thousands: '.',
-		decimal: ','
-	});
+   $(".mascaraDinheiro").maskMoney({
+	   allowZero:false, 
+	   allowNegative:true, 
+	   defaultZero:false, 
+       prefix: 'R$ ',
+       thousands: '.',
+       decimal: ','
+   });
 });
