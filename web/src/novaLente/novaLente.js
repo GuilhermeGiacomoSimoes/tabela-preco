@@ -229,21 +229,20 @@ function cadastrar() {
 	gravarLente(lente);
 }
 
-let multiplicadorInput = document.getElementById('multiplicador');
-multiplicadorInput.addEventListener('change', _=> {
+function mudouMultiplicador() {
+	let multiplicadorInput = document.getElementById('multiplicador');
 	let multiplicador 	= multiplicadorInput.value;  
 	let preco 			= document.getElementById('preco').value;
-	let venda	 		= (preco * multiplicador).toFixed(2);
-	document.getElementById('venda').value = venda;
-});
 
-let precoInput = document.getElementById('preco');
-precoInput.addEventListener('change', _=> {
-	let preco 	       = precoInput.value;  
-	let multiplicador = document.getElementById('multiplicador').value;
-	let venda	 	   = (preco * multiplicador).toFixed(2);
-	document.getElementById('venda').value = venda;
-});
+	if ( document.getElementById('promocao').checked ){
+		preco = document.getElementById('precoPromocional').value;
+	}
+
+	preco = dinheiroParaDouble(preco);
+
+	let venda	 		= (preco * multiplicador).toFixed(2);
+	document.getElementById('venda').value = doubleParaDinheiro(venda);
+} 
 
 function gerarLoading() {
 	let modal = document.getElementById("loading");
