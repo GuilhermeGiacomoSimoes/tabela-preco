@@ -33,7 +33,7 @@ function obterLente(uuid) {
 				return empresa[uuid]; 
 			}
 		}
-	}	
+	}
 
 	return null;
 }
@@ -338,16 +338,18 @@ function mudaPorcentagemPromocao() {
 }
 
 function dinheiroParaDouble( param ) {
-	let arrParam = param.split('R$');
-	let somenteValorEmNumero = arrParam[1];
-	
-	for ( let i=0; i<somenteValorEmNumero.length; i++ ){
-		if ( somenteValorEmNumero[i].toString() == '.' ) {
-			somenteValorEmNumero[i] = '';
-		}
-		if( somenteValorEmNumero[i].toString() == ',' ){
-			somenteValorEmNumero[i] = '.'; 
-		}
+	let somenteValorEmNumero = param;
+
+	if(param.includes('R$')) {
+		let arrParam = param.split('R$');
+		somenteValorEmNumero = arrParam[1];
+	}
+
+	if ( somenteValorEmNumero.includes('.')) {
+		somenteValorEmNumero = somenteValorEmNumero.replace('.', ''); 
+	}
+	if( somenteValorEmNumero.includes(',')){
+		somenteValorEmNumero = somenteValorEmNumero.replace(',', '.'); 
 	}
 
 	return Number(somenteValorEmNumero);
