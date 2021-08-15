@@ -27,7 +27,7 @@
 					Cilíndrico: <input class="form-control"id="cilindrico" placeholder="-0,25 A -4,00" style="margin-bottom: 1%; width: 80%" maxlength="15"></input> 
 					Índice de refração: <input class="form-control"id="indice" onkeypress='return event.charCode == 190 || event.charCode == 110 || event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)' placeholder="1.49" style="margin-bottom: 1%; width: 80%" maxlength="4"></input> 
 					diametro: <input class="form-control"id="diametro"  min="0" step="1" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="70" style="margin-bottom: 1%; width: 80%" maxlength="2"></input> 
-					Preço: <input class="form-control mascaraDinheiro" id="preco" placeholder="R$ 127,89" min="0" style="margin-bottom: 1%; width: 80%"></input> 
+					Preço: <input class="form-control mascaraDinheiro" id="preco" placeholder="R$ 127,89" min="0" style="margin-bottom: 1%; width: 80%" onchange="mudandoPrecoOriginal()" onkeypress="mudandoPrecoOriginal()"></input> 
 					Multiplicador: <input class="form-control"id="multiplicador" onkeypress='return event.charCode >= 48 && event.charCode <= 57'  min="0" step="1" placeholder="2.8" style="margin-bottom: 1%; width: 80%" maxlength="1"></input> 
 					Preço de venda: <input class="form-control" id="venda" placeholder="" style="margin-bottom: 1%; width: 80%" readonly></input> 
 					Promoção:	<input type="checkbox" id="promocao" onchange="flagPromocao()"> <br> <br>
