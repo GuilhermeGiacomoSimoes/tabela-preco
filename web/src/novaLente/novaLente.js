@@ -119,17 +119,17 @@ function verificaIrregularidades(lente){
 	if (lente.tipo == null || lente.tipo == undefined || lente.tipo == "" || lente.tipo.length > 10 )  {
 		msg += '** revise o tipo';
 	} 
-	if (lente.preco == null || lente.preco == undefined || lente.preco <= 0 || ''+lente.preco.length > 7 )  {
+	if (Number.isNaN(lente.preco) || lente.preco == null || lente.preco == undefined || lente.preco <= 0 || ''+lente.preco.length > 7 )  {
 		msg += ' ** revise o preço da lente';
 	} 
-	if (lente.multiplicador == null || lente.multiplicador == undefined || lente.multiplicador <= 0 || ''+lente.multiplicador.length > 1 )  {
+	if (Number.isNaN(lente.multiplicador) || lente.multiplicador == null || lente.multiplicador == undefined || lente.multiplicador <= 0 || ''+lente.multiplicador.length > 1 )  {
 		msg += '** revise o multiplicador do preço ';
 	} 
-	if (lente.promocao)  {
-		if (lente.precoPromocional == null || lente.precoPromocional == undefined || lente.precoPromocional <= 0 || ''+lente.precoPromocional.length > 7)  {
+	if (lente.promocao) {
+		if (Number.isNaN(lente.precoPromocional) || lente.precoPromocional == null || lente.precoPromocional == undefined || lente.precoPromocional <= 0 || ''+lente.precoPromocional.length > 7)  {
 			msg += '** revise o preço promocional ';
 		} 
-		if (lente.porcentagemDesconto == null || lente.porcentagemDesconto == undefined || lente.porcentagemDesconto <= 0 || ''+lente.porcentagemDesconto.length > 2)  {
+		if (Number.isNaN(lente.porcentagemDesconto) || lente.porcentagemDesconto == null || lente.porcentagemDesconto == undefined || lente.porcentagemDesconto <= 0 || ''+lente.porcentagemDesconto.length > 2)  {
 			msg += '** revise a porcentagem de desconto ';
 		} 
 	} 
