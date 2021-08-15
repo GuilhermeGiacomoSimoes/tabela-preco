@@ -87,7 +87,7 @@ function preencherDadosLente(snapshot) {
 		let	porcentagemDesconto = snapshot['porcentagemDesconto'];    
 		let	precoPromocao       = snapshot['precoPromocional'];    
 
-		edtPrecoPromocional.value = precoPromocao; 
+		edtPrecoPromocional.value = doubleParaDinheiro(precoPromocao); 
 		edtPorcentagemDesconto.value = porcentagemDesconto;
 
 		flagPromocao();
@@ -96,7 +96,7 @@ function preencherDadosLente(snapshot) {
 	edtDescricao 	  .value = descricao;	
 	edtEmpresa   	  .value = empresa;	
 	edtTipo      	  .value = tipo;	
-	edtPreco     	  .value = preco;	
+	edtPreco     	  .value = doubleParaDinheiro(preco);	
 	edtMultiplicador  .value = multiplicador;
 	edtVenda 	 	  .value = preco * multiplicador;
 	edtiCilindrico 	  .value = cilindrico;
