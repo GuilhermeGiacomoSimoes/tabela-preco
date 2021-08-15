@@ -356,7 +356,12 @@ function dinheiroParaDouble( param ) {
 }
 
 function doubleParaDinheiro( param ) {
-	param = param.toString().replace('.', ',') 
+	if(param.toString().includes('.')) {
+		param = param.toString().replace('.', ','); 
+	}
+	else {
+		param = `${param},00`; 
+	}
 	return `R$ ${param}`; 
 }
 
