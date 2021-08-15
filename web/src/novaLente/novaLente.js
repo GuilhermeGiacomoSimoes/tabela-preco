@@ -79,7 +79,7 @@ function preencherDadosLente(snapshot) {
 	let	cilindrico    = snapshot['cilindrico'];    
 	let	esferico      = snapshot['esferico'];    
 	let indice        = snapshot['indice'];    
-	let diametro        = snapshot['diametro'];    
+	let diametro      = snapshot['diametro'];    
 
 	if (promocao) {
 		cbPromocao.checked = true;
