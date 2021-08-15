@@ -362,6 +362,10 @@ function doubleParaDinheiro( param ) {
 	else {
 		param = `${param},00`; 
 	}
+	let arraySplitParam = param.split(',');
+	if( arraySplitParam[1].length < 2 ) {
+		param = `${param}0`; 
+	}
 	return `R$ ${param}`; 
 }
 
