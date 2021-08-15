@@ -327,9 +327,7 @@ function mudaPrecoPromocional() {
 function mudaPorcentagemPromocao() {
 	let porcentagem = document.getElementById('porcentagemDoDesconto').value;
 	let preco       = document.getElementById('preco').value;
-
-    precoPromocional = dinheiroParaDouble(precoPromocional);
-    preco            = dinheiroParaDouble(preco)
+    preco           = dinheiroParaDouble(preco)
 
 	if (porcentagem && preco) {
 		let precoPromocional = preco - (preco * ( porcentagem / 100 ));
@@ -376,6 +374,10 @@ function enviarEmailErro(){
              + "&body=" + msgErro 
 
     window.location.href = link;
+}
+
+function mudandoPrecoOriginal() {
+	mudaPrecoPromocional();
 }
 
 $(function(){
