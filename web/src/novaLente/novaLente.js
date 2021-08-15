@@ -110,7 +110,7 @@ function preencherDadosLente(snapshot) {
 function verificaIrregularidades(lente){
 	let msg = '';
 
-	if ( lente.descricao == null || lente.descricao  == undefined || lente.descricao  == "" || lente.descricao.length > 50 )  {
+	if ( lente.descricao == null || lente.descricao  == undefined || lente.descricao  == "" || lente.descricao.length > 50 ) {
 		msg += '** revise a descrição da lente';
 	} 
 	if (lente.empresa  == null || lente.empresa  == undefined || lente.empresa  == "" || lente.empresa.length > 20 )  {
