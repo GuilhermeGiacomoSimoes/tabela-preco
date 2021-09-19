@@ -365,17 +365,7 @@ function dinheiroParaDouble( param ) {
 }
 
 function doubleParaDinheiro( param ) {
-	if(param.toString().includes('.')) {
-		param = param.toString().replace('.', ','); 
-	}
-	else {
-		param = `${param},00`; 
-	}
-	let arraySplitParam = param.split(',');
-	if( arraySplitParam[1].length < 2 ) {
-		param = `${param}0`; 
-	}
-	return `R$ ${param}`; 
+	return param.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' }); 
 }
 
 function enviarEmailErro(){
