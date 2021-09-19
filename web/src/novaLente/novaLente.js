@@ -327,7 +327,9 @@ function mudaPrecoPromocional() {
 
 	if (precoPromocional && preco) {
 		let porcentagem = (1 - (precoPromocional / preco ))  * 100 ;	
+		let precoVenda  = precoPromocional * document.getElementById('multiplicador').value; 
 		document.getElementById('porcentagemDoDesconto').value = Number(porcentagem).toFixed(2);
+		document.getElementById('venda').value = doubleParaDinheiro(precoVenda);	
 	}
 }
 
