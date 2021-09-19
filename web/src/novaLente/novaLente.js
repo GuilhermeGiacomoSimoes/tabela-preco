@@ -283,12 +283,21 @@ function mostrarDialog(mensagem, voltar) {
 
 function flagPromocao() {
 	let promocao = document.getElementById('promocao').checked;
+	let preco = document.getElementById('preco').value;
+	let multiplicador = document.getElementById('multiplicador').value;
+
+	preco = dinheiroParaDouble(preco);
+	let precoVenda = preco * multiplicador; 
 
 	document.getElementById('flagPromocaoAtivada').style.display = 'none';
 
 	if (promocao) {
 		document.getElementById('flagPromocaoAtivada').style.display = 'block';
+		precoPromocional = document.getElementById('precoPromocional').value;
+		precoVenda = precoPromocional * multiplicador; 
 	}
+
+	document.getElementById('venda').value = doubleParaDinheiro(precoVenda);
 }
 
 function verificarPrecoPromocional() {
