@@ -372,7 +372,7 @@ function dinheiroParaDouble( param ) {
 }
 
 function doubleParaDinheiro( param ) {
-	return param.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' }); 
+	return param.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' }).toLocaleString(); 
 }
 
 function enviarEmailErro(){
