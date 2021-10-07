@@ -33,7 +33,7 @@
 					Promoção:	<input type="checkbox" id="promocao" onchange="flagPromocao()"> <br> <br>
 
 					<div id="flagPromocaoAtivada" style="display: none"> 
-						Preço promocional: <input class="form-control mascaraDinheiro"id="precoPromocional" onchange="mudaPrecoPromocional()" placeholder="R$ 127,89"  min="0" style="margin-bottom: 1%; width: 80%" maxlength="7" onkeyup="this.onchange();" oninput="this.onchange();"></input> 
+						Preço promocional: <input class="form-control mascaraDinheiro"id="precoPromocional" onchange="mudaPrecoPromocional()" placeholder="R$ 127,89"  min="0" style="margin-bottom: 1%; width: 80%" onkeyup="this.onchange();" oninput="this.onchange();"></input> 
 						Porcentagem do desconto: <input class="form-control" onkeypress='return event.charCode >= 48 && event.charCode <= 57' id="porcentagemDoDesconto" onchange="mudaPorcentagemPromocao()" placeholder="10"  min="0" max="100" style="margin-bottom: 1%; width: 80%" maxlength="2"></input> 
 					</div>
 
