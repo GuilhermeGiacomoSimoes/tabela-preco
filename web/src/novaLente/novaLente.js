@@ -132,7 +132,14 @@ function verificaIrregularidades(lente){
 		if (Number.isNaN(lente.porcentagemDesconto) || lente.porcentagemDesconto == null || lente.porcentagemDesconto == undefined || lente.porcentagemDesconto <= 0 || ''+lente.porcentagemDesconto.length > 2)  {
 			msg += '** revise a porcentagem de desconto ';
 		} 
-	} 
+		if(lente.venda != (lente.precoPromocional * lente.multiplicador)) {
+			msg += '** o calculo de preco de venda não está correto por algum motivo';
+		}
+	} else {
+		if(lente.venda != (lente.preco * lente.multiplicador)) {
+			msg += '** o calculo de preco de venda não está correto por algum motivo';
+		}
+	}
 
 	return msg;
 }
