@@ -301,7 +301,8 @@ function flagPromocao() {
 	if (promocao) {
 		document.getElementById('flagPromocaoAtivada').style.display = 'block';
 		precoPromocional = document.getElementById('precoPromocional').value;
-		precoVenda = precoPromocional * multiplicador; 
+		preco = dinheiroParaDouble(precoPromocional);
+		precoVenda = preco * multiplicador; 
 	}
 
 	document.getElementById('venda').value = doubleParaDinheiro(precoVenda);
