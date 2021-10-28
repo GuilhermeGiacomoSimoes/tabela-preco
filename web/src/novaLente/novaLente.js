@@ -198,10 +198,10 @@ function cadastrar() {
 	let multiplicador 	= document.getElementById('multiplicador').value;
 	let uuid 			= editar ? uuidLenteEditada : gerarUUID();
 	let promocao        = document.getElementById('promocao').checked;
-	let	esferico 		= document.getElementById('esferico').value;   
-	let	cilindrico  	= document.getElementById('cilindrico').value;   
-	let	indice 			= document.getElementById('indice').value;   
-	let	diametro 		= document.getElementById('diametro').value;   
+	let	esferico 		= document.getElementById('esferico').value || "";
+	let	cilindrico  	= document.getElementById('cilindrico').value || "";   
+	let	indice 			= document.getElementById('indice').value || "";   
+	let	diametro 		= document.getElementById('diametro').value || "";
 
 	let precoPromocional    = null; 
     let porcentagemDesconto = null;
@@ -229,7 +229,7 @@ function cadastrar() {
 		venda : parseFloat(venda), 
 		esferico, 
 		cilindrico, 
-		indice : parseFloat(indice), 
+		indice : parseFloat(indice) || 0, 
 		diametro : parseInt(diametro) || 0
 	};
 
