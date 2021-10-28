@@ -116,7 +116,7 @@ function verificaIrregularidades(lente){
 	if (lente.empresa  == null || lente.empresa  == undefined || lente.empresa  == "" || lente.empresa.length > 20 )  {
 		msg += ' ** revise o nome da empresa';
 	} 
-	if (lente.tipo == null || lente.tipo == undefined || lente.tipo == "" || lente.tipo.length > 10 )  {
+	if (lente.tipo == null || lente.tipo == undefined || lente.tipo == "" || lente.tipo.length > 40 )  {
 		msg += '** revise o tipo';
 	} 
 	if (Number.isNaN(lente.preco) || lente.preco == null || lente.preco == undefined || lente.preco <= 0 || ''+lente.preco.length > 7 )  {
