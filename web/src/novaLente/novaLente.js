@@ -175,13 +175,13 @@ function gravarLente(lente) {
 function resetarCampos() {
 	uuidLenteEditada  = '';
 
-	document.getElementById('descricao')    .value="";
-	document.getElementById('empresa')      .value="";
-	document.getElementById('tipo')			.value="";
-	document.getElementById('preco')		.value="";
+	document.getElementById('descricao').value="";
+	document.getElementById('empresa').value="";
+	document.getElementById('tipo').value="";
+	document.getElementById('preco').value="";
 	document.getElementById('multiplicador').value="";
-	document.getElementById('venda')        .value="";
-	document.getElementById('promocao') .checked=false;
+	document.getElementById('venda').value="";
+	document.getElementById('promocao').checked=false;
 	document.getElementById('precoPromocional').value="";
 	document.getElementById('porcentagemDoDesconto').value = '';
 	document.getElementById('indice').value = '';
