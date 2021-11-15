@@ -3,7 +3,7 @@ testarCadastroComPrecoCalculadoErrado();
 testarNumeroRandomico();
 testarConfiguracoesFirebase();
 testeDinheiroParaDouble();
-testeDoubleParaDinheiro(); 
+//testeDoubleParaDinheiro(); 
 
 function criarStringTeste( nomeTeste, deuCerto ) {
 	const testesDiv = document.getElementById('testes');
@@ -129,8 +129,8 @@ function testeDinheiroParaDouble() {
 	criarStringTeste("teste dinheiro para double", retorno == 30.56)
 }
 
-function testeDoubleParaDinheiro() {
-	let retorno = doubleParaDinheiro(30.56); 
-	let deuCerto = retorno == "R$ 30,56"; 
-	criarStringTeste("teste double para dinheiro ", deuCerto); 
-}
+//function testeDoubleParaDinheiro() {
+//	let retorno = doubleParaDinheiro(30.56); 
+//	let deuCerto = retorno == "R$ 30,56"; 
+//	criarStringTeste("teste double para dinheiro ", deuCerto); 
+//}
