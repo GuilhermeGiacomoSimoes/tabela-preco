@@ -144,7 +144,7 @@ function verificaIrregularidades(lente){
 	return msg;
 }
 
-function gravarLente(lente) {
+function salvarLenteNoBanco(lente) {
 	let msg = verificaIrregularidades(lente);
 
 	if (msg != '') {
@@ -161,6 +161,7 @@ function gravarLente(lente) {
 			mostrarDialog("Salvo com sucesso", editar);
 			editar = false;
 		}).catch(error => {
+			pararLoading(); 
 			msgErro = error;
 			document.getElementById('erro_dialog').style.display = 'block';
 		});	
@@ -190,7 +191,7 @@ function resetarCampos() {
 	document.getElementById('diametro').value = '';
 }
 
-function cadastrar() {
+function montarObjetoLente () {
 	let descricao 		= document.getElementById('descricao').value.toUpperCase();
 	let empresa 		= document.getElementById('empresa').value.toUpperCase();
 	let tipo 			= document.getElementById('tipo').value.toUpperCase();
@@ -233,7 +234,12 @@ function cadastrar() {
 		diametro : parseInt(diametro) || 0
 	};
 
-	gravarLente(lente);
+	return lente;
+}
+
+function cadastrar() {
+	const lente = montarObjetoLente();
+	salvarLenteNoBanco(lente);
 }
 
 function mudouMultiplicador() {
