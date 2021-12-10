@@ -55,35 +55,17 @@ function redirecionar(telaAtual) {
 	let url_redirecionamento = {}; 
 	const url = window.location.href; 
 
-	const redirecionar_para = 
-		param == 'index' 
-		? 'tela_inicial' 
-		: 'index';
+	const redirecionarPara = telaAtual == 'index' ? 'tela_inicial' : 'index';
+	const stringParaIndex =  url.includes('vercel') ? 'vercel.app' : 'tabela-preco/web' ;
+	const tamanhoDoPrefixo =  url.includes('vercel') ? 'vercel.app'.length : 'tabela-preco/web'.length;
 
-	if ( url.includes('vercel') ) {
-		const index = url.indexOf('vercel.app');
-		const prefix = url.substr(0, index + 10);
-		
-		url_redirecionamento = { 
-			index : prefix,
-			tela_inicial : prefix + '/src/telaInicial/telaInicial.html' 
-		}; 
-	}
-	else {
-		const index = url.indexOf('tabela-preco');
-		const prefix = url.substring(0, index + 12); 
+	const index = url.indexOf(stringParaIndex);
+	const prefixo = url.substr(0, index + tamanhoDoPrefixo);
+	
+	const urlRedirecionamento = { 
+		index : prefixo + '/index.html',
+ 		tela_inicial : prefixo + '/src/telaInicial/telaInicial.html' 
+	}; 
 
-		url_redirecionamento = { 
-			tela_inicial : prefix + '/web/src/telaInicial/telaInicial.html',
-			index : prefix + '/web/index.html' 
-		};
-	}
-
-	window.location.href = url_redirecionamento[redirecionar_para]; 
-}
-
-function verificaLoginFirebase(){
-	firebase.auth().onAuthStateChanged(function(user) {
-		verificaRedirecionamento(user)
-	});
+	window.location.href = urlRedirecionamento[redirecionarPara]; 
 }
