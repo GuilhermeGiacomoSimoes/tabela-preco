@@ -45,9 +45,9 @@ function verificarLogin( telaAtualParam ) {
 	});
 }
 
-function verificaRedirecionamento( logado ) {
-	if ((logado && param == 'index') || ! logado && (param == 'tela_inicial' || param == 'nova_lente')){
-		redirecionar(param);
+function verificaRedirecionamento( usuarioLogado ) {
+	if ((usuarioLogado && telaAtual == 'index') || ! usuarioLogado && (telaAtual == 'tela_inicial' || telaAtual == 'nova_lente')){
+		redirecionar(telaAtual);
 	}
 }
 
