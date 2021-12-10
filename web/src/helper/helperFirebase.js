@@ -1,4 +1,4 @@
-var param = null;
+var telaAtual = null;
 
 function obterConfiguracaoFirebase() {
 	var firebaseConfig = {
@@ -49,7 +49,7 @@ function verificaRedirecionamento( logado ) {
 	}
 }
 
-function redirecionar(param) {
+function redirecionar(telaAtual) {
 	let url_redirecionamento = {}; 
 	const url = window.location.href; 
 

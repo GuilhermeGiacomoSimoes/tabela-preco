@@ -20,7 +20,7 @@ function logar() {
 					verificarLogin('index');
 				}
 				else {
-					param = 'index';
+					telaAtual = 'index';
 					verificaRedirecionamento(true);
 				}
 		  })
