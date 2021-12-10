@@ -35,13 +35,13 @@ function montarDocumentoParaImpressao( empresas ) {
 	for (let key in empresas){
 
 		html += `
-			<tr class="row" style="background-color: #b8cce4; height: 7%; margin-bottom: 1%">
-				<td><span style="margin: 4%"> ${key} </span></td>
-				<td><span style="margin: 4%"> Esférico </span></td>
-				<td><span style="margin: 4%"> Cilindicro </span></td>
-				<td><span style="margin: 4%"> Índice </span></td>
-				<td><span style="margin: 4%"> Diâmetro </span></td>
-				<td><span style="margin: 4%"> Preço </span></td>
+			<tr class="row" style="background-color: #b8cce4; height: 25px; margin-bottom: 6px">
+				<td><span style="margin: 40px"> ${key} </span></td>
+				<td><span style="margin: 40px"> Esférico </span></td>
+				<td><span style="margin: 40px"> Cilindicro </span></td>
+				<td><span style="margin: 40px"> Índice </span></td>
+				<td><span style="margin: 40px"> Diâmetro </span></td>
+				<td><span style="margin: 40px"> Preço </span></td>
 			</tr>
 		`;
 
@@ -57,13 +57,13 @@ function montarDocumentoParaImpressao( empresas ) {
 			let venda = formatarParaReal(lente['venda']);
 
 			html += `
-				<tr class="row" style="background-color: #fff; height: 7%; margin-bottom: 1%">
+				<tr class="row" style="background-color: #fff; height: 25px; margin-bottom: 6px">
 					<td><span style="color: #000;"> ${lente.descricao} </span></td>
 					<td><span style="color: #000;"> ${lente.esferico} </span></td>
 					<td><span style="color: #000;"> ${lente.cilindrico} </span></td>
 					<td><span style="color: #000;"> ${lente.indice} </span></td>
 					<td><span style="color: #000;"> ${lente.diametro} </span></td>
-					<td><span style="color: ${color}; margin: 4%"> ${venda} </span></td>
+					<td><span style="color: ${color}; margin: 10px"> ${venda} </span></td>
 				</tr>
 			`;
 		}
