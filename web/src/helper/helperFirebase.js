@@ -38,9 +38,11 @@ function formatarParaReal( nmr ) {
 	return parseFloat(nmr).toLocaleString('pt-BR',{ style: 'currency', currency: 'BRL' }); 
 }
 
-function verificarLogin( local) {
-	param = local;
-	verificaLoginFirebase();
+function verificarLogin( telaAtualParam ) {
+	telaAtual = telaAtualParam;
+	firebase.auth().onAuthStateChanged(function(usuarioLogado) {
+		verificaRedirecionamento(usuarioLogado)
+	});
 }
 
 function verificaRedirecionamento( logado ) {
