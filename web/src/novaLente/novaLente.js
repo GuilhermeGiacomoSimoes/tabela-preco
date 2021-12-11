@@ -373,7 +373,21 @@ function enviarEmailErro(){
 }
 
 function mudandoPrecoOriginal() {
-	mudaPrecoPromocional();
+	const estaNaPromocao = document.getElementById('promocao').checked;
+	const multiplicadorDePreco = document.getElementById('multiplicador').value;
+
+	if( ! estaNaPromocao &&  multiplicadorDePreco != ""  && multiplicadorDePreco > 0) {
+		let preco = document.getElementById('preco').value;
+		preco = dinheiroParaDouble(preco);
+		const venda = (preco * multiplicadorDePreco).toFixed(2);
+
+		let vendaFormatada = formatarParaReal(venda); 
+		document.getElementById('venda').value = vendaFormatada;
+	}
+
+	if(estaNaPromocao) {
+		mudaPrecoPromocional();
+	}
 }
 
 $(function(){
