@@ -11,10 +11,10 @@ if( window.location.href.includes('vercel') ){
 	verificarLogin('nova_lente');
 }
 
-function verificaEdicao()  {
+function verificaEdicao() {
 	const url = window.location.href;
-	if (url.indexOf('?') != -1){
 
+	if (url.indexOf('?') != -1){
 		const lenteUUID = url.split('?')[1];
 		const lente = obterLente(lenteUUID);
 
@@ -55,16 +55,16 @@ function obterLentes() {
 	}
 }
 
-function preencherDadosLente(snapshot) {
-	let	edtDescricao	 = document.getElementById('descricao'		);
-	let	edtEmpresa  	 = document.getElementById('empresa'		); 
-	let	edtTipo     	 = document.getElementById('tipo'			); 
-	let	edtPreco    	 = document.getElementById('preco'			);   
-	let	edtMultiplicador = document.getElementById('multiplicador'	);   
-	let	edtVenda 		 = document.getElementById('venda'			);   
-	let	cbPromocao       = document.getElementById('promocao'	    );   
-	let	edtPrecoPromocional    = document.getElementById('precoPromocional' );   
-	let	edtPorcentagemDesconto = document.getElementById('porcentagemDoDesconto' );   
+function preencherOsDadosParaEditarAlente(snapshot) {
+	let	edtDescricao = document.getElementById('descricao');
+	let	edtEmpresa = document.getElementById('empresa'); 
+	let	edtTipo = document.getElementById('tipo'); 
+	let	edtPreco = document.getElementById('preco');   
+	let	edtMultiplicador = document.getElementById('multiplicador');   
+	let	edtVenda = document.getElementById('venda');   
+	let	cbPromocao = document.getElementById('promocao');   
+	let	edtPrecoPromocional = document.getElementById('precoPromocional');   
+	let	edtPorcentagemDesconto = document.getElementById('porcentagemDoDesconto');   
 	let	edtiCilindrico = document.getElementById('cilindrico');   
 	let	edtEsferico= document.getElementById('esferico');   
 	let	edtIndice= document.getElementById('indice');   
