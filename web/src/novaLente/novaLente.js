@@ -218,18 +218,18 @@ function montarObjetoLente () {
 }
 
 function mudouMultiplicador() {
-	let multiplicadorInput = document.getElementById('multiplicador');
-	let multiplicador 	= multiplicadorInput.value;  
-	let preco 			= document.getElementById('preco').value;
+	let multiplicador = document.getElementById('multiplicador').value;  
+	let preco 		  = document.getElementById('preco').value;
+	const lenteEstaNaPromocao = document.getElementById('promocao').checked;
 
-	if ( document.getElementById('promocao').checked ){
+	if ( lenteEstaNaPromocao ){
 		preco = document.getElementById('precoPromocional').value;
 	}
 
 	preco = dinheiroParaDouble(preco);
 
-	let venda	 		= (preco * multiplicador).toFixed(2);
-	document.getElementById('venda').value = doubleParaDinheiro(venda);
+	let venda = (preco * multiplicador).toFixed(2);
+	document.getElementById('venda').value = formatarParaReal(venda);
 } 
 
 function gerarLoading() {
