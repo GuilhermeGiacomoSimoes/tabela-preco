@@ -27,14 +27,14 @@
 					Cilíndrico: <input class="form-control"id="cilindrico" placeholder="-0,25 A -4,00" style="margin-bottom: 1%; width: 80%" maxlength="15"></input> 
 					Índice de refração: <input class="form-control"id="indice" onkeypress='return event.charCode == 190 || event.charCode == 110 || event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)' placeholder="1.49" style="margin-bottom: 1%; width: 80%" maxlength="4"></input> 
 					diametro: <input class="form-control"id="diametro"  min="0" step="1" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="70" style="margin-bottom: 1%; width: 80%" maxlength="2"></input> 
-					Preço: <input class="form-control mascaraDinheiro" id="preco" placeholder="R$ 127,89" min="0" style="margin-bottom: 1%; width: 80%" onchange="mudandoPrecoOriginal()" onkeypress="mudandoPrecoOriginal()"></input> 
+					Preço: <input class="form-control mascaraDinheiro" id="preco" placeholder="R$ 127,89" min="0" style="margin-bottom: 1%; width: 80%" onkeyup="mudandoPrecoOriginal()"></input> 
 					Multiplicador: <input class="form-control" id="multiplicador" onkeyup='mudouMultiplicador();' onkeypress=' return event.charCode >= 48 && event.charCode <= 57'  min="0" step="1" placeholder="2.8" style="margin-bottom: 1%; width: 80%" maxlength="1"></input> 
 					Preço de venda: <input class="form-control" id="venda" placeholder="" style="margin-bottom: 1%; width: 80%" readonly></input> 
 					Promoção:	<input type="checkbox" id="promocao" onchange="flagPromocao()"> <br> <br>
 
 					<div id="flagPromocaoAtivada" style="display: none"> 
 						Preço promocional: <input class="form-control mascaraDinheiro"id="precoPromocional" onchange="mudaPrecoPromocional()" placeholder="R$ 127,89"  min="0" style="margin-bottom: 1%; width: 80%" onkeyup="this.onchange();" oninput="this.onchange();"></input> 
-						Porcentagem do desconto: <input class="form-control" onkeypress='return event.charCode >= 48 && event.charCode <= 57' id="porcentagemDoDesconto" onchange="mudaPorcentagemPromocao()" placeholder="10"  min="0" max="100" style="margin-bottom: 1%; width: 80%" maxlength="2"></input> 
+						Porcentagem do desconto: <input class="form-control" onkeypress='return event.charCode >= 48 && event.charCode <= 57' id="porcentagemDoDesconto" onkeyup="mudaPorcentagemPromocao()" placeholder="10"  min="0" max="100" style="margin-bottom: 1%; width: 80%" maxlength="2"></input> 
 					</div>
 
 					<button id="btnVoltar" class="btn btn-primary" onclick="location.href='../telaInicial/telaInicial.html';" style="width: 120px; height: 50px; margin-right: 3%; margin-bottom: 2%"> 
