@@ -199,7 +199,7 @@ function montarObjetoLente () {
 		venda = precoPromocional * multiplicador;
 	}
 
-	let lente = {
+	return {
 		uuid, 
 		descricao, 
 		empresa, 
