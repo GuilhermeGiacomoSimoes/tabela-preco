@@ -71,41 +71,23 @@ function preencherOsDadosParaEditarAlente(snapshot) {
 	let	edtIndice= document.getElementById('indice');   
 	let	edtDiametro = document.getElementById('diametro');   
 
-	let	descricao 	  = snapshot['descricao'];  
-	let	empresa   	  = snapshot['empresa']; 
-	let	tipo      	  = snapshot['tipo']; 
-	let	preco     	  = snapshot['preco']; 
-	let	multiplicador = snapshot['multiplicador'];    
-	let	promocao      = snapshot['promocao'];    
-	let	cilindrico    = snapshot['cilindrico'];    
-	let	esferico      = snapshot['esferico'];    
-	let indice        = snapshot['indice'];    
-	let diametro      = snapshot['diametro'];    
-	let venda         = snapshot['venda'];    
-
-	if (promocao) {
+	if (snapshot['promocao']) {
 		cbPromocao.checked = true;
-
-		let	porcentagemDesconto = snapshot['porcentagemDesconto'];    
-		let	precoPromocao       = snapshot['precoPromocional'];    
-
-		edtPrecoPromocional.value = doubleParaDinheiro(precoPromocao); 
-		edtPorcentagemDesconto.value = porcentagemDesconto;
-
+		edtPrecoPromocional.value = formatarParaReal(snapshot['precoPromocional']); 
+		edtPorcentagemDesconto.value = snapshot['porcentagemDesconto'];
 		flagPromocao();
 	}
 
-	edtDescricao 	  .value = descricao;	
-	edtEmpresa   	  .value = empresa;	
-	edtTipo      	  .value = tipo;	
-	edtPreco     	  .value = doubleParaDinheiro(preco);	
-	edtMultiplicador  .value = multiplicador;
-	edtVenda 	 	  .value = doubleParaDinheiro(venda);
-	edtiCilindrico 	  .value = cilindrico;
-	edtEsferico 	  .value = esferico;
-	edtIndice 	 	  .value = indice;
-	edtDiametro       .value = diametro;
-
+	edtDescricao 	  .value = snapshot['descricao'];	
+	edtEmpresa   	  .value = snapshot['empresa'];	
+	edtTipo      	  .value = snapshot['tipo'];	
+	edtPreco     	  .value = formatarParaReal(snapshot['preco']);	
+	edtMultiplicador  .value = snapshot['multiplicador'];
+	edtVenda 	 	  .value = formatarParaReal(snapshot['venda']);
+	edtiCilindrico 	  .value = snapshot['cilindrico'];
+	edtEsferico 	  .value = snapshot['esferico'];
+	edtIndice 	 	  .value = snapshot['indice'];
+	edtDiametro       .value = snapshot['diametro'];
 }
 
 function verificaIrregularidades(lente){
