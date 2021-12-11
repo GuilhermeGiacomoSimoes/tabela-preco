@@ -245,29 +245,40 @@ function pararLoading() {
 function mostrarDialog(mensagem, voltar) {
 	let modal = document.getElementById("dialogRetorno");
 	modal.style.display = "block";
-
 	document.getElementById("mensagemRetorno").textContent=mensagem;
-
 	let btnFechar = document.getElementsByClassName("close")[0];
-	btnFechar.onclick = _=> {
-		modal.style.display = "none";
 
-		if (voltar) { 
-			window.location.href = '../telaInicial/telaInicial.html';  
-		}
+	if(voltar){
+		voltarPraTelaInicialDepoisDeDoisSegundos(); 
 	}
+	else {
+		fecharQuandoClicarNoX(btnFechar);
+		fecharQuandoClicarForaDoModal();
+	}
+}
 
+function voltarPraTelaInicialDepoisDeDoisSegundos() {
+	const modal = document.getElementById("dialogRetorno");
+	const tresSegundos = 2000;
+	setTimeout( function() {
+		window.location.href = '../telaInicial/telaInicial.html';  
+	}, tresSegundos);
+}
+
+function fecharQuandoClicarForaDoModal() {
+	const modal = document.getElementById("dialogRetorno");
 	window.onclick = function(event) {
   		if (event.target == modal) {
     		modal.style.display = "none";
-
-			if (voltar) { 
-				window.location.href = '../telaInicial/telaInicial.html';  
-			}
   		}
 	}
 }
 
+function fecharQuandoClicarNoX(btnFechar) {
+	btnFechar.onclick = _=> {
+		modal.style.display = "none";
+	}
+}
 
 function flagPromocao() {
 	let promocao = document.getElementById('promocao').checked;
