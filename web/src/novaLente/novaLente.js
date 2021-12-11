@@ -128,9 +128,9 @@ function verificaIrregularidades(lente){
 }
 
 function salvarLenteNoBanco(lente) {
-	let msg = verificaIrregularidades(lente);
+	let mensagensDeErro = verificaIrregularidades(lente);
 
-	if (msg != '') {
+	if (mensagensDeErro != '') {
 		mostrarDialog(msg, false);
 		return false;
 	}
