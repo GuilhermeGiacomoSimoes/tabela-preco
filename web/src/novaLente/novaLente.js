@@ -21,7 +21,7 @@ function verificaEdicao() {
 		editar   		 = true;
 		uuidLenteEditada = lenteUUID;
 
-		preencherDadosLente(lente);
+		preencherOsDadosParaEditarAlente(lente);
 	}
 }
 
