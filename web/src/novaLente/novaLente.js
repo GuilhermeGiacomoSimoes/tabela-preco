@@ -215,13 +215,6 @@ function montarObjetoLente () {
 		indice : parseFloat(indice) || 0, 
 		diametro : parseInt(diametro) || 0
 	};
-
-	return lente;
-}
-
-function cadastrar() {
-	const lente = montarObjetoLente();
-	salvarLenteNoBanco(lente);
 }
 
 function mudouMultiplicador() {
