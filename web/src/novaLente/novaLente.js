@@ -4,7 +4,7 @@ var uuidLenteEditada  = '';
 var arr 			  = [];
 var msgErro			  = '';
 
-resetarCampos(); 
+limparCampos(); 
 obterLentes(); 
 
 if( window.location.href.includes('vercel') ){
@@ -157,7 +157,7 @@ function salvarLenteNoBanco(lente) {
 	try {
 		database.ref(`lentes/${lente.empresa}/${lente.uuid}`).set(lente).then( snapshot => {
 			pararLoading(); 
-			resetarCampos();
+			limparCampos();
 			mostrarDialog("Salvo com sucesso", editar);
 			editar = false;
 		}).catch(error => {
@@ -173,7 +173,7 @@ function salvarLenteNoBanco(lente) {
 	return true;
 }
 
-function resetarCampos() {
+function limparCampos() {
 	uuidLenteEditada  = '';
 
 	document.getElementById('descricao').value="";
