@@ -186,12 +186,11 @@ function montarObjetoLente () {
 	let	cilindrico  	= document.getElementById('cilindrico').value || "";   
 	let	indice 			= document.getElementById('indice').value || "";   
 	let	diametro 		= document.getElementById('diametro').value || "";
+	preco = dinheiroParaDouble(preco);
+	let venda = preco * multiplicador;
 
 	let precoPromocional    = null; 
     let porcentagemDesconto = null;
-
-	preco = dinheiroParaDouble(preco);
-	let venda = preco * multiplicador;
 
 	if (promocao) {
 		precoPromocional     = document.getElementById('precoPromocional').value;
