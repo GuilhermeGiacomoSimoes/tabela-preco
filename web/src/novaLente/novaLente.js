@@ -297,11 +297,10 @@ function flagPromocao() {
 		precoVenda = preco * multiplicador; 
 	}
 
-	document.getElementById('venda').value = doubleParaDinheiro(precoVenda);
+	document.getElementById('venda').value = formatarParaReal(precoVenda);
 }
 
 function verificarPrecoPromocional() {
-
 	let precoPromocional     = document.getElementById('precoPromocional').value;
 	let preco                = document.getElementById('preco').value;
 
@@ -310,7 +309,7 @@ function verificarPrecoPromocional() {
 
 	if ( precoPromocional >= preco )	{
 		precoPromocional = preco - 1;
-		document.getElementById('precoPromocional').value = doubleParaDinheiro(precoPromocional);
+		document.getElementById('precoPromocional').value = formatarParaReal(precoPromocional);
 	}
 
 	return precoPromocional;
@@ -329,7 +328,7 @@ function mudaPrecoPromocional() {
 		let porcentagem = (1 - (precoPromocional / preco ))  * 100 ;	
 		let precoVenda  = precoPromocional * document.getElementById('multiplicador').value; 
 		document.getElementById('porcentagemDoDesconto').value = Number(porcentagem).toFixed(2);
-		document.getElementById('venda').value = doubleParaDinheiro(precoVenda);	
+		document.getElementById('venda').value = formatarParaReal(precoVenda);	
 	}
 }
 
@@ -341,8 +340,8 @@ function mudaPorcentagemPromocao() {
 	if (porcentagem && preco) {
 		let precoPromocional = preco - (preco * ( porcentagem / 100 ));
 		let precoVenda  = precoPromocional * document.getElementById('multiplicador').value; 
-		document.getElementById('precoPromocional').value = doubleParaDinheiro(precoPromocional);	
-		document.getElementById('venda').value = doubleParaDinheiro(precoVenda);	
+		document.getElementById('precoPromocional').value = formatarParaReal(precoPromocional);	
+		document.getElementById('venda').value = formatarParaReal(precoVenda);	
 	}
 }
 
@@ -362,10 +361,6 @@ function dinheiroParaDouble( param ) {
 	}
 
 	return Number(somenteValorEmNumero);
-}
-
-function doubleParaDinheiro( param ) {
-	return param.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' }).toLocaleString(); 
 }
 
 function enviarEmailErro(){
