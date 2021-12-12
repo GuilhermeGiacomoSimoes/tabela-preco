@@ -6,7 +6,7 @@ var lentesVisiveis = {};
 var msgErro 	   = "";
 
 obterLentes();
-if( window.location.href.includes('vercel') ){
+if( estamosEmProducao ){
 	verificarLogin('tela_inicial');
 }
 

@@ -7,7 +7,7 @@ var msgErro			  = '';
 limparCampos(); 
 obterLentes(); 
 
-if( window.location.href.includes('vercel') ){
+if( estamosEmProducao ){
 	verificarLogin('nova_lente');
 }
 

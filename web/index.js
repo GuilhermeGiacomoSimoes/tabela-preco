@@ -1,6 +1,6 @@
 var database = obterConfiguracaoFirebase();
 
-if (window.location.href.includes('vercel')) {
+if (estamosEmProducao) {
 	verificarLogin('index');
 }
 
@@ -16,7 +16,7 @@ function logar() {
 
 				loading('estatico');
 
-				if (window.location.href.includes('vercel')) {
+				if (estamosEmProducao) {
 					verificarLogin('index');
 				}
 				else {
