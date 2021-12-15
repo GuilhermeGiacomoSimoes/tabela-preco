@@ -13,29 +13,25 @@ verificaEdicao();
 
 function verificaEdicao() {
 	const url = window.location.href;
+	const temIDdaLenteParaEdicao = url.indexOf('?') != -1;
 
-	if (url.indexOf('?') != -1){
-		const lenteUUID = url.split('?')[1];
-		const lente = obterLente(lenteUUID);
-
-		editar   		 = true;
-		uuidLenteEditada = lenteUUID;
-
-		preencherOsDadosParaEditarAlente(lente);
+	if (temIDdaLenteParaEdicao) {
+		editar = true;
+		uuidLenteEditada = url.split('?')[1];
+		obterLentes();
 	}
 }
 
-function obterLente(uuid) {
+function obterLente() {
 	for (let key in arr){
 		let empresa = arr[key];
 		for (let uuidLente in empresa){
-			if (uuidLente == uuid){
-				return empresa[uuid]; 
+			if (uuidLente == uuidLenteEditada){
+				const lente = empresa[uuidLenteEditada]; 
+				preencherOsDadosParaEditarAlente(lente);
 			}
 		}
 	}
-
-	return null;
 }
 
 function obterLentes() {
@@ -44,7 +40,7 @@ function obterLentes() {
 		let ref = database.ref('lentes');
 		ref.on('value', snapshot => {
 			arr = snapshot.val();
-			verificaEdicao();
+			obterLente();
 			pararLoading();
 		}, err => {
 			msgErro = err;
@@ -127,11 +123,16 @@ function verificaIrregularidades(lente){
 	return msg;
 }
 
+function cadastrar() {
+	const lente = montarObjetoLente();
+	salvarLenteNoBanco(lente);
+}
+
 function salvarLenteNoBanco(lente) {
 	let mensagensDeErro = verificaIrregularidades(lente);
 
 	if (mensagensDeErro != '') {
-		mostrarDialog(msg, false);
+		mostrarDialog(mensagensDeErro, false);
 		return false;
 	}
 
@@ -249,7 +250,7 @@ function mostrarDialog(mensagem, voltar) {
 	let btnFechar = document.getElementsByClassName("close")[0];
 
 	if(voltar){
-		voltarPraTelaInicialDepoisDeDoisSegundos(); 
+		voltarPraTelaInicialDepoisDeUMegundos(); 
 	}
 	else {
 		fecharQuandoClicarNoX(btnFechar);
@@ -257,12 +258,12 @@ function mostrarDialog(mensagem, voltar) {
 	}
 }
 
-function voltarPraTelaInicialDepoisDeDoisSegundos() {
+function voltarPraTelaInicialDepoisDeUMegundos() {
 	const modal = document.getElementById("dialogRetorno");
-	const tresSegundos = 2000;
+	const umSegundo = 1000;
 	setTimeout( function() {
 		window.location.href = '../telaInicial/telaInicial.html';  
-	}, tresSegundos);
+	}, umSegundo);
 }
 
 function fecharQuandoClicarForaDoModal() {
