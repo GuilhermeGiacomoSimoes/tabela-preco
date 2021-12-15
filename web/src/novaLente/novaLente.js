@@ -276,6 +276,7 @@ function fecharQuandoClicarForaDoModal() {
 }
 
 function fecharQuandoClicarNoX(btnFechar) {
+	let modal = document.getElementById("dialogRetorno");
 	btnFechar.onclick = _=> {
 		modal.style.display = "none";
 	}
