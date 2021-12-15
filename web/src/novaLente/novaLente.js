@@ -4,12 +4,12 @@ var uuidLenteEditada  = '';
 var arr 			  = [];
 var msgErro			  = '';
 
-limparCampos(); 
-obterLentes(); 
-
 if( estamosEmProducao ){
 	verificarLogin('nova_lente');
 }
+
+limparCampos(); 
+verificaEdicao();
 
 function verificaEdicao() {
 	const url = window.location.href;
